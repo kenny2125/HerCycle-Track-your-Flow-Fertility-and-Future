@@ -37,27 +37,27 @@ Public Class Period_Records
             dbconnect.connect()
 
             MsgBox(currentUserId)
-            MsgBox(DateTimePicker1.Value)
-            MsgBox(DateTimePicker2.Value)
-            MsgBox(DateTimePicker3.Value)
-            MsgBox(TextBox4.Text)
+            MsgBox(DateTimePicker1.Value.Date)
+            MsgBox(DateTimePicker2.Value.Date)
+            MsgBox(DateTimePicker3.Value.Date)
+            MsgBox(Convert.ToInt32(TextBox4.Text))
             MsgBox(TextBox5.Text)
 
             ' Prepare the SQL insert statement
-            'Dim query As String = "INSERT INTO tbl_records (user_id, date, datestart, dateend, duration, notes) VALUES (@userid, @date, @datestart, @dateend, @duration, @notes)"
-            'Using cmd As New MySqlCommand(query, dbconnect.conn)
-            '    ' Add parameters with the parsed dates
-            '    cmd.Parameters.AddWithValue("@userid", currentUserId)
-            '    cmd.Parameters.AddWithValue("@date", date1) ' Use the parsed date
-            '    cmd.Parameters.AddWithValue("@datestart", startdate) ' Use the parsed start date
-            '    cmd.Parameters.AddWithValue("@dateend", enddate) ' Use the parsed end date
-            '    cmd.Parameters.AddWithValue("@duration", Convert.ToInt32(TextBox4.Text)) ' Assuming TextBox4 is an integer
-            '    cmd.Parameters.AddWithValue("@notes", TextBox5.Text) ' Assuming TextBox5 is for notes
+            Dim query As String = "INSERT INTO tbl_records (user_id, date, datestart, dateend, duration, notes) VALUES (@userid, @date, @datestart, @dateend, @duration, @notes)"
+            Using cmd As New MySqlCommand(query, dbconnect.conn)
+                ' Add parameters with the parsed dates
+                cmd.Parameters.AddWithValue("@userid", currentUserId)
+                cmd.Parameters.AddWithValue("@date", DateTimePicker1.Value.Date) ' Use the parsed date
+                cmd.Parameters.AddWithValue("@datestart", DateTimePicker2.Value.Date) ' Use the parsed start date
+                cmd.Parameters.AddWithValue("@dateend", DateTimePicker3.Value.Date) ' Use the parsed end date
+                cmd.Parameters.AddWithValue("@duration", Convert.ToInt32(TextBox4.Text)) ' Assuming TextBox4 is an integer
+                cmd.Parameters.AddWithValue("@notes", TextBox5.Text) ' Assuming TextBox5 is for notes
 
-            '    ' Execute the command
-            '    cmd.ExecuteNonQuery()
-            '    MsgBox("Record inserted successfully.")
-            'End Using
+                ' Execute the command
+                cmd.ExecuteNonQuery()
+                MsgBox("Record inserted successfully.")
+            End Using
 
 
 
@@ -66,7 +66,7 @@ Public Class Period_Records
 
             MessageBox.Show("Successfully Inserted")
 
-            
+
 
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message)

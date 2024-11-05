@@ -1,19 +1,25 @@
-﻿
+﻿Imports System.Security.Cryptography
+Imports MySql.Data.MySqlClient
 
 Public Class dbconnect
-    'create a connection to the database
 
+    Public conn As New MySqlConnection
     Public Sub connect()
+        conn.ConnectionString = "server=127.0.0.1;userid=root;password=;database=db_hercycle"
 
+        ' Open the connection
+        Try
+            conn.Open()
+            Console.WriteLine("Connected to database")
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+
+        End Try
     End Sub
 
-    'create insert to tbl_records with fields
-    'ID(int), Date(datetime), Start Date(datetime), End Date(datetime), Duration(int), Notes(varchar)
+
     Public Sub insert(ByVal date1 As Date, ByVal startdate As Date, ByVal enddate As Date, ByVal duration As Integer, ByVal notes As String)
 
     End Sub
-
-
-
 
 End Class

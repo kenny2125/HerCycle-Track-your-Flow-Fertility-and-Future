@@ -4,8 +4,11 @@ Public Class Period_Records
     ' Assuming you have a way to get the logged-in user's ID, for example from a session or global variable
     Private currentUserId As Integer = CurrentUser.UserId
 
-
     Private Sub Period_Records_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadUserRecords()
+    End Sub
+
+    Private Sub LoadUserRecords()
         ' Load the data from tbl_records for the current user
         Dim dbconnect As New dbconnect
         dbconnect.connect()
@@ -36,12 +39,6 @@ Public Class Period_Records
             Dim dbconnect As New dbconnect
             dbconnect.connect()
 
-            MsgBox(currentUserId)
-            MsgBox(DateTimePicker1.Value.Date)
-            MsgBox(DateTimePicker2.Value.Date)
-            MsgBox(DateTimePicker3.Value.Date)
-            MsgBox(Convert.ToInt32(TextBox4.Text))
-            MsgBox(TextBox5.Text)
 
             ' Prepare the SQL insert statement
             Dim query As String = "INSERT INTO tbl_records (user_id, date, datestart, dateend, duration, notes) VALUES (@userid, @date, @datestart, @dateend, @duration, @notes)"
@@ -56,17 +53,11 @@ Public Class Period_Records
 
                 ' Execute the command
                 cmd.ExecuteNonQuery()
-                MsgBox("Record inserted successfully.")
+
             End Using
 
-
-
-
-
-
             MessageBox.Show("Successfully Inserted")
-
-
+            LoadUserRecords() ' Reload the records after insertion
 
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message)

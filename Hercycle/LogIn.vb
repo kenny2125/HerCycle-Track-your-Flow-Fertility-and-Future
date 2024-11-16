@@ -8,10 +8,10 @@ Public Class LogIn
         dbconnect.connect()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         ' Get the username and password
-        Dim username As String = TextBox1.Text
-        Dim password As String = TextBox2.Text
+        Dim username As String = UsernameTextBox.Text
+        Dim password As String = PasswordTextBox.Text
 
         ' SQL query to check if the username and password matched from the database
         Dim query As String = "SELECT user_id FROM tbl_user WHERE username = @username AND password = @password"
@@ -39,11 +39,18 @@ Public Class LogIn
         End Using
     End Sub
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+    Private Sub Label4_Click(sender As Object, e As EventArgs)
         SignUp.Show()
         Me.Hide()
     End Sub
 
+    Private Sub PasswordTextBox_TextChanged(sender As Object, e As EventArgs) Handles PasswordTextBox.TextChanged
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
 End Class
 
 ' Create a static class to hold the current user's information

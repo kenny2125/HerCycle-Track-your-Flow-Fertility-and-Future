@@ -6,7 +6,7 @@ Public Class SignUp
         Me.Hide()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Try
             Dim dbconnect As New dbconnect
             dbconnect.connect()
@@ -30,5 +30,33 @@ Public Class SignUp
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub Guna2HtmlLabel2_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel2.Click
+
+    End Sub
+
+    Private Sub SignUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel4_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel4.Click
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel6_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel6.Click
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel8_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel8.Click
+
+    End Sub
+
+    Private Sub txb_password_TextChanged(sender As Object, e As EventArgs) Handles txb_password.TextChanged
+
+    End Sub
+
+    Private Sub txb_username_TextChanged(sender As Object, e As EventArgs)
+
     End Sub
 End Class

@@ -45,11 +45,11 @@ Public Class Dashboard
         Me.Hide()
     End Sub
 
-    Private Sub Guna2GradientPanel1_Paint(sender As Object, e As PaintEventArgs) Handles BACKGROUND.Paint
+    Private Sub Guna2GradientPanel1_Paint(sender As Object, e As PaintEventArgs) Handles pnl_dashboardbg.Paint
 
     End Sub
 
-    Private Sub Guna2Panel2_Paint(sender As Object, e As PaintEventArgs) Handles PHASE_PANEL.Paint
+    Private Sub Guna2Panel2_Paint(sender As Object, e As PaintEventArgs) Handles pnl_phase.Paint
 
     End Sub
 
@@ -65,23 +65,47 @@ Public Class Dashboard
 
     End Sub
 
-    Private Sub Guna2HtmlLabel6_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel6.Click
+    Private Sub Guna2HtmlLabel6_Click(sender As Object, e As EventArgs) Handles lbl_phaseday.Click
 
     End Sub
 
-    Private Sub Guna2HtmlLabel5_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel5.Click
+    Private Sub Guna2HtmlLabel5_Click(sender As Object, e As EventArgs) Handles lbl_phasedayno.Click
 
     End Sub
 
-    Private Sub Guna2HtmlLabel7_Click_1(sender As Object, e As EventArgs) Handles Guna2HtmlLabel7.Click
+    Private Sub Guna2HtmlLabel7_Click_1(sender As Object, e As EventArgs) Handles lbl_phaseheader.Click
 
     End Sub
 
-    Private Sub Guna2HtmlLabel19_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel19.Click
+    Private Sub Guna2HtmlLabel19_Click(sender As Object, e As EventArgs) Handles lbl_phasesub.Click
 
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel11_Click(sender As Object, e As EventArgs) Handles lbl_dailydigest.Click
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel15_Click(sender As Object, e As EventArgs) Handles lbl_follicular.Click
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel12_Click_1(sender As Object, e As EventArgs) Handles lbl_greet.Click
+
+    End Sub
+
+    Private Sub EDIT_PROFILE_PANEL_Paint(sender As Object, e As PaintEventArgs) Handles pnl_editprof.Paint
+
+    End Sub
+
+    Private Sub Guna2GradientButton1_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btn_addnew_Click(sender As Object, e As EventArgs) Handles btn_addnew.Click
 
     End Sub
 End Class

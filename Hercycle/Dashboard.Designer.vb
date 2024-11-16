@@ -23,47 +23,61 @@ Partial Class Dashboard
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         Me.Guna2ShapesTool1 = New Guna.UI2.WinForms.Guna2ShapesTool(Me.components)
-        Me.DASHBOARD_TOP_PANEL = New Guna.UI2.WinForms.Guna2Panel()
-        Me.EDIT_PROFILE_PANEL = New Guna.UI2.WinForms.Guna2Panel()
-        Me.BACKGROUND = New Guna.UI2.WinForms.Guna2GradientPanel()
-        Me.PERIOD_PANEL = New Guna.UI2.WinForms.Guna2Panel()
-        Me.PHASE_PANEL = New Guna.UI2.WinForms.Guna2Panel()
-        Me.FERTILITY_PAMEL = New Guna.UI2.WinForms.Guna2Panel()
-        Me.ADVICE_PANEL = New Guna.UI2.WinForms.Guna2Panel()
-        Me.OTHERS_PANEL = New Guna.UI2.WinForms.Guna2Panel()
-        Me.PERIOD_TRACKER_PANEL = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Guna2HtmlLabel12 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel13 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel14 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel15 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel16 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel17 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel18 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel19 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.pnl_dashboard = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pnl_editprof = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pnl_dashboardbg = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.pnl_tracker = New Guna.UI2.WinForms.Guna2Panel()
+        Me.lbl_periodtracker = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.pnl_others = New Guna.UI2.WinForms.Guna2Panel()
+        Me.lbl_luteal = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_ovulation = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_follicular = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_menstruation = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_currenttime = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.pnl_dailydigest = New Guna.UI2.WinForms.Guna2Panel()
+        Me.lbl_dailydigest = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.pnl_fertility = New Guna.UI2.WinForms.Guna2Panel()
+        Me.lbl_prediction = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_fertilityphase = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_fertility = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.pnl_phase = New Guna.UI2.WinForms.Guna2Panel()
+        Me.lbl_phasesub = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_phaseheader = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_phaseday = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_phasedayno = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_phase = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.pnl_period = New Guna.UI2.WinForms.Guna2Panel()
+        Me.lbl_periodtitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_periodday = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_period = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Guna2HtmlLabel20 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.DASHBOARD_TOP_PANEL.SuspendLayout()
-        Me.BACKGROUND.SuspendLayout()
-        Me.PERIOD_PANEL.SuspendLayout()
-        Me.PHASE_PANEL.SuspendLayout()
-        Me.FERTILITY_PAMEL.SuspendLayout()
-        Me.ADVICE_PANEL.SuspendLayout()
-        Me.OTHERS_PANEL.SuspendLayout()
-        Me.PERIOD_TRACKER_PANEL.SuspendLayout()
+        Me.lbl_displaycurrenttime = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.picb_profile = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.lbl_greet = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.txt_menstruation = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_follicular = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_ovulation = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_luteal = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.linklbl_details = New System.Windows.Forms.LinkLabel()
+        Me.txt_trackercolumn = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_column1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_column2 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_column3 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_column4 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_column5 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_column6 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btn_addnew = New Guna.UI2.WinForms.Guna2Button()
+        Me.pnl_dashboard.SuspendLayout()
+        Me.pnl_editprof.SuspendLayout()
+        Me.pnl_dashboardbg.SuspendLayout()
+        Me.pnl_tracker.SuspendLayout()
+        Me.pnl_others.SuspendLayout()
+        Me.pnl_dailydigest.SuspendLayout()
+        Me.pnl_fertility.SuspendLayout()
+        Me.pnl_phase.SuspendLayout()
+        Me.pnl_period.SuspendLayout()
+        CType(Me.picb_profile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2ShapesTool1
@@ -74,376 +88,665 @@ Partial Class Dashboard
         Me.Guna2ShapesTool1.Size = New System.Drawing.Size(200, 200)
         Me.Guna2ShapesTool1.TargetControl = Nothing
         '
-        'DASHBOARD_TOP_PANEL
+        'pnl_dashboard
         '
-        Me.DASHBOARD_TOP_PANEL.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
-        Me.DASHBOARD_TOP_PANEL.Controls.Add(Me.EDIT_PROFILE_PANEL)
-        Me.DASHBOARD_TOP_PANEL.Dock = System.Windows.Forms.DockStyle.Top
-        Me.DASHBOARD_TOP_PANEL.Location = New System.Drawing.Point(0, 0)
-        Me.DASHBOARD_TOP_PANEL.Name = "DASHBOARD_TOP_PANEL"
-        Me.DASHBOARD_TOP_PANEL.Size = New System.Drawing.Size(1904, 170)
-        Me.DASHBOARD_TOP_PANEL.TabIndex = 0
+        Me.pnl_dashboard.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
+        Me.pnl_dashboard.Controls.Add(Me.pnl_editprof)
+        Me.pnl_dashboard.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnl_dashboard.Location = New System.Drawing.Point(0, 0)
+        Me.pnl_dashboard.Name = "pnl_dashboard"
+        Me.pnl_dashboard.Size = New System.Drawing.Size(1904, 170)
+        Me.pnl_dashboard.TabIndex = 0
         '
-        'EDIT_PROFILE_PANEL
+        'pnl_editprof
         '
-        Me.EDIT_PROFILE_PANEL.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(163, Byte), Integer), CType(CType(163, Byte), Integer))
-        Me.EDIT_PROFILE_PANEL.Location = New System.Drawing.Point(1509, 31)
-        Me.EDIT_PROFILE_PANEL.Name = "EDIT_PROFILE_PANEL"
-        Me.EDIT_PROFILE_PANEL.Size = New System.Drawing.Size(355, 101)
-        Me.EDIT_PROFILE_PANEL.TabIndex = 0
+        Me.pnl_editprof.AutoRoundedCorners = True
+        Me.pnl_editprof.AutoSize = True
+        Me.pnl_editprof.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(163, Byte), Integer), CType(CType(163, Byte), Integer))
+        Me.pnl_editprof.BorderRadius = 49
+        Me.pnl_editprof.Controls.Add(Me.lbl_greet)
+        Me.pnl_editprof.Controls.Add(Me.picb_profile)
+        Me.pnl_editprof.Location = New System.Drawing.Point(1509, 31)
+        Me.pnl_editprof.Name = "pnl_editprof"
+        Me.pnl_editprof.Size = New System.Drawing.Size(371, 101)
+        Me.pnl_editprof.TabIndex = 0
         '
-        'BACKGROUND
+        'pnl_dashboardbg
         '
-        Me.BACKGROUND.Controls.Add(Me.PERIOD_TRACKER_PANEL)
-        Me.BACKGROUND.Controls.Add(Me.OTHERS_PANEL)
-        Me.BACKGROUND.Controls.Add(Me.ADVICE_PANEL)
-        Me.BACKGROUND.Controls.Add(Me.FERTILITY_PAMEL)
-        Me.BACKGROUND.Controls.Add(Me.PHASE_PANEL)
-        Me.BACKGROUND.Controls.Add(Me.PERIOD_PANEL)
-        Me.BACKGROUND.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.BACKGROUND.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.BACKGROUND.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(207, Byte), Integer), CType(CType(207, Byte), Integer))
-        Me.BACKGROUND.Location = New System.Drawing.Point(0, 170)
-        Me.BACKGROUND.Name = "BACKGROUND"
-        Me.BACKGROUND.Size = New System.Drawing.Size(1904, 871)
-        Me.BACKGROUND.TabIndex = 2
+        Me.pnl_dashboardbg.Controls.Add(Me.pnl_tracker)
+        Me.pnl_dashboardbg.Controls.Add(Me.pnl_others)
+        Me.pnl_dashboardbg.Controls.Add(Me.pnl_dailydigest)
+        Me.pnl_dashboardbg.Controls.Add(Me.pnl_fertility)
+        Me.pnl_dashboardbg.Controls.Add(Me.pnl_phase)
+        Me.pnl_dashboardbg.Controls.Add(Me.pnl_period)
+        Me.pnl_dashboardbg.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnl_dashboardbg.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.pnl_dashboardbg.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(207, Byte), Integer), CType(CType(207, Byte), Integer))
+        Me.pnl_dashboardbg.Location = New System.Drawing.Point(0, 170)
+        Me.pnl_dashboardbg.Name = "pnl_dashboardbg"
+        Me.pnl_dashboardbg.Size = New System.Drawing.Size(1904, 871)
+        Me.pnl_dashboardbg.TabIndex = 2
         '
-        'PERIOD_PANEL
+        'pnl_tracker
         '
-        Me.PERIOD_PANEL.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
-        Me.PERIOD_PANEL.Controls.Add(Me.Guna2HtmlLabel3)
-        Me.PERIOD_PANEL.Controls.Add(Me.Guna2HtmlLabel2)
-        Me.PERIOD_PANEL.Controls.Add(Me.Guna2HtmlLabel1)
-        Me.PERIOD_PANEL.Location = New System.Drawing.Point(29, 21)
-        Me.PERIOD_PANEL.Name = "PERIOD_PANEL"
-        Me.PERIOD_PANEL.Size = New System.Drawing.Size(450, 450)
-        Me.PERIOD_PANEL.TabIndex = 0
+        Me.pnl_tracker.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.pnl_tracker.Controls.Add(Me.btn_addnew)
+        Me.pnl_tracker.Controls.Add(Me.txt_column6)
+        Me.pnl_tracker.Controls.Add(Me.txt_column5)
+        Me.pnl_tracker.Controls.Add(Me.txt_column4)
+        Me.pnl_tracker.Controls.Add(Me.txt_column3)
+        Me.pnl_tracker.Controls.Add(Me.txt_column2)
+        Me.pnl_tracker.Controls.Add(Me.txt_column1)
+        Me.pnl_tracker.Controls.Add(Me.txt_trackercolumn)
+        Me.pnl_tracker.Controls.Add(Me.lbl_periodtracker)
+        Me.pnl_tracker.Location = New System.Drawing.Point(751, 516)
+        Me.pnl_tracker.Name = "pnl_tracker"
+        Me.pnl_tracker.Size = New System.Drawing.Size(1129, 343)
+        Me.pnl_tracker.TabIndex = 5
         '
-        'PHASE_PANEL
+        'lbl_periodtracker
         '
-        Me.PHASE_PANEL.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
-        Me.PHASE_PANEL.Controls.Add(Me.Guna2HtmlLabel19)
-        Me.PHASE_PANEL.Controls.Add(Me.Guna2HtmlLabel7)
-        Me.PHASE_PANEL.Controls.Add(Me.Guna2HtmlLabel6)
-        Me.PHASE_PANEL.Controls.Add(Me.Guna2HtmlLabel5)
-        Me.PHASE_PANEL.Controls.Add(Me.Guna2HtmlLabel4)
-        Me.PHASE_PANEL.Location = New System.Drawing.Point(494, 21)
-        Me.PHASE_PANEL.Name = "PHASE_PANEL"
-        Me.PHASE_PANEL.Size = New System.Drawing.Size(450, 450)
-        Me.PHASE_PANEL.TabIndex = 1
+        Me.lbl_periodtracker.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_periodtracker.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_periodtracker.Location = New System.Drawing.Point(27, 10)
+        Me.lbl_periodtracker.Name = "lbl_periodtracker"
+        Me.lbl_periodtracker.Size = New System.Drawing.Size(166, 41)
+        Me.lbl_periodtracker.TabIndex = 3
+        Me.lbl_periodtracker.Text = "Period Tracker"
         '
-        'FERTILITY_PAMEL
+        'pnl_others
         '
-        Me.FERTILITY_PAMEL.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
-        Me.FERTILITY_PAMEL.Controls.Add(Me.Guna2HtmlLabel10)
-        Me.FERTILITY_PAMEL.Controls.Add(Me.Guna2HtmlLabel9)
-        Me.FERTILITY_PAMEL.Controls.Add(Me.Guna2HtmlLabel8)
-        Me.FERTILITY_PAMEL.Location = New System.Drawing.Point(961, 21)
-        Me.FERTILITY_PAMEL.Name = "FERTILITY_PAMEL"
-        Me.FERTILITY_PAMEL.Size = New System.Drawing.Size(450, 450)
-        Me.FERTILITY_PAMEL.TabIndex = 2
+        Me.pnl_others.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.pnl_others.Controls.Add(Me.txt_luteal)
+        Me.pnl_others.Controls.Add(Me.txt_ovulation)
+        Me.pnl_others.Controls.Add(Me.txt_follicular)
+        Me.pnl_others.Controls.Add(Me.txt_menstruation)
+        Me.pnl_others.Controls.Add(Me.lbl_displaycurrenttime)
+        Me.pnl_others.Controls.Add(Me.lbl_luteal)
+        Me.pnl_others.Controls.Add(Me.lbl_ovulation)
+        Me.pnl_others.Controls.Add(Me.lbl_follicular)
+        Me.pnl_others.Controls.Add(Me.lbl_menstruation)
+        Me.pnl_others.Controls.Add(Me.lbl_currenttime)
+        Me.pnl_others.Location = New System.Drawing.Point(29, 516)
+        Me.pnl_others.Name = "pnl_others"
+        Me.pnl_others.Size = New System.Drawing.Size(701, 343)
+        Me.pnl_others.TabIndex = 4
         '
-        'ADVICE_PANEL
+        'lbl_luteal
         '
-        Me.ADVICE_PANEL.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
-        Me.ADVICE_PANEL.Controls.Add(Me.Guna2HtmlLabel12)
-        Me.ADVICE_PANEL.Controls.Add(Me.Label1)
-        Me.ADVICE_PANEL.Controls.Add(Me.Guna2HtmlLabel11)
-        Me.ADVICE_PANEL.Location = New System.Drawing.Point(1430, 21)
-        Me.ADVICE_PANEL.Name = "ADVICE_PANEL"
-        Me.ADVICE_PANEL.Size = New System.Drawing.Size(450, 450)
-        Me.ADVICE_PANEL.TabIndex = 3
+        Me.lbl_luteal.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_luteal.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_luteal.Location = New System.Drawing.Point(29, 262)
+        Me.lbl_luteal.Name = "lbl_luteal"
+        Me.lbl_luteal.Size = New System.Drawing.Size(140, 41)
+        Me.lbl_luteal.TabIndex = 6
+        Me.lbl_luteal.Text = "Luteal Phase"
         '
-        'OTHERS_PANEL
+        'lbl_ovulation
         '
-        Me.OTHERS_PANEL.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
-        Me.OTHERS_PANEL.Controls.Add(Me.Guna2HtmlLabel20)
-        Me.OTHERS_PANEL.Controls.Add(Me.Guna2HtmlLabel17)
-        Me.OTHERS_PANEL.Controls.Add(Me.Guna2HtmlLabel16)
-        Me.OTHERS_PANEL.Controls.Add(Me.Guna2HtmlLabel15)
-        Me.OTHERS_PANEL.Controls.Add(Me.Guna2HtmlLabel14)
-        Me.OTHERS_PANEL.Controls.Add(Me.Guna2HtmlLabel13)
-        Me.OTHERS_PANEL.Location = New System.Drawing.Point(29, 516)
-        Me.OTHERS_PANEL.Name = "OTHERS_PANEL"
-        Me.OTHERS_PANEL.Size = New System.Drawing.Size(701, 343)
-        Me.OTHERS_PANEL.TabIndex = 4
+        Me.lbl_ovulation.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_ovulation.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_ovulation.Location = New System.Drawing.Point(29, 215)
+        Me.lbl_ovulation.Name = "lbl_ovulation"
+        Me.lbl_ovulation.Size = New System.Drawing.Size(110, 41)
+        Me.lbl_ovulation.TabIndex = 5
+        Me.lbl_ovulation.Text = "Ovulation"
         '
-        'PERIOD_TRACKER_PANEL
+        'lbl_follicular
         '
-        Me.PERIOD_TRACKER_PANEL.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
-        Me.PERIOD_TRACKER_PANEL.Controls.Add(Me.Guna2HtmlLabel18)
-        Me.PERIOD_TRACKER_PANEL.Location = New System.Drawing.Point(751, 516)
-        Me.PERIOD_TRACKER_PANEL.Name = "PERIOD_TRACKER_PANEL"
-        Me.PERIOD_TRACKER_PANEL.Size = New System.Drawing.Size(1129, 343)
-        Me.PERIOD_TRACKER_PANEL.TabIndex = 5
+        Me.lbl_follicular.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_follicular.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_follicular.Location = New System.Drawing.Point(29, 168)
+        Me.lbl_follicular.Name = "lbl_follicular"
+        Me.lbl_follicular.Size = New System.Drawing.Size(175, 41)
+        Me.lbl_follicular.TabIndex = 4
+        Me.lbl_follicular.Text = "Follicular Phase"
         '
-        'Guna2HtmlLabel1
+        'lbl_menstruation
         '
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Sitka Banner", 25.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(115, 42)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(217, 50)
-        Me.Guna2HtmlLabel1.TabIndex = 0
-        Me.Guna2HtmlLabel1.Text = "Period Tracking"
+        Me.lbl_menstruation.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_menstruation.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_menstruation.Location = New System.Drawing.Point(29, 116)
+        Me.lbl_menstruation.Name = "lbl_menstruation"
+        Me.lbl_menstruation.Size = New System.Drawing.Size(153, 41)
+        Me.lbl_menstruation.TabIndex = 3
+        Me.lbl_menstruation.Text = "Menstruation"
         '
-        'Guna2HtmlLabel2
+        'lbl_currenttime
         '
-        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Lucida Fax", 90.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(42, 150)
-        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(366, 139)
-        Me.Guna2HtmlLabel2.TabIndex = 1
-        Me.Guna2HtmlLabel2.Text = "Day 1"
+        Me.lbl_currenttime.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_currenttime.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_currenttime.Location = New System.Drawing.Point(29, 30)
+        Me.lbl_currenttime.Name = "lbl_currenttime"
+        Me.lbl_currenttime.Size = New System.Drawing.Size(153, 41)
+        Me.lbl_currenttime.TabIndex = 2
+        Me.lbl_currenttime.Text = "Current Time"
         '
-        'Guna2HtmlLabel3
+        'pnl_dailydigest
         '
-        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Sitka Banner", 27.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(105, 343)
-        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(241, 54)
-        Me.Guna2HtmlLabel3.TabIndex = 2
-        Me.Guna2HtmlLabel3.Text = "of Menstruation"
+        Me.pnl_dailydigest.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.pnl_dailydigest.Controls.Add(Me.linklbl_details)
+        Me.pnl_dailydigest.Controls.Add(Me.lbl_dailydigest)
+        Me.pnl_dailydigest.Location = New System.Drawing.Point(1430, 21)
+        Me.pnl_dailydigest.Name = "pnl_dailydigest"
+        Me.pnl_dailydigest.Size = New System.Drawing.Size(450, 450)
+        Me.pnl_dailydigest.TabIndex = 3
         '
-        'Guna2HtmlLabel4
+        'lbl_dailydigest
         '
-        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Sitka Banner", 25.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(124, 42)
-        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
-        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(208, 50)
-        Me.Guna2HtmlLabel4.TabIndex = 1
-        Me.Guna2HtmlLabel4.Text = "Phase Tracking"
+        Me.lbl_dailydigest.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_dailydigest.Font = New System.Drawing.Font("Sitka Banner", 50.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_dailydigest.Location = New System.Drawing.Point(62, 130)
+        Me.lbl_dailydigest.Name = "lbl_dailydigest"
+        Me.lbl_dailydigest.Size = New System.Drawing.Size(330, 99)
+        Me.lbl_dailydigest.TabIndex = 1
+        Me.lbl_dailydigest.Text = "Daily Digest"
+        Me.lbl_dailydigest.TextAlignment = System.Drawing.ContentAlignment.TopCenter
         '
-        'Guna2HtmlLabel5
+        'pnl_fertility
         '
-        Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Lucida Fax", 110.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(132, 120)
-        Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
-        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(197, 169)
-        Me.Guna2HtmlLabel5.TabIndex = 2
-        Me.Guna2HtmlLabel5.Text = "14"
+        Me.pnl_fertility.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.pnl_fertility.Controls.Add(Me.lbl_prediction)
+        Me.pnl_fertility.Controls.Add(Me.lbl_fertilityphase)
+        Me.pnl_fertility.Controls.Add(Me.lbl_fertility)
+        Me.pnl_fertility.Location = New System.Drawing.Point(961, 21)
+        Me.pnl_fertility.Name = "pnl_fertility"
+        Me.pnl_fertility.Size = New System.Drawing.Size(450, 450)
+        Me.pnl_fertility.TabIndex = 2
         '
-        'Guna2HtmlLabel6
+        'lbl_prediction
         '
-        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(297, 264)
-        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
-        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(55, 41)
-        Me.Guna2HtmlLabel6.TabIndex = 3
-        Me.Guna2HtmlLabel6.Text = "Days"
+        Me.lbl_prediction.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_prediction.Font = New System.Drawing.Font("Sitka Banner", 27.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_prediction.Location = New System.Drawing.Point(50, 343)
+        Me.lbl_prediction.Name = "lbl_prediction"
+        Me.lbl_prediction.Size = New System.Drawing.Size(358, 54)
+        Me.lbl_prediction.TabIndex = 3
+        Me.lbl_prediction.Text = "No Chance" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " of Pregnancy" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'Guna2HtmlLabel7
+        'lbl_fertilityphase
         '
-        Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Sitka Banner", 27.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(134, 311)
-        Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
-        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(192, 54)
-        Me.Guna2HtmlLabel7.TabIndex = 4
-        Me.Guna2HtmlLabel7.Text = "Currently on"
+        Me.lbl_fertilityphase.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_fertilityphase.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_fertilityphase.Location = New System.Drawing.Point(145, 89)
+        Me.lbl_fertilityphase.Name = "lbl_fertilityphase"
+        Me.lbl_fertilityphase.Size = New System.Drawing.Size(168, 31)
+        Me.lbl_fertilityphase.TabIndex = 2
+        Me.lbl_fertilityphase.Text = "Menstruation Phase"
         '
-        'Guna2HtmlLabel8
+        'lbl_fertility
         '
-        Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Sitka Banner", 25.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(117, 42)
-        Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
-        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(233, 50)
-        Me.Guna2HtmlLabel8.TabIndex = 1
-        Me.Guna2HtmlLabel8.Text = "Fertility Watcher"
+        Me.lbl_fertility.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_fertility.Font = New System.Drawing.Font("Sitka Banner", 25.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_fertility.Location = New System.Drawing.Point(111, 42)
+        Me.lbl_fertility.Name = "lbl_fertility"
+        Me.lbl_fertility.Size = New System.Drawing.Size(233, 50)
+        Me.lbl_fertility.TabIndex = 1
+        Me.lbl_fertility.Text = "Fertility Watcher"
         '
-        'Guna2HtmlLabel9
+        'pnl_phase
         '
-        Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(152, 92)
-        Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
-        Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(168, 31)
-        Me.Guna2HtmlLabel9.TabIndex = 2
-        Me.Guna2HtmlLabel9.Text = "Menstruation Phase"
+        Me.pnl_phase.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.pnl_phase.Controls.Add(Me.lbl_phasesub)
+        Me.pnl_phase.Controls.Add(Me.lbl_phaseheader)
+        Me.pnl_phase.Controls.Add(Me.lbl_phaseday)
+        Me.pnl_phase.Controls.Add(Me.lbl_phasedayno)
+        Me.pnl_phase.Controls.Add(Me.lbl_phase)
+        Me.pnl_phase.Location = New System.Drawing.Point(494, 21)
+        Me.pnl_phase.Name = "pnl_phase"
+        Me.pnl_phase.Size = New System.Drawing.Size(450, 450)
+        Me.pnl_phase.TabIndex = 1
         '
-        'Guna2HtmlLabel10
+        'lbl_phasesub
         '
-        Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Sitka Banner", 27.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(50, 343)
-        Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
-        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(358, 54)
-        Me.Guna2HtmlLabel10.TabIndex = 3
-        Me.Guna2HtmlLabel10.Text = "No Chance" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " of Pregnancy" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lbl_phasesub.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_phasesub.Font = New System.Drawing.Font("Sitka Banner", 35.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_phasesub.Location = New System.Drawing.Point(97, 362)
+        Me.lbl_phasesub.Name = "lbl_phasesub"
+        Me.lbl_phasesub.Size = New System.Drawing.Size(265, 70)
+        Me.lbl_phasesub.TabIndex = 3
+        Me.lbl_phasesub.Text = "Menstruation"
         '
-        'Guna2HtmlLabel11
+        'lbl_phaseheader
         '
-        Me.Guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel11.Font = New System.Drawing.Font("Sitka Banner", 25.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel11.Location = New System.Drawing.Point(88, 42)
-        Me.Guna2HtmlLabel11.Name = "Guna2HtmlLabel11"
-        Me.Guna2HtmlLabel11.Size = New System.Drawing.Size(282, 50)
-        Me.Guna2HtmlLabel11.TabIndex = 1
-        Me.Guna2HtmlLabel11.Text = "Menstruation Advice"
+        Me.lbl_phaseheader.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_phaseheader.Font = New System.Drawing.Font("Sitka Banner", 27.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_phaseheader.Location = New System.Drawing.Point(134, 311)
+        Me.lbl_phaseheader.Name = "lbl_phaseheader"
+        Me.lbl_phaseheader.Size = New System.Drawing.Size(192, 54)
+        Me.lbl_phaseheader.TabIndex = 4
+        Me.lbl_phaseheader.Text = "Currently on"
         '
-        'Label1
+        'lbl_phaseday
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label1.Font = New System.Drawing.Font("Sitka Banner", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(42, 125)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(375, 180)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = resources.GetString("Label1.Text")
+        Me.lbl_phaseday.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_phaseday.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_phaseday.Location = New System.Drawing.Point(297, 274)
+        Me.lbl_phaseday.Name = "lbl_phaseday"
+        Me.lbl_phaseday.Size = New System.Drawing.Size(55, 41)
+        Me.lbl_phaseday.TabIndex = 3
+        Me.lbl_phaseday.Text = "Days"
         '
-        'Guna2HtmlLabel12
+        'lbl_phasedayno
         '
-        Me.Guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel12.Font = New System.Drawing.Font("Sitka Banner", 27.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(115, 343)
-        Me.Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
-        Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(216, 54)
-        Me.Guna2HtmlLabel12.TabIndex = 3
-        Me.Guna2HtmlLabel12.Text = "Stay Hydrated"
+        Me.lbl_phasedayno.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_phasedayno.Font = New System.Drawing.Font("Lucida Fax", 131.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_phasedayno.Location = New System.Drawing.Point(117, 104)
+        Me.lbl_phasedayno.Name = "lbl_phasedayno"
+        Me.lbl_phasedayno.Size = New System.Drawing.Size(235, 201)
+        Me.lbl_phasedayno.TabIndex = 2
+        Me.lbl_phasedayno.Text = "14"
         '
-        'Guna2HtmlLabel13
+        'lbl_phase
         '
-        Me.Guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel13.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel13.Location = New System.Drawing.Point(29, 30)
-        Me.Guna2HtmlLabel13.Name = "Guna2HtmlLabel13"
-        Me.Guna2HtmlLabel13.Size = New System.Drawing.Size(153, 41)
-        Me.Guna2HtmlLabel13.TabIndex = 2
-        Me.Guna2HtmlLabel13.Text = "Current Time"
+        Me.lbl_phase.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_phase.Font = New System.Drawing.Font("Sitka Banner", 25.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_phase.Location = New System.Drawing.Point(124, 42)
+        Me.lbl_phase.Name = "lbl_phase"
+        Me.lbl_phase.Size = New System.Drawing.Size(208, 50)
+        Me.lbl_phase.TabIndex = 1
+        Me.lbl_phase.Text = "Phase Tracking"
         '
-        'Guna2HtmlLabel14
+        'pnl_period
         '
-        Me.Guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel14.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel14.Location = New System.Drawing.Point(29, 116)
-        Me.Guna2HtmlLabel14.Name = "Guna2HtmlLabel14"
-        Me.Guna2HtmlLabel14.Size = New System.Drawing.Size(153, 41)
-        Me.Guna2HtmlLabel14.TabIndex = 3
-        Me.Guna2HtmlLabel14.Text = "Menstruation"
+        Me.pnl_period.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.pnl_period.Controls.Add(Me.lbl_periodtitle)
+        Me.pnl_period.Controls.Add(Me.lbl_periodday)
+        Me.pnl_period.Controls.Add(Me.lbl_period)
+        Me.pnl_period.Location = New System.Drawing.Point(29, 21)
+        Me.pnl_period.Name = "pnl_period"
+        Me.pnl_period.Size = New System.Drawing.Size(450, 450)
+        Me.pnl_period.TabIndex = 0
         '
-        'Guna2HtmlLabel15
+        'lbl_periodtitle
         '
-        Me.Guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel15.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel15.Location = New System.Drawing.Point(29, 163)
-        Me.Guna2HtmlLabel15.Name = "Guna2HtmlLabel15"
-        Me.Guna2HtmlLabel15.Size = New System.Drawing.Size(175, 41)
-        Me.Guna2HtmlLabel15.TabIndex = 4
-        Me.Guna2HtmlLabel15.Text = "Follicular Phase"
+        Me.lbl_periodtitle.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_periodtitle.Font = New System.Drawing.Font("Sitka Banner", 27.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_periodtitle.Location = New System.Drawing.Point(105, 343)
+        Me.lbl_periodtitle.Name = "lbl_periodtitle"
+        Me.lbl_periodtitle.Size = New System.Drawing.Size(241, 54)
+        Me.lbl_periodtitle.TabIndex = 2
+        Me.lbl_periodtitle.Text = "of Menstruation"
         '
-        'Guna2HtmlLabel16
+        'lbl_periodday
         '
-        Me.Guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel16.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel16.Location = New System.Drawing.Point(29, 210)
-        Me.Guna2HtmlLabel16.Name = "Guna2HtmlLabel16"
-        Me.Guna2HtmlLabel16.Size = New System.Drawing.Size(110, 41)
-        Me.Guna2HtmlLabel16.TabIndex = 5
-        Me.Guna2HtmlLabel16.Text = "Ovulation"
+        Me.lbl_periodday.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_periodday.Font = New System.Drawing.Font("Lucida Fax", 90.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_periodday.Location = New System.Drawing.Point(42, 150)
+        Me.lbl_periodday.Name = "lbl_periodday"
+        Me.lbl_periodday.Size = New System.Drawing.Size(366, 139)
+        Me.lbl_periodday.TabIndex = 1
+        Me.lbl_periodday.Text = "Day 1"
         '
-        'Guna2HtmlLabel17
+        'lbl_period
         '
-        Me.Guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel17.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel17.Location = New System.Drawing.Point(29, 257)
-        Me.Guna2HtmlLabel17.Name = "Guna2HtmlLabel17"
-        Me.Guna2HtmlLabel17.Size = New System.Drawing.Size(140, 41)
-        Me.Guna2HtmlLabel17.TabIndex = 6
-        Me.Guna2HtmlLabel17.Text = "Luteal Phase"
-        '
-        'Guna2HtmlLabel18
-        '
-        Me.Guna2HtmlLabel18.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel18.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel18.Location = New System.Drawing.Point(40, 42)
-        Me.Guna2HtmlLabel18.Name = "Guna2HtmlLabel18"
-        Me.Guna2HtmlLabel18.Size = New System.Drawing.Size(166, 41)
-        Me.Guna2HtmlLabel18.TabIndex = 3
-        Me.Guna2HtmlLabel18.Text = "Period Tracker"
-        '
-        'Guna2HtmlLabel19
-        '
-        Me.Guna2HtmlLabel19.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel19.Font = New System.Drawing.Font("Sitka Banner", 35.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel19.Location = New System.Drawing.Point(97, 362)
-        Me.Guna2HtmlLabel19.Name = "Guna2HtmlLabel19"
-        Me.Guna2HtmlLabel19.Size = New System.Drawing.Size(265, 70)
-        Me.Guna2HtmlLabel19.TabIndex = 3
-        Me.Guna2HtmlLabel19.Text = "Menstruation"
+        Me.lbl_period.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_period.Font = New System.Drawing.Font("Sitka Banner", 25.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_period.Location = New System.Drawing.Point(115, 42)
+        Me.lbl_period.Name = "lbl_period"
+        Me.lbl_period.Size = New System.Drawing.Size(217, 50)
+        Me.lbl_period.TabIndex = 0
+        Me.lbl_period.Text = "Period Tracking"
         '
         'Timer1
         '
         '
-        'Guna2HtmlLabel20
+        'lbl_displaycurrenttime
         '
-        Me.Guna2HtmlLabel20.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel20.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2HtmlLabel20.Location = New System.Drawing.Point(404, 30)
-        Me.Guna2HtmlLabel20.Name = "Guna2HtmlLabel20"
-        Me.Guna2HtmlLabel20.Size = New System.Drawing.Size(153, 41)
-        Me.Guna2HtmlLabel20.TabIndex = 7
-        Me.Guna2HtmlLabel20.Text = "Current Time"
+        Me.lbl_displaycurrenttime.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_displaycurrenttime.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_displaycurrenttime.Location = New System.Drawing.Point(417, 30)
+        Me.lbl_displaycurrenttime.Name = "lbl_displaycurrenttime"
+        Me.lbl_displaycurrenttime.Size = New System.Drawing.Size(153, 41)
+        Me.lbl_displaycurrenttime.TabIndex = 7
+        Me.lbl_displaycurrenttime.Text = "Current Time"
+        '
+        'picb_profile
+        '
+        Me.picb_profile.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.picb_profile.ImageRotate = 0!
+        Me.picb_profile.Location = New System.Drawing.Point(264, 10)
+        Me.picb_profile.Name = "picb_profile"
+        Me.picb_profile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.picb_profile.Size = New System.Drawing.Size(83, 81)
+        Me.picb_profile.TabIndex = 1
+        Me.picb_profile.TabStop = False
+        '
+        'lbl_greet
+        '
+        Me.lbl_greet.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_greet.Font = New System.Drawing.Font("Sitka Banner", 18.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_greet.Location = New System.Drawing.Point(28, 30)
+        Me.lbl_greet.Name = "lbl_greet"
+        Me.lbl_greet.Size = New System.Drawing.Size(209, 37)
+        Me.lbl_greet.TabIndex = 4
+        Me.lbl_greet.Text = "Good Evening! Danel"
+        '
+        'txt_menstruation
+        '
+        Me.txt_menstruation.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_menstruation.DefaultText = ""
+        Me.txt_menstruation.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_menstruation.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_menstruation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_menstruation.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_menstruation.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_menstruation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_menstruation.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_menstruation.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_menstruation.Location = New System.Drawing.Point(306, 121)
+        Me.txt_menstruation.Name = "txt_menstruation"
+        Me.txt_menstruation.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_menstruation.PlaceholderText = ""
+        Me.txt_menstruation.SelectedText = ""
+        Me.txt_menstruation.Size = New System.Drawing.Size(369, 36)
+        Me.txt_menstruation.TabIndex = 8
+        '
+        'txt_follicular
+        '
+        Me.txt_follicular.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_follicular.DefaultText = ""
+        Me.txt_follicular.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_follicular.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_follicular.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_follicular.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_follicular.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_follicular.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_follicular.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_follicular.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_follicular.Location = New System.Drawing.Point(306, 173)
+        Me.txt_follicular.Name = "txt_follicular"
+        Me.txt_follicular.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_follicular.PlaceholderText = ""
+        Me.txt_follicular.SelectedText = ""
+        Me.txt_follicular.Size = New System.Drawing.Size(369, 36)
+        Me.txt_follicular.TabIndex = 9
+        '
+        'txt_ovulation
+        '
+        Me.txt_ovulation.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_ovulation.DefaultText = ""
+        Me.txt_ovulation.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_ovulation.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_ovulation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_ovulation.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_ovulation.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_ovulation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_ovulation.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_ovulation.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_ovulation.Location = New System.Drawing.Point(306, 220)
+        Me.txt_ovulation.Name = "txt_ovulation"
+        Me.txt_ovulation.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_ovulation.PlaceholderText = ""
+        Me.txt_ovulation.SelectedText = ""
+        Me.txt_ovulation.Size = New System.Drawing.Size(369, 36)
+        Me.txt_ovulation.TabIndex = 10
+        '
+        'txt_luteal
+        '
+        Me.txt_luteal.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_luteal.DefaultText = ""
+        Me.txt_luteal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_luteal.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_luteal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_luteal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_luteal.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_luteal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_luteal.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_luteal.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_luteal.Location = New System.Drawing.Point(306, 267)
+        Me.txt_luteal.Name = "txt_luteal"
+        Me.txt_luteal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_luteal.PlaceholderText = ""
+        Me.txt_luteal.SelectedText = ""
+        Me.txt_luteal.Size = New System.Drawing.Size(369, 36)
+        Me.txt_luteal.TabIndex = 11
+        '
+        'linklbl_details
+        '
+        Me.linklbl_details.AutoSize = True
+        Me.linklbl_details.Font = New System.Drawing.Font("Sitka Text", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.linklbl_details.LinkColor = System.Drawing.Color.Black
+        Me.linklbl_details.Location = New System.Drawing.Point(167, 235)
+        Me.linklbl_details.Name = "linklbl_details"
+        Me.linklbl_details.Size = New System.Drawing.Size(132, 39)
+        Me.linklbl_details.TabIndex = 2
+        Me.linklbl_details.TabStop = True
+        Me.linklbl_details.Text = "Details >"
+        '
+        'txt_trackercolumn
+        '
+        Me.txt_trackercolumn.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_trackercolumn.DefaultText = ""
+        Me.txt_trackercolumn.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_trackercolumn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_trackercolumn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_trackercolumn.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_trackercolumn.FillColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.txt_trackercolumn.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_trackercolumn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_trackercolumn.ForeColor = System.Drawing.Color.Gray
+        Me.txt_trackercolumn.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_trackercolumn.Location = New System.Drawing.Point(27, 61)
+        Me.txt_trackercolumn.Name = "txt_trackercolumn"
+        Me.txt_trackercolumn.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_trackercolumn.PlaceholderText = ""
+        Me.txt_trackercolumn.SelectedText = ""
+        Me.txt_trackercolumn.Size = New System.Drawing.Size(1071, 36)
+        Me.txt_trackercolumn.TabIndex = 12
+        '
+        'txt_column1
+        '
+        Me.txt_column1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_column1.DefaultText = ""
+        Me.txt_column1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_column1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_column1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_column1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_column1.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_column1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_column1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_column1.ForeColor = System.Drawing.Color.Gray
+        Me.txt_column1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_column1.Location = New System.Drawing.Point(27, 96)
+        Me.txt_column1.Name = "txt_column1"
+        Me.txt_column1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_column1.PlaceholderText = ""
+        Me.txt_column1.SelectedText = ""
+        Me.txt_column1.Size = New System.Drawing.Size(1071, 36)
+        Me.txt_column1.TabIndex = 13
+        '
+        'txt_column2
+        '
+        Me.txt_column2.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_column2.DefaultText = ""
+        Me.txt_column2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_column2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_column2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_column2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_column2.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_column2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_column2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_column2.ForeColor = System.Drawing.Color.Gray
+        Me.txt_column2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_column2.Location = New System.Drawing.Point(27, 132)
+        Me.txt_column2.Name = "txt_column2"
+        Me.txt_column2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_column2.PlaceholderText = ""
+        Me.txt_column2.SelectedText = ""
+        Me.txt_column2.Size = New System.Drawing.Size(1071, 36)
+        Me.txt_column2.TabIndex = 14
+        '
+        'txt_column3
+        '
+        Me.txt_column3.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_column3.DefaultText = ""
+        Me.txt_column3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_column3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_column3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_column3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_column3.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_column3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_column3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_column3.ForeColor = System.Drawing.Color.Gray
+        Me.txt_column3.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_column3.Location = New System.Drawing.Point(27, 168)
+        Me.txt_column3.Name = "txt_column3"
+        Me.txt_column3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_column3.PlaceholderText = ""
+        Me.txt_column3.SelectedText = ""
+        Me.txt_column3.Size = New System.Drawing.Size(1071, 36)
+        Me.txt_column3.TabIndex = 15
+        '
+        'txt_column4
+        '
+        Me.txt_column4.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_column4.DefaultText = ""
+        Me.txt_column4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_column4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_column4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_column4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_column4.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_column4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_column4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_column4.ForeColor = System.Drawing.Color.Gray
+        Me.txt_column4.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_column4.Location = New System.Drawing.Point(27, 204)
+        Me.txt_column4.Name = "txt_column4"
+        Me.txt_column4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_column4.PlaceholderText = ""
+        Me.txt_column4.SelectedText = ""
+        Me.txt_column4.Size = New System.Drawing.Size(1071, 36)
+        Me.txt_column4.TabIndex = 16
+        '
+        'txt_column5
+        '
+        Me.txt_column5.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_column5.DefaultText = ""
+        Me.txt_column5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_column5.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_column5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_column5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_column5.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_column5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_column5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_column5.ForeColor = System.Drawing.Color.Gray
+        Me.txt_column5.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_column5.Location = New System.Drawing.Point(27, 240)
+        Me.txt_column5.Name = "txt_column5"
+        Me.txt_column5.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_column5.PlaceholderText = ""
+        Me.txt_column5.SelectedText = ""
+        Me.txt_column5.Size = New System.Drawing.Size(1071, 36)
+        Me.txt_column5.TabIndex = 17
+        '
+        'txt_column6
+        '
+        Me.txt_column6.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_column6.DefaultText = ""
+        Me.txt_column6.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_column6.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_column6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_column6.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_column6.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_column6.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_column6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_column6.ForeColor = System.Drawing.Color.Gray
+        Me.txt_column6.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_column6.Location = New System.Drawing.Point(27, 276)
+        Me.txt_column6.Name = "txt_column6"
+        Me.txt_column6.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_column6.PlaceholderText = ""
+        Me.txt_column6.SelectedText = ""
+        Me.txt_column6.Size = New System.Drawing.Size(1071, 36)
+        Me.txt_column6.TabIndex = 18
+        '
+        'btn_addnew
+        '
+        Me.btn_addnew.BorderRadius = 6
+        Me.btn_addnew.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_addnew.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_addnew.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_addnew.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_addnew.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
+        Me.btn_addnew.Font = New System.Drawing.Font("Sitka Text", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_addnew.ForeColor = System.Drawing.Color.White
+        Me.btn_addnew.Location = New System.Drawing.Point(240, 12)
+        Me.btn_addnew.Name = "btn_addnew"
+        Me.btn_addnew.Size = New System.Drawing.Size(204, 40)
+        Me.btn_addnew.TabIndex = 19
+        Me.btn_addnew.Text = "Add New Record"
         '
         'Dashboard
         '
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Controls.Add(Me.BACKGROUND)
-        Me.Controls.Add(Me.DASHBOARD_TOP_PANEL)
+        Me.Controls.Add(Me.pnl_dashboardbg)
+        Me.Controls.Add(Me.pnl_dashboard)
         Me.Name = "Dashboard"
-        Me.DASHBOARD_TOP_PANEL.ResumeLayout(False)
-        Me.BACKGROUND.ResumeLayout(False)
-        Me.PERIOD_PANEL.ResumeLayout(False)
-        Me.PERIOD_PANEL.PerformLayout()
-        Me.PHASE_PANEL.ResumeLayout(False)
-        Me.PHASE_PANEL.PerformLayout()
-        Me.FERTILITY_PAMEL.ResumeLayout(False)
-        Me.FERTILITY_PAMEL.PerformLayout()
-        Me.ADVICE_PANEL.ResumeLayout(False)
-        Me.ADVICE_PANEL.PerformLayout()
-        Me.OTHERS_PANEL.ResumeLayout(False)
-        Me.OTHERS_PANEL.PerformLayout()
-        Me.PERIOD_TRACKER_PANEL.ResumeLayout(False)
-        Me.PERIOD_TRACKER_PANEL.PerformLayout()
+        Me.pnl_dashboard.ResumeLayout(False)
+        Me.pnl_dashboard.PerformLayout()
+        Me.pnl_editprof.ResumeLayout(False)
+        Me.pnl_editprof.PerformLayout()
+        Me.pnl_dashboardbg.ResumeLayout(False)
+        Me.pnl_tracker.ResumeLayout(False)
+        Me.pnl_tracker.PerformLayout()
+        Me.pnl_others.ResumeLayout(False)
+        Me.pnl_others.PerformLayout()
+        Me.pnl_dailydigest.ResumeLayout(False)
+        Me.pnl_dailydigest.PerformLayout()
+        Me.pnl_fertility.ResumeLayout(False)
+        Me.pnl_fertility.PerformLayout()
+        Me.pnl_phase.ResumeLayout(False)
+        Me.pnl_phase.PerformLayout()
+        Me.pnl_period.ResumeLayout(False)
+        Me.pnl_period.PerformLayout()
+        CType(Me.picb_profile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Guna2ShapesTool1 As Guna.UI2.WinForms.Guna2ShapesTool
-    Friend WithEvents DASHBOARD_TOP_PANEL As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents EDIT_PROFILE_PANEL As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents BACKGROUND As Guna.UI2.WinForms.Guna2GradientPanel
-    Friend WithEvents ADVICE_PANEL As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents FERTILITY_PAMEL As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents PHASE_PANEL As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents PERIOD_PANEL As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents PERIOD_TRACKER_PANEL As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents OTHERS_PANEL As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel11 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel9 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel8 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel12 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Guna2HtmlLabel13 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel18 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel17 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel16 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel15 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel14 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel19 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents pnl_dashboard As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnl_editprof As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnl_dashboardbg As Guna.UI2.WinForms.Guna2GradientPanel
+    Friend WithEvents pnl_dailydigest As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnl_fertility As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnl_phase As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnl_period As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnl_tracker As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnl_others As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents lbl_periodtitle As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_periodday As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_period As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_phaseday As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_phasedayno As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_phase As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_phaseheader As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_dailydigest As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_prediction As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_fertilityphase As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_fertility As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_currenttime As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_periodtracker As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_luteal As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_ovulation As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_follicular As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_menstruation As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_phasesub As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents Guna2HtmlLabel20 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_displaycurrenttime As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents picb_profile As Guna.UI2.WinForms.Guna2CirclePictureBox
+    Friend WithEvents lbl_greet As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents txt_menstruation As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_luteal As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_ovulation As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_follicular As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents linklbl_details As LinkLabel
+    Friend WithEvents txt_trackercolumn As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_column1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_column5 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_column4 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_column3 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_column2 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_column6 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btn_addnew As Guna.UI2.WinForms.Guna2Button
 End Class

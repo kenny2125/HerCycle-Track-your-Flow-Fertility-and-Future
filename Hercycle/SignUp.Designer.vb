@@ -22,298 +22,340 @@ Partial Class SignUp
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.txb_surname = New System.Windows.Forms.TextBox()
-        Me.txb_email = New System.Windows.Forms.TextBox()
-        Me.txb_firstname = New System.Windows.Forms.TextBox()
-        Me.txb_MI = New System.Windows.Forms.TextBox()
-        Me.txb_age = New System.Windows.Forms.TextBox()
-        Me.txb_gender = New System.Windows.Forms.TextBox()
-        Me.txb_password = New System.Windows.Forms.TextBox()
-        Me.txb_passconf = New System.Windows.Forms.TextBox()
+        Me.txt_surname = New System.Windows.Forms.TextBox()
+        Me.txt_email = New System.Windows.Forms.TextBox()
+        Me.txt_givenname = New System.Windows.Forms.TextBox()
+        Me.txt_middleint = New System.Windows.Forms.TextBox()
+        Me.txt_age = New System.Windows.Forms.TextBox()
+        Me.txt_password = New System.Windows.Forms.TextBox()
+        Me.txt_confirmpass = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_create = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_question = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_surname = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.txt_username = New System.Windows.Forms.TextBox()
+        Me.btn_signup = New Guna.UI2.WinForms.Guna2Button()
+        Me.linklbl_create = New System.Windows.Forms.LinkLabel()
+        Me.lbl_username = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_password = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_confirmpass = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2HtmlLabel12 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.chckbox_terms = New Guna.UI2.WinForms.Guna2CheckBox()
+        Me.lbl_givenname = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_middleint = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_email = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_gender = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.cmbox_gender = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.lbl_age = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.pnl_divider = New Guna.UI2.WinForms.Guna2Panel()
         Me.SuspendLayout()
         '
-        'txb_surname
+        'txt_surname
         '
-        Me.txb_surname.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.txb_surname.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txb_surname.Location = New System.Drawing.Point(45, 160)
-        Me.txb_surname.Name = "txb_surname"
-        Me.txb_surname.Size = New System.Drawing.Size(296, 50)
-        Me.txb_surname.TabIndex = 1
+        Me.txt_surname.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_surname.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_surname.Location = New System.Drawing.Point(69, 217)
+        Me.txt_surname.Name = "txt_surname"
+        Me.txt_surname.Size = New System.Drawing.Size(296, 50)
+        Me.txt_surname.TabIndex = 1
         '
-        'txb_email
+        'txt_email
         '
-        Me.txb_email.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.txb_email.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txb_email.Location = New System.Drawing.Point(43, 273)
-        Me.txb_email.Name = "txb_email"
-        Me.txb_email.Size = New System.Drawing.Size(296, 50)
-        Me.txb_email.TabIndex = 4
+        Me.txt_email.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_email.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_email.Location = New System.Drawing.Point(69, 369)
+        Me.txt_email.Name = "txt_email"
+        Me.txt_email.Size = New System.Drawing.Size(709, 50)
+        Me.txt_email.TabIndex = 4
         '
-        'txb_firstname
+        'txt_givenname
         '
-        Me.txb_firstname.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.txb_firstname.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txb_firstname.Location = New System.Drawing.Point(361, 160)
-        Me.txb_firstname.Name = "txb_firstname"
-        Me.txb_firstname.Size = New System.Drawing.Size(169, 50)
-        Me.txb_firstname.TabIndex = 2
+        Me.txt_givenname.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_givenname.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_givenname.Location = New System.Drawing.Point(386, 217)
+        Me.txt_givenname.Name = "txt_givenname"
+        Me.txt_givenname.Size = New System.Drawing.Size(578, 50)
+        Me.txt_givenname.TabIndex = 2
         '
-        'txb_MI
+        'txt_middleint
         '
-        Me.txb_MI.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.txb_MI.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txb_MI.Location = New System.Drawing.Point(541, 160)
-        Me.txb_MI.Name = "txb_MI"
-        Me.txb_MI.Size = New System.Drawing.Size(157, 50)
-        Me.txb_MI.TabIndex = 3
+        Me.txt_middleint.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_middleint.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_middleint.Location = New System.Drawing.Point(982, 217)
+        Me.txt_middleint.Name = "txt_middleint"
+        Me.txt_middleint.Size = New System.Drawing.Size(157, 50)
+        Me.txt_middleint.TabIndex = 3
         '
-        'txb_age
+        'txt_age
         '
-        Me.txb_age.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.txb_age.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txb_age.Location = New System.Drawing.Point(397, 273)
-        Me.txb_age.Name = "txb_age"
-        Me.txb_age.Size = New System.Drawing.Size(116, 50)
-        Me.txb_age.TabIndex = 5
+        Me.txt_age.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_age.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_age.Location = New System.Drawing.Point(799, 369)
+        Me.txt_age.Name = "txt_age"
+        Me.txt_age.Size = New System.Drawing.Size(128, 50)
+        Me.txt_age.TabIndex = 5
         '
-        'txb_gender
+        'txt_password
         '
-        Me.txb_gender.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.txb_gender.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txb_gender.Location = New System.Drawing.Point(563, 273)
-        Me.txb_gender.Name = "txb_gender"
-        Me.txb_gender.Size = New System.Drawing.Size(116, 50)
-        Me.txb_gender.TabIndex = 6
+        Me.txt_password.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_password.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_password.Location = New System.Drawing.Point(1239, 274)
+        Me.txt_password.Name = "txt_password"
+        Me.txt_password.Size = New System.Drawing.Size(408, 50)
+        Me.txt_password.TabIndex = 8
         '
-        'txb_password
+        'txt_confirmpass
         '
-        Me.txb_password.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.txb_password.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txb_password.Location = New System.Drawing.Point(745, 273)
-        Me.txb_password.Name = "txb_password"
-        Me.txb_password.Size = New System.Drawing.Size(315, 50)
-        Me.txb_password.TabIndex = 8
-        '
-        'txb_passconf
-        '
-        Me.txb_passconf.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.txb_passconf.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txb_passconf.Location = New System.Drawing.Point(740, 376)
-        Me.txb_passconf.Name = "txb_passconf"
-        Me.txb_passconf.Size = New System.Drawing.Size(341, 50)
-        Me.txb_passconf.TabIndex = 9
+        Me.txt_confirmpass.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_confirmpass.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_confirmpass.Location = New System.Drawing.Point(1239, 412)
+        Me.txt_confirmpass.Name = "txt_confirmpass"
+        Me.txt_confirmpass.Size = New System.Drawing.Size(408, 50)
+        Me.txt_confirmpass.TabIndex = 9
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(38, 46)
+        Me.Label11.Location = New System.Drawing.Point(36, 57)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(318, 37)
         Me.Label11.TabIndex = 21
         Me.Label11.Text = "Already have an account?"
         '
-        'Label12
+        'lbl_create
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Sylfaen", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(182, 88)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(43, 18)
-        Me.Label12.TabIndex = 22
-        Me.Label12.Text = "Log In"
+        Me.lbl_create.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_create.Font = New System.Drawing.Font("Sitka Text", 45.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_create.Location = New System.Drawing.Point(27, 12)
+        Me.lbl_create.Name = "lbl_create"
+        Me.lbl_create.Size = New System.Drawing.Size(536, 89)
+        Me.lbl_create.TabIndex = 23
+        Me.lbl_create.Text = "Create an Account"
         '
-        'Guna2HtmlLabel1
+        'lbl_question
         '
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Sylfaen", 33.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(45, 32)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(362, 60)
-        Me.Guna2HtmlLabel1.TabIndex = 23
-        Me.Guna2HtmlLabel1.Text = " Create an Account"
+        Me.lbl_question.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_question.Font = New System.Drawing.Font("Sitka Text", 13.0!)
+        Me.lbl_question.Location = New System.Drawing.Point(67, 100)
+        Me.lbl_question.Name = "lbl_question"
+        Me.lbl_question.Size = New System.Drawing.Size(203, 26)
+        Me.lbl_question.TabIndex = 24
+        Me.lbl_question.Text = " Already have an account?"
         '
-        'Guna2HtmlLabel2
+        'lbl_surname
         '
-        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Sylfaen", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(43, 88)
-        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(137, 20)
-        Me.Guna2HtmlLabel2.TabIndex = 24
-        Me.Guna2HtmlLabel2.Text = " Already have an account"
+        Me.lbl_surname.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_surname.Font = New System.Drawing.Font("Sitka Text", 18.0!)
+        Me.lbl_surname.Location = New System.Drawing.Point(69, 174)
+        Me.lbl_surname.Name = "lbl_surname"
+        Me.lbl_surname.Size = New System.Drawing.Size(104, 37)
+        Me.lbl_surname.TabIndex = 25
+        Me.lbl_surname.Text = "Surname"
         '
-        'Guna2HtmlLabel3
+        'txt_username
         '
-        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(45, 115)
-        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(83, 29)
-        Me.Guna2HtmlLabel3.TabIndex = 25
-        Me.Guna2HtmlLabel3.Text = "Surname"
+        Me.txt_username.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.txt_username.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_username.Location = New System.Drawing.Point(1239, 132)
+        Me.txt_username.Name = "txt_username"
+        Me.txt_username.Size = New System.Drawing.Size(408, 50)
+        Me.txt_username.TabIndex = 34
         '
-        'Guna2HtmlLabel4
+        'btn_signup
         '
-        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(356, 115)
-        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
-        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(115, 29)
-        Me.Guna2HtmlLabel4.TabIndex = 26
-        Me.Guna2HtmlLabel4.Text = "Given Name"
+        Me.btn_signup.BorderRadius = 6
+        Me.btn_signup.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_signup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_signup.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_signup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_signup.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
+        Me.btn_signup.Font = New System.Drawing.Font("Sitka Text", 18.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_signup.ForeColor = System.Drawing.Color.White
+        Me.btn_signup.Location = New System.Drawing.Point(1364, 544)
+        Me.btn_signup.Name = "btn_signup"
+        Me.btn_signup.Size = New System.Drawing.Size(197, 58)
+        Me.btn_signup.TabIndex = 35
+        Me.btn_signup.Text = "Sign Up"
         '
-        'Guna2HtmlLabel5
+        'linklbl_create
         '
-        Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(541, 115)
-        Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
-        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(35, 29)
-        Me.Guna2HtmlLabel5.TabIndex = 27
-        Me.Guna2HtmlLabel5.Text = "M.I"
+        Me.linklbl_create.AutoSize = True
+        Me.linklbl_create.Font = New System.Drawing.Font("Sitka Text", 13.0!)
+        Me.linklbl_create.LinkColor = System.Drawing.Color.Black
+        Me.linklbl_create.Location = New System.Drawing.Point(271, 99)
+        Me.linklbl_create.Name = "linklbl_create"
+        Me.linklbl_create.Size = New System.Drawing.Size(65, 26)
+        Me.linklbl_create.TabIndex = 37
+        Me.linklbl_create.TabStop = True
+        Me.linklbl_create.Text = "Log In"
         '
-        'Guna2HtmlLabel6
+        'lbl_username
         '
-        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(745, 115)
-        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
-        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(94, 29)
-        Me.Guna2HtmlLabel6.TabIndex = 28
-        Me.Guna2HtmlLabel6.Text = "Username"
+        Me.lbl_username.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_username.Font = New System.Drawing.Font("Sitka Text", 18.0!)
+        Me.lbl_username.Location = New System.Drawing.Point(1239, 89)
+        Me.lbl_username.Name = "lbl_username"
+        Me.lbl_username.Size = New System.Drawing.Size(119, 37)
+        Me.lbl_username.TabIndex = 38
+        Me.lbl_username.Text = "Username"
         '
-        'Guna2HtmlLabel7
+        'lbl_password
         '
-        Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(45, 238)
-        Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
-        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(131, 29)
-        Me.Guna2HtmlLabel7.TabIndex = 29
-        Me.Guna2HtmlLabel7.Text = "Email Address"
+        Me.lbl_password.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_password.Font = New System.Drawing.Font("Sitka Text", 18.0!)
+        Me.lbl_password.Location = New System.Drawing.Point(1239, 231)
+        Me.lbl_password.Name = "lbl_password"
+        Me.lbl_password.Size = New System.Drawing.Size(110, 37)
+        Me.lbl_password.TabIndex = 39
+        Me.lbl_password.Text = "Password"
         '
-        'Guna2HtmlLabel8
+        'lbl_confirmpass
         '
-        Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(397, 238)
-        Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
-        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(38, 29)
-        Me.Guna2HtmlLabel8.TabIndex = 30
-        Me.Guna2HtmlLabel8.Text = "Age"
-        '
-        'Guna2HtmlLabel9
-        '
-        Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(563, 238)
-        Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
-        Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(69, 29)
-        Me.Guna2HtmlLabel9.TabIndex = 31
-        Me.Guna2HtmlLabel9.Text = "Gender"
-        '
-        'Guna2HtmlLabel10
-        '
-        Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(745, 238)
-        Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
-        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(87, 29)
-        Me.Guna2HtmlLabel10.TabIndex = 32
-        Me.Guna2HtmlLabel10.Text = "Password"
+        Me.lbl_confirmpass.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_confirmpass.Font = New System.Drawing.Font("Sitka Text", 18.0!)
+        Me.lbl_confirmpass.Location = New System.Drawing.Point(1239, 369)
+        Me.lbl_confirmpass.Name = "lbl_confirmpass"
+        Me.lbl_confirmpass.Size = New System.Drawing.Size(210, 37)
+        Me.lbl_confirmpass.TabIndex = 40
+        Me.lbl_confirmpass.Text = "Confirm Password"
         '
         'Guna2HtmlLabel11
         '
         Me.Guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel11.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel11.Location = New System.Drawing.Point(745, 341)
+        Me.Guna2HtmlLabel11.Font = New System.Drawing.Font("Sitka Text", 18.0!)
+        Me.Guna2HtmlLabel11.Location = New System.Drawing.Point(961, 474)
         Me.Guna2HtmlLabel11.Name = "Guna2HtmlLabel11"
-        Me.Guna2HtmlLabel11.Size = New System.Drawing.Size(168, 29)
-        Me.Guna2HtmlLabel11.TabIndex = 33
-        Me.Guna2HtmlLabel11.Text = "Confirm Password"
+        Me.Guna2HtmlLabel11.Size = New System.Drawing.Size(3, 2)
+        Me.Guna2HtmlLabel11.TabIndex = 41
         '
-        'TextBox1
+        'chckbox_terms
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(745, 160)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(315, 50)
-        Me.TextBox1.TabIndex = 34
+        Me.chckbox_terms.AutoSize = True
+        Me.chckbox_terms.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.chckbox_terms.CheckedState.BorderRadius = 0
+        Me.chckbox_terms.CheckedState.BorderThickness = 0
+        Me.chckbox_terms.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.chckbox_terms.Font = New System.Drawing.Font("Sitka Text", 9.0!)
+        Me.chckbox_terms.Location = New System.Drawing.Point(1282, 484)
+        Me.chckbox_terms.Name = "chckbox_terms"
+        Me.chckbox_terms.Size = New System.Drawing.Size(342, 22)
+        Me.chckbox_terms.TabIndex = 42
+        Me.chckbox_terms.Text = "I agree to the Terms and Conditions while using this app"
+        Me.chckbox_terms.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.chckbox_terms.UncheckedState.BorderRadius = 0
+        Me.chckbox_terms.UncheckedState.BorderThickness = 0
+        Me.chckbox_terms.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         '
-        'Guna2Button1
+        'lbl_givenname
         '
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
-        Me.Guna2Button1.Font = New System.Drawing.Font("Sylfaen", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(813, 479)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(180, 45)
-        Me.Guna2Button1.TabIndex = 35
-        Me.Guna2Button1.Text = "Sign Up"
+        Me.lbl_givenname.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_givenname.Font = New System.Drawing.Font("Sitka Text", 18.0!)
+        Me.lbl_givenname.Location = New System.Drawing.Point(386, 174)
+        Me.lbl_givenname.Name = "lbl_givenname"
+        Me.lbl_givenname.Size = New System.Drawing.Size(142, 37)
+        Me.lbl_givenname.TabIndex = 43
+        Me.lbl_givenname.Text = "Given Name"
         '
-        'Guna2HtmlLabel12
+        'lbl_middleint
         '
-        Me.Guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel12.Font = New System.Drawing.Font("Sylfaen", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(773, 432)
-        Me.Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
-        Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(276, 18)
-        Me.Guna2HtmlLabel12.TabIndex = 36
-        Me.Guna2HtmlLabel12.Text = "I agree to the Terms and Conditions while using this app"
+        Me.lbl_middleint.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_middleint.Font = New System.Drawing.Font("Sitka Text", 18.0!)
+        Me.lbl_middleint.Location = New System.Drawing.Point(982, 174)
+        Me.lbl_middleint.Name = "lbl_middleint"
+        Me.lbl_middleint.Size = New System.Drawing.Size(41, 37)
+        Me.lbl_middleint.TabIndex = 44
+        Me.lbl_middleint.Text = "M.I"
+        '
+        'lbl_email
+        '
+        Me.lbl_email.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_email.Font = New System.Drawing.Font("Sitka Text", 18.0!)
+        Me.lbl_email.Location = New System.Drawing.Point(69, 326)
+        Me.lbl_email.Name = "lbl_email"
+        Me.lbl_email.Size = New System.Drawing.Size(165, 37)
+        Me.lbl_email.TabIndex = 45
+        Me.lbl_email.Text = "Email Address"
+        '
+        'lbl_gender
+        '
+        Me.lbl_gender.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_gender.Font = New System.Drawing.Font("Sitka Text", 18.0!)
+        Me.lbl_gender.Location = New System.Drawing.Point(944, 326)
+        Me.lbl_gender.Name = "lbl_gender"
+        Me.lbl_gender.Size = New System.Drawing.Size(86, 37)
+        Me.lbl_gender.TabIndex = 46
+        Me.lbl_gender.Text = "Gender"
+        '
+        'cmbox_gender
+        '
+        Me.cmbox_gender.BackColor = System.Drawing.Color.Transparent
+        Me.cmbox_gender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbox_gender.DropDownHeight = 116
+        Me.cmbox_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbox_gender.DropDownWidth = 50
+        Me.cmbox_gender.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.cmbox_gender.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbox_gender.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbox_gender.Font = New System.Drawing.Font("Sitka Text", 24.0!)
+        Me.cmbox_gender.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmbox_gender.IntegralHeight = False
+        Me.cmbox_gender.ItemHeight = 44
+        Me.cmbox_gender.Location = New System.Drawing.Point(944, 369)
+        Me.cmbox_gender.Name = "cmbox_gender"
+        Me.cmbox_gender.Size = New System.Drawing.Size(195, 50)
+        Me.cmbox_gender.TabIndex = 47
+        '
+        'lbl_age
+        '
+        Me.lbl_age.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_age.Font = New System.Drawing.Font("Sitka Text", 18.0!)
+        Me.lbl_age.Location = New System.Drawing.Point(799, 326)
+        Me.lbl_age.Name = "lbl_age"
+        Me.lbl_age.Size = New System.Drawing.Size(44, 37)
+        Me.lbl_age.TabIndex = 48
+        Me.lbl_age.Text = "Age"
+        '
+        'pnl_divider
+        '
+        Me.pnl_divider.BackColor = System.Drawing.Color.Black
+        Me.pnl_divider.Location = New System.Drawing.Point(1187, 57)
+        Me.pnl_divider.Name = "pnl_divider"
+        Me.pnl_divider.Size = New System.Drawing.Size(10, 553)
+        Me.pnl_divider.TabIndex = 49
         '
         'SignUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(1199, 565)
-        Me.Controls.Add(Me.Guna2HtmlLabel12)
-        Me.Controls.Add(Me.Guna2Button1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.ClientSize = New System.Drawing.Size(1731, 696)
+        Me.Controls.Add(Me.pnl_divider)
+        Me.Controls.Add(Me.lbl_age)
+        Me.Controls.Add(Me.cmbox_gender)
+        Me.Controls.Add(Me.lbl_gender)
+        Me.Controls.Add(Me.lbl_email)
+        Me.Controls.Add(Me.lbl_middleint)
+        Me.Controls.Add(Me.lbl_givenname)
+        Me.Controls.Add(Me.chckbox_terms)
         Me.Controls.Add(Me.Guna2HtmlLabel11)
-        Me.Controls.Add(Me.Guna2HtmlLabel10)
-        Me.Controls.Add(Me.Guna2HtmlLabel9)
-        Me.Controls.Add(Me.Guna2HtmlLabel8)
-        Me.Controls.Add(Me.Guna2HtmlLabel7)
-        Me.Controls.Add(Me.Guna2HtmlLabel6)
-        Me.Controls.Add(Me.Guna2HtmlLabel5)
-        Me.Controls.Add(Me.Guna2HtmlLabel4)
-        Me.Controls.Add(Me.Guna2HtmlLabel3)
-        Me.Controls.Add(Me.Guna2HtmlLabel2)
-        Me.Controls.Add(Me.Guna2HtmlLabel1)
-        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.lbl_confirmpass)
+        Me.Controls.Add(Me.lbl_password)
+        Me.Controls.Add(Me.lbl_username)
+        Me.Controls.Add(Me.linklbl_create)
+        Me.Controls.Add(Me.btn_signup)
+        Me.Controls.Add(Me.txt_username)
+        Me.Controls.Add(Me.lbl_surname)
+        Me.Controls.Add(Me.lbl_question)
+        Me.Controls.Add(Me.lbl_create)
         Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.txb_passconf)
-        Me.Controls.Add(Me.txb_password)
-        Me.Controls.Add(Me.txb_gender)
-        Me.Controls.Add(Me.txb_age)
-        Me.Controls.Add(Me.txb_MI)
-        Me.Controls.Add(Me.txb_firstname)
-        Me.Controls.Add(Me.txb_email)
-        Me.Controls.Add(Me.txb_surname)
+        Me.Controls.Add(Me.txt_confirmpass)
+        Me.Controls.Add(Me.txt_password)
+        Me.Controls.Add(Me.txt_age)
+        Me.Controls.Add(Me.txt_middleint)
+        Me.Controls.Add(Me.txt_givenname)
+        Me.Controls.Add(Me.txt_email)
+        Me.Controls.Add(Me.txt_surname)
         Me.Name = "SignUp"
         Me.Text = "SignUp"
         Me.ResumeLayout(False)
@@ -321,28 +363,30 @@ Partial Class SignUp
 
     End Sub
 
-    Friend WithEvents txb_surname As TextBox
-    Friend WithEvents txb_email As TextBox
-    Friend WithEvents txb_firstname As TextBox
-    Friend WithEvents txb_MI As TextBox
-    Friend WithEvents txb_age As TextBox
-    Friend WithEvents txb_gender As TextBox
-    Friend WithEvents txb_password As TextBox
-    Friend WithEvents txb_passconf As TextBox
+    Friend WithEvents txt_surname As TextBox
+    Friend WithEvents txt_email As TextBox
+    Friend WithEvents txt_givenname As TextBox
+    Friend WithEvents txt_middleint As TextBox
+    Friend WithEvents txt_age As TextBox
+    Friend WithEvents txt_password As TextBox
+    Friend WithEvents txt_confirmpass As TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel8 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel9 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_create As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_question As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_surname As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents txt_username As TextBox
+    Friend WithEvents btn_signup As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents linklbl_create As LinkLabel
+    Friend WithEvents lbl_username As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_password As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_confirmpass As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel11 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2HtmlLabel12 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents chckbox_terms As Guna.UI2.WinForms.Guna2CheckBox
+    Friend WithEvents lbl_givenname As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_middleint As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_email As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_gender As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents cmbox_gender As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents lbl_age As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents pnl_divider As Guna.UI2.WinForms.Guna2Panel
 End Class

@@ -10,8 +10,8 @@ Public Class LogIn
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         ' Get the username and password
-        Dim username As String = UsernameTextBox.Text
-        Dim password As String = PasswordTextBox.Text
+        Dim username As String = txt_usernamefield.Text
+        Dim password As String = txt_passwordfield.Text
 
         ' SQL query to check if the username and password matched from the database
         Dim query As String = "SELECT user_id FROM tbl_user WHERE username = @username AND password = @password"
@@ -44,11 +44,11 @@ Public Class LogIn
         Me.Hide()
     End Sub
 
-    Private Sub PasswordTextBox_TextChanged(sender As Object, e As EventArgs) Handles PasswordTextBox.TextChanged
+    Private Sub PasswordTextBox_TextChanged(sender As Object, e As EventArgs) Handles txt_passwordfield.TextChanged
 
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lbl_username.Click
 
     End Sub
 End Class

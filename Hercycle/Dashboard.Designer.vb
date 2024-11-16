@@ -23,6 +23,9 @@ Partial Class Dashboard
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2ShapesTool1 = New Guna.UI2.WinForms.Guna2ShapesTool(Me.components)
         Me.pnl_dashboard = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnl_editprof = New Guna.UI2.WinForms.Guna2Panel()
@@ -60,14 +63,13 @@ Partial Class Dashboard
         Me.txt_ovulation = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txt_luteal = New Guna.UI2.WinForms.Guna2TextBox()
         Me.linklbl_details = New System.Windows.Forms.LinkLabel()
-        Me.txt_trackercolumn = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txt_column1 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txt_column2 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txt_column3 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txt_column4 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txt_column5 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txt_column6 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btn_addnew = New Guna.UI2.WinForms.Guna2Button()
+        Me.gridview_tracker = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.col1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnl_dashboard.SuspendLayout()
         Me.pnl_editprof.SuspendLayout()
         Me.pnl_dashboardbg.SuspendLayout()
@@ -78,6 +80,7 @@ Partial Class Dashboard
         Me.pnl_phase.SuspendLayout()
         Me.pnl_period.SuspendLayout()
         CType(Me.picb_profile, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridview_tracker, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2ShapesTool1
@@ -130,14 +133,8 @@ Partial Class Dashboard
         'pnl_tracker
         '
         Me.pnl_tracker.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.pnl_tracker.Controls.Add(Me.gridview_tracker)
         Me.pnl_tracker.Controls.Add(Me.btn_addnew)
-        Me.pnl_tracker.Controls.Add(Me.txt_column6)
-        Me.pnl_tracker.Controls.Add(Me.txt_column5)
-        Me.pnl_tracker.Controls.Add(Me.txt_column4)
-        Me.pnl_tracker.Controls.Add(Me.txt_column3)
-        Me.pnl_tracker.Controls.Add(Me.txt_column2)
-        Me.pnl_tracker.Controls.Add(Me.txt_column1)
-        Me.pnl_tracker.Controls.Add(Me.txt_trackercolumn)
         Me.pnl_tracker.Controls.Add(Me.lbl_periodtracker)
         Me.pnl_tracker.Location = New System.Drawing.Point(751, 516)
         Me.pnl_tracker.Name = "pnl_tracker"
@@ -514,156 +511,10 @@ Partial Class Dashboard
         Me.linklbl_details.TabStop = True
         Me.linklbl_details.Text = "Details >"
         '
-        'txt_trackercolumn
-        '
-        Me.txt_trackercolumn.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_trackercolumn.DefaultText = ""
-        Me.txt_trackercolumn.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_trackercolumn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_trackercolumn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_trackercolumn.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_trackercolumn.FillColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.txt_trackercolumn.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_trackercolumn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txt_trackercolumn.ForeColor = System.Drawing.Color.Gray
-        Me.txt_trackercolumn.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_trackercolumn.Location = New System.Drawing.Point(27, 61)
-        Me.txt_trackercolumn.Name = "txt_trackercolumn"
-        Me.txt_trackercolumn.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_trackercolumn.PlaceholderText = ""
-        Me.txt_trackercolumn.SelectedText = ""
-        Me.txt_trackercolumn.Size = New System.Drawing.Size(1071, 36)
-        Me.txt_trackercolumn.TabIndex = 12
-        '
-        'txt_column1
-        '
-        Me.txt_column1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_column1.DefaultText = ""
-        Me.txt_column1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_column1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_column1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_column1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_column1.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.txt_column1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_column1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txt_column1.ForeColor = System.Drawing.Color.Gray
-        Me.txt_column1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_column1.Location = New System.Drawing.Point(27, 96)
-        Me.txt_column1.Name = "txt_column1"
-        Me.txt_column1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_column1.PlaceholderText = ""
-        Me.txt_column1.SelectedText = ""
-        Me.txt_column1.Size = New System.Drawing.Size(1071, 36)
-        Me.txt_column1.TabIndex = 13
-        '
-        'txt_column2
-        '
-        Me.txt_column2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_column2.DefaultText = ""
-        Me.txt_column2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_column2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_column2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_column2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_column2.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.txt_column2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_column2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txt_column2.ForeColor = System.Drawing.Color.Gray
-        Me.txt_column2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_column2.Location = New System.Drawing.Point(27, 132)
-        Me.txt_column2.Name = "txt_column2"
-        Me.txt_column2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_column2.PlaceholderText = ""
-        Me.txt_column2.SelectedText = ""
-        Me.txt_column2.Size = New System.Drawing.Size(1071, 36)
-        Me.txt_column2.TabIndex = 14
-        '
-        'txt_column3
-        '
-        Me.txt_column3.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_column3.DefaultText = ""
-        Me.txt_column3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_column3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_column3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_column3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_column3.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.txt_column3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_column3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txt_column3.ForeColor = System.Drawing.Color.Gray
-        Me.txt_column3.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_column3.Location = New System.Drawing.Point(27, 168)
-        Me.txt_column3.Name = "txt_column3"
-        Me.txt_column3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_column3.PlaceholderText = ""
-        Me.txt_column3.SelectedText = ""
-        Me.txt_column3.Size = New System.Drawing.Size(1071, 36)
-        Me.txt_column3.TabIndex = 15
-        '
-        'txt_column4
-        '
-        Me.txt_column4.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_column4.DefaultText = ""
-        Me.txt_column4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_column4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_column4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_column4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_column4.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.txt_column4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_column4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txt_column4.ForeColor = System.Drawing.Color.Gray
-        Me.txt_column4.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_column4.Location = New System.Drawing.Point(27, 204)
-        Me.txt_column4.Name = "txt_column4"
-        Me.txt_column4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_column4.PlaceholderText = ""
-        Me.txt_column4.SelectedText = ""
-        Me.txt_column4.Size = New System.Drawing.Size(1071, 36)
-        Me.txt_column4.TabIndex = 16
-        '
-        'txt_column5
-        '
-        Me.txt_column5.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_column5.DefaultText = ""
-        Me.txt_column5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_column5.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_column5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_column5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_column5.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.txt_column5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_column5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txt_column5.ForeColor = System.Drawing.Color.Gray
-        Me.txt_column5.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_column5.Location = New System.Drawing.Point(27, 240)
-        Me.txt_column5.Name = "txt_column5"
-        Me.txt_column5.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_column5.PlaceholderText = ""
-        Me.txt_column5.SelectedText = ""
-        Me.txt_column5.Size = New System.Drawing.Size(1071, 36)
-        Me.txt_column5.TabIndex = 17
-        '
-        'txt_column6
-        '
-        Me.txt_column6.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_column6.DefaultText = ""
-        Me.txt_column6.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_column6.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_column6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_column6.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_column6.FillColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.txt_column6.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_column6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txt_column6.ForeColor = System.Drawing.Color.Gray
-        Me.txt_column6.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_column6.Location = New System.Drawing.Point(27, 276)
-        Me.txt_column6.Name = "txt_column6"
-        Me.txt_column6.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_column6.PlaceholderText = ""
-        Me.txt_column6.SelectedText = ""
-        Me.txt_column6.Size = New System.Drawing.Size(1071, 36)
-        Me.txt_column6.TabIndex = 18
-        '
         'btn_addnew
         '
         Me.btn_addnew.BorderRadius = 6
+        Me.btn_addnew.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_addnew.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_addnew.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btn_addnew.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -676,6 +527,92 @@ Partial Class Dashboard
         Me.btn_addnew.Size = New System.Drawing.Size(204, 40)
         Me.btn_addnew.TabIndex = 19
         Me.btn_addnew.Text = "Add New Record"
+        '
+        'gridview_tracker
+        '
+        Me.gridview_tracker.AllowUserToAddRows = False
+        Me.gridview_tracker.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Sitka Text", 15.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.gridview_tracker.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.gridview_tracker.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(197, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Sitka Text", 13.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gridview_tracker.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.gridview_tracker.ColumnHeadersHeight = 35
+        Me.gridview_tracker.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col1, Me.col2, Me.col3, Me.col4, Me.col5})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.gridview_tracker.DefaultCellStyle = DataGridViewCellStyle3
+        Me.gridview_tracker.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridview_tracker.Location = New System.Drawing.Point(27, 59)
+        Me.gridview_tracker.Name = "gridview_tracker"
+        Me.gridview_tracker.RowHeadersVisible = False
+        Me.gridview_tracker.Size = New System.Drawing.Size(1078, 253)
+        Me.gridview_tracker.TabIndex = 20
+        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.gridview_tracker.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.gridview_tracker.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridview_tracker.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridview_tracker.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.gridview_tracker.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gridview_tracker.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.gridview_tracker.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.gridview_tracker.ThemeStyle.HeaderStyle.Height = 35
+        Me.gridview_tracker.ThemeStyle.ReadOnly = False
+        Me.gridview_tracker.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.gridview_tracker.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.gridview_tracker.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gridview_tracker.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.gridview_tracker.ThemeStyle.RowsStyle.Height = 22
+        Me.gridview_tracker.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridview_tracker.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'col1
+        '
+        Me.col1.HeaderText = "Date"
+        Me.col1.Name = "col1"
+        Me.col1.ReadOnly = True
+        '
+        'col2
+        '
+        Me.col2.HeaderText = "Start"
+        Me.col2.Name = "col2"
+        Me.col2.ReadOnly = True
+        '
+        'col3
+        '
+        Me.col3.HeaderText = "End"
+        Me.col3.Name = "col3"
+        Me.col3.ReadOnly = True
+        '
+        'col4
+        '
+        Me.col4.HeaderText = "Period Duration"
+        Me.col4.Name = "col4"
+        Me.col4.ReadOnly = True
+        '
+        'col5
+        '
+        Me.col5.HeaderText = "Notes"
+        Me.col5.Name = "col5"
+        Me.col5.ReadOnly = True
         '
         'Dashboard
         '
@@ -701,6 +638,7 @@ Partial Class Dashboard
         Me.pnl_period.ResumeLayout(False)
         Me.pnl_period.PerformLayout()
         CType(Me.picb_profile, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridview_tracker, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -741,12 +679,11 @@ Partial Class Dashboard
     Friend WithEvents txt_ovulation As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txt_follicular As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents linklbl_details As LinkLabel
-    Friend WithEvents txt_trackercolumn As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents txt_column1 As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents txt_column5 As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents txt_column4 As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents txt_column3 As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents txt_column2 As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents txt_column6 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btn_addnew As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents gridview_tracker As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents col1 As DataGridViewTextBoxColumn
+    Friend WithEvents col2 As DataGridViewTextBoxColumn
+    Friend WithEvents col3 As DataGridViewTextBoxColumn
+    Friend WithEvents col4 As DataGridViewTextBoxColumn
+    Friend WithEvents col5 As DataGridViewTextBoxColumn
 End Class

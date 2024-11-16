@@ -28,7 +28,7 @@ Public Class Dashboard
         If reader.HasRows Then
             Dim dt As New DataTable
             dt.Load(reader)
-            Guna2DataGridView1.DataSource = dt
+            gridview_tracker.DataSource = dt
         Else
             MessageBox.Show("No records found.")
         End If
@@ -106,6 +106,10 @@ Public Class Dashboard
     End Sub
 
     Private Sub btn_addnew_Click(sender As Object, e As EventArgs) Handles btn_addnew.Click
+
+    End Sub
+
+    Private Sub Guna2DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridview_tracker.CellContentClick
 
     End Sub
 End Class

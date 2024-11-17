@@ -48,6 +48,8 @@ Partial Class SignUp
         Me.cmbox_gender = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.lbl_age = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_divider = New Guna.UI2.WinForms.Guna2Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txt_surname
@@ -149,7 +151,7 @@ Partial Class SignUp
         Me.lbl_surname.Font = New System.Drawing.Font("Sitka Text", 18.0!)
         Me.lbl_surname.Location = New System.Drawing.Point(69, 174)
         Me.lbl_surname.Name = "lbl_surname"
-        Me.lbl_surname.Size = New System.Drawing.Size(104, 37)
+        Me.lbl_surname.Size = New System.Drawing.Size(105, 37)
         Me.lbl_surname.TabIndex = 25
         Me.lbl_surname.Text = "Surname"
         '
@@ -228,6 +230,7 @@ Partial Class SignUp
         Me.Guna2HtmlLabel11.Name = "Guna2HtmlLabel11"
         Me.Guna2HtmlLabel11.Size = New System.Drawing.Size(3, 2)
         Me.Guna2HtmlLabel11.TabIndex = 41
+        Me.Guna2HtmlLabel11.Text = Nothing
         '
         'chckbox_terms
         '
@@ -324,6 +327,15 @@ Partial Class SignUp
         Me.pnl_divider.Size = New System.Drawing.Size(10, 553)
         Me.pnl_divider.TabIndex = 49
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Hercycle.My.Resources.Resources.Sign_Up
+        Me.PictureBox1.Location = New System.Drawing.Point(1, -2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(651, 700)
+        Me.PictureBox1.TabIndex = 50
+        Me.PictureBox1.TabStop = False
+        '
         'SignUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -356,8 +368,10 @@ Partial Class SignUp
         Me.Controls.Add(Me.txt_givenname)
         Me.Controls.Add(Me.txt_email)
         Me.Controls.Add(Me.txt_surname)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Name = "SignUp"
-        Me.Text = "SignUp"
+        Me.Text = "Sign Up"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -30,7 +30,7 @@ Partial Class Splashscreen
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Image = Global.Hercycle.My.Resources.Resources.Splashscreen_Form
         Me.PictureBox1.Location = New System.Drawing.Point(1, 2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(1904, 1042)
@@ -39,16 +39,17 @@ Partial Class Splashscreen
         '
         'Guna2Button1
         '
+        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button1.Font = New System.Drawing.Font("Quattrocento Sans", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(863, 675)
+        Me.Guna2Button1.Location = New System.Drawing.Point(856, 676)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(200, 52)
+        Me.Guna2Button1.Size = New System.Drawing.Size(213, 52)
         Me.Guna2Button1.TabIndex = 7
         Me.Guna2Button1.Text = "Get Started"
         '
@@ -59,9 +60,12 @@ Partial Class Splashscreen
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
         Me.Controls.Add(Me.Guna2Button1)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Splashscreen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Splashscreen"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

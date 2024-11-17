@@ -8,7 +8,8 @@ Public Class LogIn
         dbconnect.connect()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
+    Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         ' Get the username and password
         Dim username As String = txt_usernamefield.Text
         Dim password As String = txt_passwordfield.Text
@@ -39,16 +40,10 @@ Public Class LogIn
         End Using
     End Sub
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs)
+    Private Sub linklbl_create_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklbl_create.LinkClicked
         SignUp.Show()
         Me.Hide()
-    End Sub
 
-    Private Sub PasswordTextBox_TextChanged(sender As Object, e As EventArgs) Handles txt_passwordfield.TextChanged
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lbl_username.Click
 
     End Sub
 End Class

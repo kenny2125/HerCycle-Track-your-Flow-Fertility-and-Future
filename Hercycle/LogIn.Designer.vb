@@ -54,7 +54,7 @@ Partial Class LogIn
         'btn_login
         '
         Me.btn_login.AutoRoundedCorners = True
-        Me.btn_login.BorderRadius = 6
+        Me.btn_login.BorderRadius = 32
         Me.btn_login.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_login.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btn_login.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -74,7 +74,7 @@ Partial Class LogIn
         Me.lbl_question.Font = New System.Drawing.Font("Sitka Text", 14.0!)
         Me.lbl_question.Location = New System.Drawing.Point(89, 459)
         Me.lbl_question.Name = "lbl_question"
-        Me.lbl_question.Size = New System.Drawing.Size(204, 30)
+        Me.lbl_question.Size = New System.Drawing.Size(207, 30)
         Me.lbl_question.TabIndex = 9
         Me.lbl_question.Text = "Don't have an account?"
         '
@@ -85,7 +85,7 @@ Partial Class LogIn
         Me.linklbl_create.LinkColor = System.Drawing.Color.Black
         Me.linklbl_create.Location = New System.Drawing.Point(296, 460)
         Me.linklbl_create.Name = "linklbl_create"
-        Me.linklbl_create.Size = New System.Drawing.Size(171, 28)
+        Me.linklbl_create.Size = New System.Drawing.Size(173, 28)
         Me.linklbl_create.TabIndex = 10
         Me.linklbl_create.TabStop = True
         Me.linklbl_create.Text = "Create an Account"
@@ -154,7 +154,6 @@ Partial Class LogIn
         Me.MinimumSize = New System.Drawing.Size(592, 546)
         Me.Name = "LogIn"
         Me.ShowIcon = False
-        Me.ShowInTaskbar = False
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LogIn"

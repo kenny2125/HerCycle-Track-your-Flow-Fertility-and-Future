@@ -1,17 +1,9 @@
 ﻿Public Class Splashscreen
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        LogIn.Show()
-    End Sub
-
     Private Sub Splashscreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-
-
-
-    End Sub
-
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-
+        Dim pictureBox As New PictureBox()
+        pictureBox.Image = Image.FromFile("C:\Users\GameWorks\source\repos\Hercycle\Hercycle\Splashscreen Form.jpg")
+        pictureBox.SizeMode = PictureBoxSizeMode.StretchImage
+        pictureBox.Dock = DockStyle.Fill
+        Me.Controls.Add(pictureBox)
     End Sub
 End Class

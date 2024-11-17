@@ -201,6 +201,12 @@
     <Compile Include="Splashscreen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="test.Designer.vb">
+      <DependentUpon>test.vb</DependentUpon>
+    </Compile>
+    <Compile Include="test.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Dashboard.resx">
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Splashscreen.resx">
       <DependentUpon>Splashscreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +262,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="femme flow %281%29.ico" />
+    <Content Include="Splashscreen Form.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

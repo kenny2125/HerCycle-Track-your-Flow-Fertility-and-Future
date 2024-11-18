@@ -6,7 +6,8 @@ Public Class SignUp
         Me.Hide()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
+    Private Sub btn_signup_Click(sender As Object, e As EventArgs) Handles btn_signup.Click
         Try
             Dim dbconnect As New dbconnect
             dbconnect.connect()
@@ -31,6 +32,4 @@ Public Class SignUp
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
     End Sub
-
-
 End Class

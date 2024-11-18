@@ -1,5 +1,4 @@
-﻿Imports System.Security.Cryptography
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class dbconnect
 
@@ -18,8 +17,6 @@ Public Class dbconnect
     End Sub
 
 
-    Public Sub insert(ByVal date1 As Date, ByVal startdate As Date, ByVal enddate As Date, ByVal duration As Integer, ByVal notes As String)
 
-    End Sub
 
 End Class

@@ -63,7 +63,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>femme flow %281%29.ico</ApplicationIcon>
+    <ApplicationIcon>bin\femme flow %281%29.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -160,7 +160,7 @@
     <Compile Include="Dashboard.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dbconnect.vb" />
+    <Compile Include="Classes\dbconnect.vb" />
     <Compile Include="LogIn.Designer.vb">
       <DependentUpon>LogIn.vb</DependentUpon>
     </Compile>
@@ -183,10 +183,52 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="MyProfile.Designer.vb">
+      <DependentUpon>MyProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MyProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Period Records.Designer.vb">
       <DependentUpon>Period Records.vb</DependentUpon>
     </Compile>
     <Compile Include="Period Records.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pre Screening\1.Designer.vb">
+      <DependentUpon>1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pre Screening\1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pre Screening\2.Designer.vb">
+      <DependentUpon>2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pre Screening\2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pre Screening\3.Designer.vb">
+      <DependentUpon>3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pre Screening\3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pre Screening\4.Designer.vb">
+      <DependentUpon>4.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pre Screening\4.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pre Screening\5.Designer.vb">
+      <DependentUpon>5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pre Screening\5.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pre Screening\PreScreening.Designer.vb">
+      <DependentUpon>PreScreening.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pre Screening\PreScreening.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SignUp.Designer.vb">
@@ -215,8 +257,29 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyProfile.resx">
+      <DependentUpon>MyProfile.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Period Records.resx">
       <DependentUpon>Period Records.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pre Screening\1.resx">
+      <DependentUpon>1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pre Screening\2.resx">
+      <DependentUpon>2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pre Screening\3.resx">
+      <DependentUpon>3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pre Screening\4.resx">
+      <DependentUpon>4.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pre Screening\5.resx">
+      <DependentUpon>5.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pre Screening\PreScreening.resx">
+      <DependentUpon>PreScreening.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.vb</DependentUpon>
@@ -236,8 +299,8 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="bin\App.config" />
+    <None Include="bin\packages.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -254,7 +317,15 @@
   <ItemGroup>
     <None Include="bin\Assets\Splashscreen Form.jpg" />
     <None Include="bin\Assets\Sign Up.jpg" />
-    <Content Include="femme flow %281%29.ico" />
+    <None Include="bin\Assets\Frame 10.png" />
+    <None Include="bin\Assets\Pre Screening.png" />
+    <None Include="bin\Assets\Pre Screening  1.png" />
+    <None Include="bin\Assets\Pre Screening 2.png" />
+    <None Include="bin\Assets\Pre Screening 3.png" />
+    <None Include="bin\Assets\Pre Screening 4.png" />
+    <None Include="bin\Assets\Pre Screening 5.png" />
+    <None Include="bin\Assets\MY Profile.png" />
+    <Content Include="bin\femme flow %281%29.ico" />
     <Content Include="bin\Assets\Login.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

@@ -123,7 +123,7 @@ Partial Class Dashboard
         '
         Me.lbl_greet.BackColor = System.Drawing.Color.Transparent
         Me.lbl_greet.Font = New System.Drawing.Font("Sitka Banner", 18.0!, System.Drawing.FontStyle.Bold)
-        Me.lbl_greet.Location = New System.Drawing.Point(28, 30)
+        Me.lbl_greet.Location = New System.Drawing.Point(138, 26)
         Me.lbl_greet.Name = "lbl_greet"
         Me.lbl_greet.Size = New System.Drawing.Size(209, 37)
         Me.lbl_greet.TabIndex = 4
@@ -133,7 +133,7 @@ Partial Class Dashboard
         '
         Me.picb_profile.Cursor = System.Windows.Forms.Cursors.Hand
         Me.picb_profile.ImageRotate = 0!
-        Me.picb_profile.Location = New System.Drawing.Point(264, 10)
+        Me.picb_profile.Location = New System.Drawing.Point(16, 10)
         Me.picb_profile.Name = "picb_profile"
         Me.picb_profile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.picb_profile.Size = New System.Drawing.Size(83, 81)

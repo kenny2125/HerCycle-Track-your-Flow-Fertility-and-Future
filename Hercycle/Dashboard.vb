@@ -7,7 +7,6 @@ Public Class Dashboard
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         Period_Records.Show()
-
         Me.Hide()
     End Sub
 
@@ -64,10 +63,9 @@ Public Class Dashboard
 
 
     End Sub
-End Class
 
-Public Class OtherForm
-    Public Sub LoadUserRecords()
-        ' Your code to load user records
+    Private Sub picb_profile_Click(sender As Object, e As EventArgs) Handles picb_profile.Click
+        MyProfile.Show()
     End Sub
 End Class
+

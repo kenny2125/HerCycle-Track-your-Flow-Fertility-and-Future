@@ -25,8 +25,8 @@ Partial Class _4
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -78,16 +78,6 @@ Partial Class _4
         Me.Guna2Button3.TabIndex = 7
         Me.Guna2Button3.Text = "Yes"
         '
-        'Guna2PictureBox1
-        '
-        Me.Guna2PictureBox1.Image = Global.Hercycle.My.Resources.Resources.Pre_Screening_4
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(-5, -1)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(652, 486)
-        Me.Guna2PictureBox1.TabIndex = 0
-        Me.Guna2PictureBox1.TabStop = False
-        '
         'Guna2Button4
         '
         Me.Guna2Button4.BorderRadius = 20
@@ -103,6 +93,16 @@ Partial Class _4
         Me.Guna2Button4.Size = New System.Drawing.Size(180, 27)
         Me.Guna2Button4.TabIndex = 8
         Me.Guna2Button4.Text = "Yes"
+        '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.Image = Global.Hercycle.My.Resources.Resources.Pre_Screening_4
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(-5, -1)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(652, 486)
+        Me.Guna2PictureBox1.TabIndex = 0
+        Me.Guna2PictureBox1.TabStop = False
         '
         '_4
         '

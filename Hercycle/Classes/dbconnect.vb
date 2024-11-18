@@ -20,3 +20,21 @@ Public Class dbconnect
 
 
 End Class
+Public Class LoginStatus
+    Public Shared Property loginSuccess As Boolean
+End Class
+
+
+Public Class CurrentUser
+    Public Shared Property UserId As Integer
+End Class
+
+
+Public Class UserSession
+    Public Shared Sub LogOut()
+        CurrentUser.UserId = 0
+        LoginStatus.loginSuccess = False
+        Application.OpenForms.Cast(Of Form).ToList().ForEach(Sub(f) f.Hide())
+        LogIn.Show()
+    End Sub
+End Class

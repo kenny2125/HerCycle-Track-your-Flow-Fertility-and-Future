@@ -4,11 +4,13 @@ Public Class dbconnect
 
     Public conn As New MySqlConnection
     Public Sub connect()
-        conn.ConnectionString = "server=127.0.0.1;userid=root;password=;database=db_hercycle"
+        conn.ConnectionString = "server=erxv1bzckceve5lh.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;userid=vg2eweo4yg8eydii;password=rccstjx3or46kpl9;database=s0gp0gvxcx3fc7ib"
 
         ' Open the connection
         Try
             conn.Open()
+            MessageBox.Show("Connected to database")
+
             Console.WriteLine("Connected to database")
         Catch ex As Exception
             Console.WriteLine(ex.Message)
@@ -16,19 +18,15 @@ Public Class dbconnect
         End Try
     End Sub
 
-
-
-
 End Class
+
 Public Class LoginStatus
     Public Shared Property loginSuccess As Boolean
 End Class
 
-
 Public Class CurrentUser
     Public Shared Property UserId As Integer
 End Class
-
 
 Public Class UserSession
     Public Shared Sub LogOut()

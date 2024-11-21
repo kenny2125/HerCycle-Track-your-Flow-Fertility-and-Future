@@ -6,6 +6,10 @@
         pictureBox.SizeMode = PictureBoxSizeMode.StretchImage
         pictureBox.Dock = DockStyle.Fill
         Me.Controls.Add(pictureBox)
+
+        Dim dbconnect As New dbconnect
+        dbconnect.connect()
+
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click

@@ -19,14 +19,14 @@ Public Class SignUp
             cmd.Parameters.AddWithValue("@lastname", txt_surname.Text)
             cmd.Parameters.AddWithValue("@email", txt_email.Text)
             cmd.Parameters.AddWithValue("@age", txt_age.Text)
-            cmd.Parameters.AddWithValue("@gender", cmbox_gender)
+            cmd.Parameters.AddWithValue("@gender", cmbox_gender.Text)
             cmd.Parameters.AddWithValue("@username", txt_username.Text)
             cmd.Parameters.AddWithValue("@password", txt_password.Text)
             cmd.ExecuteNonQuery()
 
             MessageBox.Show("User successfully registered")
             LogIn.Show()
-            Me.Hide()
+            Me.Close()
 
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message)

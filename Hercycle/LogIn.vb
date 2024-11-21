@@ -4,7 +4,7 @@ Public Class LogIn
 
     Private dbconnect As New dbconnect
 
-    Private loginSuccess As Boolean = LoginStatus.loginSuccess
+
 
 
     Private Sub LogIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -33,7 +33,7 @@ Public Class LogIn
 
                 ' Store user ID in a static class or variable for global access
                 CurrentUser.UserId = userId
-                LoginStatus.loginSuccess = True
+
 
                 Dashboard.Show()
                 Me.Hide()

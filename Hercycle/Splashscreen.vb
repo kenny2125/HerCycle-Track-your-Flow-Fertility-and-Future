@@ -7,8 +7,8 @@
         pictureBox.Dock = DockStyle.Fill
         Me.Controls.Add(pictureBox)
 
-        Dim dbconnect As New dbconnect
-        dbconnect.connect()
+        'Dim dbconnect As New dbconnect
+        'dbconnect.connect()
 
     End Sub
 

@@ -61,6 +61,7 @@ Partial Class _5
         Me.Controls.Add(Me.Guna2Button4)
         Me.Controls.Add(Me.Guna2PictureBox1)
         Me.Name = "_5"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "_5"
         Me.TopMost = True
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

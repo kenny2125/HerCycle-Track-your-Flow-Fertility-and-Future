@@ -79,6 +79,7 @@ Partial Class _1
         Me.Controls.Add(Me.Guna2Button1)
         Me.Controls.Add(Me.Guna2PictureBox1)
         Me.Name = "_1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "_1"
         Me.TopMost = True
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

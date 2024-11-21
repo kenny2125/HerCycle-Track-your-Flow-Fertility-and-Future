@@ -4,35 +4,40 @@ Public Class dbconnect
 
     Public conn As New MySqlConnection
     Public Sub connect()
-        conn.ConnectionString = "server=erxv1bzckceve5lh.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;userid=vg2eweo4yg8eydii;password=rccstjx3or46kpl9;database=s0gp0gvxcx3fc7ib"
+        ' Set the connection string only once before attempting to open the connection
+        If conn.State = ConnectionState.Closed Then
+            conn.ConnectionString = "server=127.0.0.1;uid=root;pwd=;database=db_hercycle;"
+        End If
 
-        ' Open the connection
-        Try
-            conn.Open()
-            MessageBox.Show("Connected to database")
-
-            Console.WriteLine("Connected to database")
-        Catch ex As Exception
-            Console.WriteLine(ex.Message)
-
-        End Try
+        ' Check if the connection is already open
+        If conn.State <> ConnectionState.Open Then
+            Try
+                ' Open the connection if it's not already open
+                conn.Open()
+                Console.WriteLine("Connected to database")
+            Catch ex As MySqlException
+                Select Case ex.Number
+                    Case 0
+                        Console.WriteLine("Cannot connect to server. Contact administrator")
+                    Case 1045
+                        Console.WriteLine("Invalid username/password, please try again")
+                    Case Else
+                        Console.WriteLine(ex.Message)
+                End Select
+                MessageBox.Show("Please check your internet connection")
+            End Try
+        Else
+            Console.WriteLine("Connection is already open")
+        End If
     End Sub
 
+
+
 End Class
 
-Public Class LoginStatus
-    Public Shared Property loginSuccess As Boolean
-End Class
 
 Public Class CurrentUser
     Public Shared Property UserId As Integer
 End Class
 
-Public Class UserSession
-    Public Shared Sub LogOut()
-        CurrentUser.UserId = 0
-        LoginStatus.loginSuccess = False
-        Application.OpenForms.Cast(Of Form).ToList().ForEach(Sub(f) f.Hide())
-        LogIn.Show()
-    End Sub
-End Class
+

@@ -23,17 +23,17 @@ Partial Class Dashboard
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         Me.Guna2ShapesTool1 = New Guna.UI2.WinForms.Guna2ShapesTool(Me.components)
         Me.pnl_dashboard = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnl_editprof = New Guna.UI2.WinForms.Guna2Panel()
         Me.lbl_greet = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.picb_profile = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.pnl_dashboardbg = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.pnl_tracker = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2DataGridView1 = New Guna.UI2.WinForms.Guna2DataGridView()
@@ -57,7 +57,6 @@ Partial Class Dashboard
         Me.lbl_menstruation = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_currenttime = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_dailydigest = New Guna.UI2.WinForms.Guna2Panel()
-        Me.linklbl_details = New System.Windows.Forms.LinkLabel()
         Me.lbl_dailydigest = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_fertility = New Guna.UI2.WinForms.Guna2Panel()
         Me.lbl_prediction = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -74,9 +73,11 @@ Partial Class Dashboard
         Me.lbl_periodday = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_period = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.picb_profile = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.linklbl_details = New System.Windows.Forms.LinkLabel()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_dashboard.SuspendLayout()
         Me.pnl_editprof.SuspendLayout()
-        CType(Me.picb_profile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_dashboardbg.SuspendLayout()
         Me.pnl_tracker.SuspendLayout()
         CType(Me.Guna2DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,6 +87,7 @@ Partial Class Dashboard
         Me.pnl_fertility.SuspendLayout()
         Me.pnl_phase.SuspendLayout()
         Me.pnl_period.SuspendLayout()
+        CType(Me.picb_profile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2ShapesTool1
@@ -129,17 +131,6 @@ Partial Class Dashboard
         Me.lbl_greet.TabIndex = 4
         Me.lbl_greet.Text = "Good Evening! Danel"
         '
-        'picb_profile
-        '
-        Me.picb_profile.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.picb_profile.ImageRotate = 0!
-        Me.picb_profile.Location = New System.Drawing.Point(16, 10)
-        Me.picb_profile.Name = "picb_profile"
-        Me.picb_profile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.picb_profile.Size = New System.Drawing.Size(83, 81)
-        Me.picb_profile.TabIndex = 1
-        Me.picb_profile.TabStop = False
-        '
         'pnl_dashboardbg
         '
         Me.pnl_dashboardbg.Controls.Add(Me.pnl_tracker)
@@ -170,26 +161,26 @@ Partial Class Dashboard
         '
         'Guna2DataGridView1
         '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.Guna2DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Guna2DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
+        Me.Guna2DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Guna2DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.Guna2DataGridView1.ColumnHeadersHeight = 4
         Me.Guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Guna2DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Guna2DataGridView1.DefaultCellStyle = DataGridViewCellStyle15
         Me.Guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2DataGridView1.Location = New System.Drawing.Point(27, 93)
         Me.Guna2DataGridView1.Name = "Guna2DataGridView1"
@@ -222,30 +213,30 @@ Partial Class Dashboard
         '
         Me.gridview_tracker.AllowUserToAddRows = False
         Me.gridview_tracker.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Sitka Text", 15.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        Me.gridview_tracker.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Sitka Text", 15.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black
+        Me.gridview_tracker.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
         Me.gridview_tracker.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(197, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Sitka Text", 13.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.gridview_tracker.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(197, Byte), Integer))
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Sitka Text", 13.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gridview_tracker.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.gridview_tracker.ColumnHeadersHeight = 35
         Me.gridview_tracker.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col1, Me.col2, Me.col3, Me.col4, Me.col5})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.gridview_tracker.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle18.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.gridview_tracker.DefaultCellStyle = DataGridViewCellStyle18
         Me.gridview_tracker.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.gridview_tracker.Location = New System.Drawing.Point(27, 59)
         Me.gridview_tracker.Name = "gridview_tracker"
@@ -492,6 +483,7 @@ Partial Class Dashboard
         'pnl_dailydigest
         '
         Me.pnl_dailydigest.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.pnl_dailydigest.Controls.Add(Me.Guna2HtmlLabel1)
         Me.pnl_dailydigest.Controls.Add(Me.linklbl_details)
         Me.pnl_dailydigest.Controls.Add(Me.lbl_dailydigest)
         Me.pnl_dailydigest.Location = New System.Drawing.Point(1430, 21)
@@ -499,25 +491,13 @@ Partial Class Dashboard
         Me.pnl_dailydigest.Size = New System.Drawing.Size(450, 450)
         Me.pnl_dailydigest.TabIndex = 3
         '
-        'linklbl_details
-        '
-        Me.linklbl_details.AutoSize = True
-        Me.linklbl_details.Font = New System.Drawing.Font("Sitka Text", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.linklbl_details.LinkColor = System.Drawing.Color.Black
-        Me.linklbl_details.Location = New System.Drawing.Point(167, 235)
-        Me.linklbl_details.Name = "linklbl_details"
-        Me.linklbl_details.Size = New System.Drawing.Size(132, 39)
-        Me.linklbl_details.TabIndex = 2
-        Me.linklbl_details.TabStop = True
-        Me.linklbl_details.Text = "Details >"
-        '
         'lbl_dailydigest
         '
         Me.lbl_dailydigest.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_dailydigest.Font = New System.Drawing.Font("Sitka Banner", 50.0!, System.Drawing.FontStyle.Bold)
-        Me.lbl_dailydigest.Location = New System.Drawing.Point(62, 130)
+        Me.lbl_dailydigest.Font = New System.Drawing.Font("Sitka Banner", 25.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_dailydigest.Location = New System.Drawing.Point(156, 42)
         Me.lbl_dailydigest.Name = "lbl_dailydigest"
-        Me.lbl_dailydigest.Size = New System.Drawing.Size(330, 99)
+        Me.lbl_dailydigest.Size = New System.Drawing.Size(165, 50)
         Me.lbl_dailydigest.TabIndex = 1
         Me.lbl_dailydigest.Text = "Daily Digest"
         Me.lbl_dailydigest.TextAlignment = System.Drawing.ContentAlignment.TopCenter
@@ -537,7 +517,7 @@ Partial Class Dashboard
         '
         Me.lbl_prediction.BackColor = System.Drawing.Color.Transparent
         Me.lbl_prediction.Font = New System.Drawing.Font("Sitka Banner", 27.0!, System.Drawing.FontStyle.Bold)
-        Me.lbl_prediction.Location = New System.Drawing.Point(50, 343)
+        Me.lbl_prediction.Location = New System.Drawing.Point(45, 343)
         Me.lbl_prediction.Name = "lbl_prediction"
         Me.lbl_prediction.Size = New System.Drawing.Size(358, 54)
         Me.lbl_prediction.TabIndex = 3
@@ -566,8 +546,8 @@ Partial Class Dashboard
         'pnl_phase
         '
         Me.pnl_phase.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(254, Byte), Integer))
-        Me.pnl_phase.Controls.Add(Me.lbl_phasesub)
         Me.pnl_phase.Controls.Add(Me.lbl_phaseheader)
+        Me.pnl_phase.Controls.Add(Me.lbl_phasesub)
         Me.pnl_phase.Controls.Add(Me.lbl_phaseday)
         Me.pnl_phase.Controls.Add(Me.lbl_phasedayno)
         Me.pnl_phase.Controls.Add(Me.lbl_phase)
@@ -579,22 +559,22 @@ Partial Class Dashboard
         'lbl_phasesub
         '
         Me.lbl_phasesub.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_phasesub.Font = New System.Drawing.Font("Sitka Banner", 35.0!, System.Drawing.FontStyle.Bold)
-        Me.lbl_phasesub.Location = New System.Drawing.Point(97, 362)
+        Me.lbl_phasesub.Font = New System.Drawing.Font("Sitka Banner", 27.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_phasesub.Location = New System.Drawing.Point(175, 343)
         Me.lbl_phasesub.Name = "lbl_phasesub"
-        Me.lbl_phasesub.Size = New System.Drawing.Size(265, 70)
+        Me.lbl_phasesub.Size = New System.Drawing.Size(120, 54)
         Me.lbl_phasesub.TabIndex = 3
-        Me.lbl_phasesub.Text = "Menstruation"
+        Me.lbl_phasesub.Text = "Regular"
         '
         'lbl_phaseheader
         '
         Me.lbl_phaseheader.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_phaseheader.Font = New System.Drawing.Font("Sitka Banner", 27.0!, System.Drawing.FontStyle.Bold)
-        Me.lbl_phaseheader.Location = New System.Drawing.Point(134, 311)
+        Me.lbl_phaseheader.Font = New System.Drawing.Font("Sitka Banner", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_phaseheader.Location = New System.Drawing.Point(117, 331)
         Me.lbl_phaseheader.Name = "lbl_phaseheader"
-        Me.lbl_phaseheader.Size = New System.Drawing.Size(192, 54)
+        Me.lbl_phaseheader.Size = New System.Drawing.Size(245, 30)
         Me.lbl_phaseheader.TabIndex = 4
-        Me.lbl_phaseheader.Text = "Currently on"
+        Me.lbl_phaseheader.Text = "Your current menstrual cycle is "
         '
         'lbl_phaseday
         '
@@ -622,9 +602,9 @@ Partial Class Dashboard
         Me.lbl_phase.Font = New System.Drawing.Font("Sitka Banner", 25.0!, System.Drawing.FontStyle.Bold)
         Me.lbl_phase.Location = New System.Drawing.Point(124, 42)
         Me.lbl_phase.Name = "lbl_phase"
-        Me.lbl_phase.Size = New System.Drawing.Size(208, 50)
+        Me.lbl_phase.Size = New System.Drawing.Size(219, 50)
         Me.lbl_phase.TabIndex = 1
-        Me.lbl_phase.Text = "Phase Tracking"
+        Me.lbl_phase.Text = "Menstrual Cycle"
         '
         'pnl_period
         '
@@ -667,6 +647,38 @@ Partial Class Dashboard
         Me.lbl_period.TabIndex = 0
         Me.lbl_period.Text = "Period Tracking"
         '
+        'picb_profile
+        '
+        Me.picb_profile.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.picb_profile.ImageRotate = 0!
+        Me.picb_profile.Location = New System.Drawing.Point(16, 10)
+        Me.picb_profile.Name = "picb_profile"
+        Me.picb_profile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.picb_profile.Size = New System.Drawing.Size(83, 81)
+        Me.picb_profile.TabIndex = 1
+        Me.picb_profile.TabStop = False
+        '
+        'linklbl_details
+        '
+        Me.linklbl_details.Font = New System.Drawing.Font("Sitka Text", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.linklbl_details.LinkColor = System.Drawing.Color.Black
+        Me.linklbl_details.Location = New System.Drawing.Point(56, 104)
+        Me.linklbl_details.Name = "linklbl_details"
+        Me.linklbl_details.Size = New System.Drawing.Size(349, 248)
+        Me.linklbl_details.TabIndex = 2
+        Me.linklbl_details.TabStop = True
+        Me.linklbl_details.Text = resources.GetString("linklbl_details.Text")
+        '
+        'Guna2HtmlLabel1
+        '
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Sitka Banner", 27.0!, System.Drawing.FontStyle.Bold)
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(128, 343)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(216, 54)
+        Me.Guna2HtmlLabel1.TabIndex = 4
+        Me.Guna2HtmlLabel1.Text = "Stay Hydrated"
+        '
         'Dashboard
         '
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
@@ -677,7 +689,6 @@ Partial Class Dashboard
         Me.pnl_dashboard.PerformLayout()
         Me.pnl_editprof.ResumeLayout(False)
         Me.pnl_editprof.PerformLayout()
-        CType(Me.picb_profile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_dashboardbg.ResumeLayout(False)
         Me.pnl_tracker.ResumeLayout(False)
         Me.pnl_tracker.PerformLayout()
@@ -693,6 +704,7 @@ Partial Class Dashboard
         Me.pnl_phase.PerformLayout()
         Me.pnl_period.ResumeLayout(False)
         Me.pnl_period.PerformLayout()
+        CType(Me.picb_profile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -732,7 +744,6 @@ Partial Class Dashboard
     Friend WithEvents txt_luteal As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txt_ovulation As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txt_follicular As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents linklbl_details As LinkLabel
     Friend WithEvents btn_addnew As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents gridview_tracker As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents col1 As DataGridViewTextBoxColumn
@@ -741,4 +752,6 @@ Partial Class Dashboard
     Friend WithEvents col4 As DataGridViewTextBoxColumn
     Friend WithEvents col5 As DataGridViewTextBoxColumn
     Friend WithEvents Guna2DataGridView1 As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents linklbl_details As LinkLabel
 End Class

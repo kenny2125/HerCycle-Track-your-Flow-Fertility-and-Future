@@ -281,9 +281,10 @@ Partial Class SignUp
         Me.cmbox_gender.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbox_gender.IntegralHeight = False
         Me.cmbox_gender.ItemHeight = 44
-        Me.cmbox_gender.Location = New System.Drawing.Point(935, 356)
+        Me.cmbox_gender.Items.AddRange(New Object() {"Male", "Female"})
+        Me.cmbox_gender.Location = New System.Drawing.Point(897, 356)
         Me.cmbox_gender.Name = "cmbox_gender"
-        Me.cmbox_gender.Size = New System.Drawing.Size(104, 50)
+        Me.cmbox_gender.Size = New System.Drawing.Size(142, 50)
         Me.cmbox_gender.TabIndex = 47
         '
         'lbl_age

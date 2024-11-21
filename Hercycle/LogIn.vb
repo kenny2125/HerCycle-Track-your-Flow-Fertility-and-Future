@@ -4,11 +4,15 @@ Public Class LogIn
 
     Private dbconnect As New dbconnect
 
+    Private loginSuccess As Boolean = LoginStatus.loginSuccess
+
+
     Private Sub LogIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dbconnect.connect()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
+    Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         ' Get the username and password
         Dim username As String = txt_usernamefield.Text
         Dim password As String = txt_passwordfield.Text
@@ -29,31 +33,26 @@ Public Class LogIn
 
                 ' Store user ID in a static class or variable for global access
                 CurrentUser.UserId = userId
+                LoginStatus.loginSuccess = True
 
                 Dashboard.Show()
                 Me.Hide()
                 Splashscreen.Hide()
             Else
-                MsgBox("Login Failed")
+                MsgBox("Login Failed. Please try again.")
             End If
+            reader.Close()
         End Using
     End Sub
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs)
+
+    Private Sub linklbl_create_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklbl_create.LinkClicked
         SignUp.Show()
         Me.Hide()
-    End Sub
 
-    Private Sub PasswordTextBox_TextChanged(sender As Object, e As EventArgs) Handles txt_passwordfield.TextChanged
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lbl_username.Click
 
     End Sub
 End Class
 
 ' Create a static class to hold the current user's information
-Public Class CurrentUser
-    Public Shared Property UserId As Integer
-End Class
+

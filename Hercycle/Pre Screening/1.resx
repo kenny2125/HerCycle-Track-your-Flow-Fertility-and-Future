@@ -117,38 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Pre Screening 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Assets\Pre Screening 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frame 10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Assets\Frame 10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pre Screening 4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Assets\Pre Screening 4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Splashscreen Form" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Assets\Splashscreen Form.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pre Screening" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Assets\Pre Screening.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sign Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Assets\Sign Up.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pre Screening  1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Assets\Pre Screening  1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pre Screening 5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Assets\Pre Screening 5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Assets\Login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pre Screening 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Assets\Pre Screening 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MY Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Assets\MY Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

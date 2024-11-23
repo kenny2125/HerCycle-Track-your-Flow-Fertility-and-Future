@@ -24,9 +24,9 @@ Partial Class Splashscreen
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Splashscreen))
         Me.pnl_splashscreen = New Guna.UI2.WinForms.Guna2GradientPanel()
-        Me.lbl_header = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lbl_subheader = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_getstarted = New Guna.UI2.WinForms.Guna2Button()
+        Me.lbl_subheader = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_header = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_splashscreen.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -44,31 +44,11 @@ Partial Class Splashscreen
         Me.pnl_splashscreen.Size = New System.Drawing.Size(1415, 622)
         Me.pnl_splashscreen.TabIndex = 7
         '
-        'lbl_header
-        '
-        Me.lbl_header.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_header.Font = New System.Drawing.Font("Sitka Banner", 100.0!, System.Drawing.FontStyle.Bold)
-        Me.lbl_header.Location = New System.Drawing.Point(105, 168)
-        Me.lbl_header.Name = "lbl_header"
-        Me.lbl_header.Size = New System.Drawing.Size(1192, 195)
-        Me.lbl_header.TabIndex = 2
-        Me.lbl_header.Text = "Track your cycle now!"
-        '
-        'lbl_subheader
-        '
-        Me.lbl_subheader.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_subheader.Font = New System.Drawing.Font("Sitka Banner", 20.0!)
-        Me.lbl_subheader.Location = New System.Drawing.Point(453, 380)
-        Me.lbl_subheader.Name = "lbl_subheader"
-        Me.lbl_subheader.Size = New System.Drawing.Size(484, 41)
-        Me.lbl_subheader.TabIndex = 5
-        Me.lbl_subheader.Text = "Start to know yourself better by using this app!"
-        '
         'btn_getstarted
         '
         Me.btn_getstarted.AutoRoundedCorners = True
         Me.btn_getstarted.BackColor = System.Drawing.Color.Transparent
-        Me.btn_getstarted.BorderRadius = 15
+        Me.btn_getstarted.BorderRadius = 31
         Me.btn_getstarted.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_getstarted.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btn_getstarted.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -81,6 +61,26 @@ Partial Class Splashscreen
         Me.btn_getstarted.Size = New System.Drawing.Size(238, 65)
         Me.btn_getstarted.TabIndex = 8
         Me.btn_getstarted.Text = "Get Started"
+        '
+        'lbl_subheader
+        '
+        Me.lbl_subheader.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_subheader.Font = New System.Drawing.Font("Sitka Banner", 20.0!)
+        Me.lbl_subheader.Location = New System.Drawing.Point(453, 380)
+        Me.lbl_subheader.Name = "lbl_subheader"
+        Me.lbl_subheader.Size = New System.Drawing.Size(485, 41)
+        Me.lbl_subheader.TabIndex = 5
+        Me.lbl_subheader.Text = "Start to know yourself better by using this app!"
+        '
+        'lbl_header
+        '
+        Me.lbl_header.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_header.Font = New System.Drawing.Font("Sitka Banner", 100.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_header.Location = New System.Drawing.Point(105, 168)
+        Me.lbl_header.Name = "lbl_header"
+        Me.lbl_header.Size = New System.Drawing.Size(1192, 195)
+        Me.lbl_header.TabIndex = 2
+        Me.lbl_header.Text = "Track your cycle now!"
         '
         'Splashscreen
         '

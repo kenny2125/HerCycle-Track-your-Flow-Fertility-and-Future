@@ -105,4 +105,51 @@ Public Class Dashboard
         dbconnect.conn.Close() ' Ensure the connection is closed after use
     End Sub
 
+    Private Sub lbl_greet_Click(sender As Object, e As EventArgs) Handles lbl_name.Click
+
+    End Sub
+
+    Private Sub pnl_editprof_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+
+    Private Sub lbl_phase_Click(sender As Object, e As EventArgs) Handles lbl_phase.Click
+
+    End Sub
+
+    Private Sub Guna2GradientPanel1_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+
+    Private Sub lbl_phaseday_Click(sender As Object, e As EventArgs) Handles lbl_phaseday.Click
+
+    End Sub
+
+    Private Sub lbl_phaseheader_Click(sender As Object, e As EventArgs) Handles lbl_phaseheader.Click
+
+    End Sub
+
+    Private Sub pnl_dashboardbg_Paint(sender As Object, e As PaintEventArgs) Handles pnl_dashboardbg.Paint
+
+    End Sub
+
+    Private Sub lbl_dailydigest_Click(sender As Object, e As EventArgs) Handles lbl_dailydigest.Click
+
+    End Sub
+
+    Private Sub linklbl_details_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklbl_details.LinkClicked
+
+    End Sub
+
+    Private Sub lbl_periodtracker_Click(sender As Object, e As EventArgs) Handles lbl_periodtracker.Click
+
+    End Sub
+
+    Private Sub Guna2DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+
+    End Sub
+
+    Private Sub gridview_tracker_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridview_tracker.CellContentClick
+
+    End Sub
 End Class

@@ -5,7 +5,7 @@ Public Class MyProfile
     Private currentUserId As Integer = CurrentUser.UserId
 
     Private db As New dbconnect()
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btn_close.Click
         Application.Exit()
     End Sub
     Private Sub MyProfile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -76,7 +76,7 @@ Public Class MyProfile
         End Using
     End Sub
 
-    Private Sub btn_addnew_Click(sender As Object, e As EventArgs) Handles btn_addnew.Click
+    Private Sub btn_addnew_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
         ' Reset the current user ID to 0
         CurrentUser.UserId = 0
 
@@ -96,4 +96,63 @@ Public Class MyProfile
         ' Me.Dispose()
     End Sub
 
+    Private Sub lbl_header_Click(sender As Object, e As EventArgs) Handles lbl_header.Click
+
+    End Sub
+
+    Private Sub Guna2TextBox4_TextChanged(sender As Object, e As EventArgs) Handles txt_birthdate.TextChanged
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel5_Click(sender As Object, e As EventArgs) Handles lbl_age.Click
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel4_Click(sender As Object, e As EventArgs) Handles lbl_birthdate.Click
+
+    End Sub
+
+    Private Sub Guna2TextBox3_TextChanged(sender As Object, e As EventArgs) Handles txt_password.TextChanged
+
+    End Sub
+
+    Private Sub Guna2TextBox2_TextChanged(sender As Object, e As EventArgs) Handles txt_username.TextChanged
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel3_Click(sender As Object, e As EventArgs) Handles lbl_password.Click
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel2_Click(sender As Object, e As EventArgs) Handles lbl_username.Click
+
+    End Sub
+
+    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txt_email.TextChanged
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel1_Click(sender As Object, e As EventArgs) Handles lbl_email.Click
+
+    End Sub
+
+    Private Sub txt_passwordfield_TextChanged(sender As Object, e As EventArgs) Handles txt_name.TextChanged
+
+    End Sub
+
+    Private Sub lbl_givenname_Click(sender As Object, e As EventArgs) Handles lbl_name.Click
+
+    End Sub
+
+    Private Sub Guna2TextBox5_TextChanged(sender As Object, e As EventArgs) Handles txt_age.TextChanged
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel10_Click(sender As Object, e As EventArgs) Handles lbl_ques4.Click
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel11_Click(sender As Object, e As EventArgs) Handles lbl_ans1.Click
+
+    End Sub
 End Class

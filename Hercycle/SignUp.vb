@@ -7,7 +7,7 @@ Public Class SignUp
     End Sub
 
 
-    Private Sub btn_signup_Click(sender As Object, e As EventArgs) Handles btn_signup.Click
+    Private Sub btn_signup_Click(sender As Object, e As EventArgs)
         Try
             Dim dbconnect As New dbconnect
             dbconnect.connect()
@@ -31,5 +31,49 @@ Public Class SignUp
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub Guna2GradientPanel1_Paint(sender As Object, e As PaintEventArgs) Handles pnl_signup.Paint
+
+    End Sub
+
+    Private Sub txt_email_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub lbl_surname_Click(sender As Object, e As EventArgs) Handles lbl_surname.Click
+
+    End Sub
+
+    Private Sub txt_age_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel4_Click(sender As Object, e As EventArgs) Handles lbl_middleint.Click
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel5_Click(sender As Object, e As EventArgs) Handles lbl_email.Click
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel7_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub cmbox_gender_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub txt_usernamefield_TextChanged(sender As Object, e As EventArgs) Handles txt_surname.TextChanged
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel7_Click_1(sender As Object, e As EventArgs) Handles lbl_birthdate.Click
+
+    End Sub
+
+    Private Sub Guna2TextBox3_TextChanged(sender As Object, e As EventArgs) Handles txt_email.TextChanged
+
     End Sub
 End Class

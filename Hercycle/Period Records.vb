@@ -10,7 +10,7 @@ Public Class Period_Records
         ' Any initialization code here if needed
     End Sub
 
-    Private Sub btn_addnew_Click(sender As Object, e As EventArgs) Handles btn_addnew.Click
+    Private Sub btn_addnew_Click(sender As Object, e As EventArgs)
         Try
             ' Ensure that duration is set correctly before attempting to insert
             If duration = 0 Then
@@ -43,11 +43,11 @@ Public Class Period_Records
         End Try
     End Sub
 
-    Private Sub Guna2DateTimePicker3_ValueChanged(sender As Object, e As EventArgs) Handles Guna2DateTimePicker3.ValueChanged
+    Private Sub Guna2DateTimePicker3_ValueChanged(sender As Object, e As EventArgs)
         CalculateDuration()
     End Sub
 
-    Private Sub Guna2DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles Guna2DateTimePicker2.ValueChanged
+    Private Sub Guna2DateTimePicker2_ValueChanged(sender As Object, e As EventArgs)
         CalculateDuration()
     End Sub
 
@@ -60,5 +60,13 @@ Public Class Period_Records
         Else
             TextBox4.Text = "Invalid date range"
         End If
+    End Sub
+
+    Private Sub lbl_subheader_Click(sender As Object, e As EventArgs) Handles lbl_startdate.Click
+
+    End Sub
+
+    Private Sub txt_givenname_TextChanged(sender As Object, e As EventArgs) Handles txt_prduration.TextChanged
+
     End Sub
 End Class

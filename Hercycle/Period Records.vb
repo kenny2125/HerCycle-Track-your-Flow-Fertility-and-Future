@@ -27,10 +27,10 @@ Public Class Period_Records
             Using cmd As New MySqlCommand(query, dbconnect.conn)
                 ' Add parameters with the parsed dates
                 cmd.Parameters.AddWithValue("@userid", currentUserId)
-                cmd.Parameters.AddWithValue("@datestart", Guna2DateTimePicker2.Value.Date) ' Use the parsed start date
-                cmd.Parameters.AddWithValue("@dateend", Guna2DateTimePicker3.Value.Date) ' Use the parsed end date
+                cmd.Parameters.AddWithValue("@datestart", datetmpick_start.Value.Date) ' Use the parsed start date
+                cmd.Parameters.AddWithValue("@dateend", datetmpick_end.Value.Date) ' Use the parsed end date
                 cmd.Parameters.AddWithValue("@duration", duration) ' Use the globally declared duration
-                cmd.Parameters.AddWithValue("@notes", TextBox5.Text) ' Assuming TextBox5 is for notes
+                cmd.Parameters.AddWithValue("@notes", txt_notes.Text) ' Assuming TextBox5 is for notes
 
                 ' Execute the command
                 cmd.ExecuteNonQuery()
@@ -53,12 +53,12 @@ Public Class Period_Records
 
     Private Sub CalculateDuration()
         ' Check if both date pickers have valid dates
-        If Guna2DateTimePicker2.Value <= Guna2DateTimePicker3.Value Then
+        If datetmpick_start.Value <= datetmpick_end.Value Then
             ' Calculate the difference in days
-            duration = (Guna2DateTimePicker3.Value - Guna2DateTimePicker2.Value).Days
-            TextBox4.Text = duration.ToString() & " days"
+            duration = (datetmpick_end.Value - datetmpick_start.Value).Days
+            txt_prduration.Text = duration.ToString() & " days"
         Else
-            TextBox4.Text = "Invalid date range"
+            txt_prduration.Text = "Invalid date range"
         End If
     End Sub
 

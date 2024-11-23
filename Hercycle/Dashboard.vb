@@ -32,12 +32,12 @@ Public Class Dashboard
         If reader.HasRows Then
             Dim dt As New DataTable
             dt.Load(reader)
-            Guna2DataGridView1.DataSource = dt
+            gridview_tracker.DataSource = dt
 
             ' Hide the first two columns
-            If Guna2DataGridView1.Columns.Count > 1 Then
-                Guna2DataGridView1.Columns(0).Visible = False
-                Guna2DataGridView1.Columns(1).Visible = False
+            If gridview_tracker.Columns.Count > 1 Then
+                gridview_tracker.Columns(0).Visible = False
+                gridview_tracker.Columns(1).Visible = False
             End If
         Else
             MessageBox.Show("No records found for the current user.")

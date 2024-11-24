@@ -27,9 +27,9 @@ Partial Class LogIn
         Me.txt_password = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txt_username = New Guna.UI2.WinForms.Guna2TextBox()
         Me.pnl_login = New Guna.UI2.WinForms.Guna2GradientPanel()
-        Me.lbl_username = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lbl_password = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_question = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_password = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_username = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_login.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -37,7 +37,7 @@ Partial Class LogIn
         '
         Me.btn_login.AutoRoundedCorners = True
         Me.btn_login.BackColor = System.Drawing.Color.Transparent
-        Me.btn_login.BorderRadius = 15
+        Me.btn_login.BorderRadius = 31
         Me.btn_login.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_login.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btn_login.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -125,18 +125,18 @@ Partial Class LogIn
         Me.pnl_login.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.pnl_login.Location = New System.Drawing.Point(1, 0)
         Me.pnl_login.Name = "pnl_login"
-        Me.pnl_login.Size = New System.Drawing.Size(575, 509)
+        Me.pnl_login.Size = New System.Drawing.Size(575, 534)
         Me.pnl_login.TabIndex = 14
         '
-        'lbl_username
+        'lbl_question
         '
-        Me.lbl_username.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_username.Font = New System.Drawing.Font("Sitka Banner", 20.0!)
-        Me.lbl_username.Location = New System.Drawing.Point(37, 140)
-        Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(109, 41)
-        Me.lbl_username.TabIndex = 8
-        Me.lbl_username.Text = "Username"
+        Me.lbl_question.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_question.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
+        Me.lbl_question.Location = New System.Drawing.Point(91, 453)
+        Me.lbl_question.Name = "lbl_question"
+        Me.lbl_question.Size = New System.Drawing.Size(213, 37)
+        Me.lbl_question.TabIndex = 14
+        Me.lbl_question.Text = "Don't have an account?"
         '
         'lbl_password
         '
@@ -148,15 +148,15 @@ Partial Class LogIn
         Me.lbl_password.TabIndex = 13
         Me.lbl_password.Text = "Password"
         '
-        'lbl_question
+        'lbl_username
         '
-        Me.lbl_question.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_question.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
-        Me.lbl_question.Location = New System.Drawing.Point(91, 453)
-        Me.lbl_question.Name = "lbl_question"
-        Me.lbl_question.Size = New System.Drawing.Size(213, 37)
-        Me.lbl_question.TabIndex = 14
-        Me.lbl_question.Text = "Don't have an account?"
+        Me.lbl_username.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_username.Font = New System.Drawing.Font("Sitka Banner", 20.0!)
+        Me.lbl_username.Location = New System.Drawing.Point(37, 140)
+        Me.lbl_username.Name = "lbl_username"
+        Me.lbl_username.Size = New System.Drawing.Size(109, 41)
+        Me.lbl_username.TabIndex = 8
+        Me.lbl_username.Text = "Username"
         '
         'LogIn
         '

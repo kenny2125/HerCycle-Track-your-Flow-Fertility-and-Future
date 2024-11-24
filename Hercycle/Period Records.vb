@@ -6,7 +6,31 @@ Public Class Period_Records
 
     Private currentUserId As Integer = CurrentUser.UserId
 
-    Private Sub btn_addnew_Click(sender As Object, e As EventArgs)
+
+    Private Sub Guna2DateTimePicker3_ValueChanged(sender As Object, e As EventArgs)
+        CalculateDuration()
+    End Sub
+
+    Private Sub Guna2DateTimePicker2_ValueChanged(sender As Object, e As EventArgs)
+        CalculateDuration()
+    End Sub
+
+    Private Sub CalculateDuration()
+        ' Check if both date pickers have valid dates
+        If datetmpick_start.Value <= datetmpick_end.Value Then
+            ' Calculate the difference in days
+            duration = (datetmpick_end.Value - datetmpick_start.Value).Days
+            txt_prduration.Text = duration.ToString() & " days"
+        Else
+            txt_prduration.Text = "Invalid date range"
+        End If
+    End Sub
+
+    Private Sub btn_reset_Click(sender As Object, e As EventArgs) Handles btn_reset.Click
+
+    End Sub
+
+    Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         Try
             ' Ensure that duration is set correctly before attempting to insert
             If duration = 0 Then
@@ -38,24 +62,4 @@ Public Class Period_Records
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
     End Sub
-
-    Private Sub Guna2DateTimePicker3_ValueChanged(sender As Object, e As EventArgs)
-        CalculateDuration()
-    End Sub
-
-    Private Sub Guna2DateTimePicker2_ValueChanged(sender As Object, e As EventArgs)
-        CalculateDuration()
-    End Sub
-
-    Private Sub CalculateDuration()
-        ' Check if both date pickers have valid dates
-        If datetmpick_start.Value <= datetmpick_end.Value Then
-            ' Calculate the difference in days
-            duration = (datetmpick_end.Value - datetmpick_start.Value).Days
-            txt_prduration.Text = duration.ToString() & " days"
-        Else
-            txt_prduration.Text = "Invalid date range"
-        End If
-    End Sub
-
 End Class

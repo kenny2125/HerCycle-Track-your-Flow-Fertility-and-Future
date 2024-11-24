@@ -22,10 +22,12 @@ Partial Class _5
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lbl_header = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_message = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.lbl_message = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_start = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.pnl_message.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -83,6 +85,13 @@ Partial Class _5
         Me.btn_start.Text = "Start"
         Me.btn_start.TextOffset = New System.Drawing.Point(0, -3)
         '
+        'Guna2BorderlessForm1
+        '
+        Me.Guna2BorderlessForm1.BorderRadius = 20
+        Me.Guna2BorderlessForm1.ContainerControl = Me
+        Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
+        Me.Guna2BorderlessForm1.TransparentWhileDrag = True
+        '
         '_5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -92,7 +101,7 @@ Partial Class _5
         Me.Controls.Add(Me.btn_start)
         Me.Controls.Add(Me.pnl_message)
         Me.Controls.Add(Me.lbl_header)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "_5"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "_5"
@@ -107,4 +116,5 @@ Partial Class _5
     Friend WithEvents pnl_message As Guna.UI2.WinForms.Guna2GradientPanel
     Friend WithEvents lbl_message As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents btn_start As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
 End Class

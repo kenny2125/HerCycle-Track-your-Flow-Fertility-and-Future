@@ -40,7 +40,14 @@ Public Class _4
         End Using
     End Sub
 
-    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txt_input.TextChanged
+    Private Sub txt_input_TextChanged(sender As Object, e As EventArgs) Handles txt_input.TextChanged
+        ' Enable the button only if the TextBox is not empty
+        btn_enter.Enabled = Not String.IsNullOrWhiteSpace(txt_input.Text)
+    End Sub
 
+    Private Sub btn_enter_Click(sender As Object, e As EventArgs) Handles btn_enter.Click
+        ' Get the value from the TextBox
+        Dim answer As String = txt_input.Text
+        UpdateAnswer(answer)
     End Sub
 End Class

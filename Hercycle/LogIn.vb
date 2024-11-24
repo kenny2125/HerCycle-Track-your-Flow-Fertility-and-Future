@@ -60,6 +60,14 @@ Public Class LogIn
     Private Sub txt_usernamefield_TextChanged(sender As Object, e As EventArgs) Handles txt_password.TextChanged
 
     End Sub
+
+    Private Sub Guna2ToggleSwitch1_CheckedChanged(sender As Object, e As EventArgs) Handles Guna2ToggleSwitch1.CheckedChanged
+        If Guna2ToggleSwitch1.Checked Then
+            txt_password.PasswordChar = ""
+        Else
+            txt_password.PasswordChar = "*"c
+        End If
+    End Sub
 End Class
 
 ' Create a static class to hold the current user's information

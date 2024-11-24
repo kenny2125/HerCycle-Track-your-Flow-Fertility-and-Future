@@ -25,6 +25,8 @@ Partial Class SignUp
         Me.components = New System.ComponentModel.Container()
         Me.lbl_surname = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_signup = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.lbl_agevalue = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_signup = New Guna.UI2.WinForms.Guna2Button()
         Me.txt_cnfirmpassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txt_password = New Guna.UI2.WinForms.Guna2TextBox()
@@ -47,8 +49,8 @@ Partial Class SignUp
         Me.lbl_question = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_header = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
-        Me.lbl_agevalue = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2ToggleSwitch1 = New Guna.UI2.WinForms.Guna2ToggleSwitch()
+        Me.Guna2ToggleSwitch2 = New Guna.UI2.WinForms.Guna2ToggleSwitch()
         Me.pnl_signup.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -65,6 +67,8 @@ Partial Class SignUp
         '
         'pnl_signup
         '
+        Me.pnl_signup.Controls.Add(Me.Guna2ToggleSwitch2)
+        Me.pnl_signup.Controls.Add(Me.Guna2ToggleSwitch1)
         Me.pnl_signup.Controls.Add(Me.Guna2PictureBox1)
         Me.pnl_signup.Controls.Add(Me.lbl_agevalue)
         Me.pnl_signup.Controls.Add(Me.btn_signup)
@@ -95,6 +99,29 @@ Partial Class SignUp
         Me.pnl_signup.Name = "pnl_signup"
         Me.pnl_signup.Size = New System.Drawing.Size(1731, 698)
         Me.pnl_signup.TabIndex = 49
+        '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = Global.Hercycle.My.Resources.Resources.femme_flow__1_
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(1270, 26)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(300, 200)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2PictureBox1.TabIndex = 73
+        Me.Guna2PictureBox1.TabStop = False
+        Me.Guna2PictureBox1.UseTransparentBackground = True
+        '
+        'lbl_agevalue
+        '
+        Me.lbl_agevalue.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_agevalue.Font = New System.Drawing.Font("Sitka Banner", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_agevalue.Location = New System.Drawing.Point(1013, 384)
+        Me.lbl_agevalue.Name = "lbl_agevalue"
+        Me.lbl_agevalue.Size = New System.Drawing.Size(37, 37)
+        Me.lbl_agevalue.TabIndex = 72
+        Me.lbl_agevalue.Text = "Age"
         '
         'btn_signup
         '
@@ -424,28 +451,35 @@ Partial Class SignUp
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
-        'lbl_agevalue
+        'Guna2ToggleSwitch1
         '
-        Me.lbl_agevalue.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_agevalue.Font = New System.Drawing.Font("Sitka Banner", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_agevalue.Location = New System.Drawing.Point(1013, 384)
-        Me.lbl_agevalue.Name = "lbl_agevalue"
-        Me.lbl_agevalue.Size = New System.Drawing.Size(37, 37)
-        Me.lbl_agevalue.TabIndex = 72
-        Me.lbl_agevalue.Text = "Age"
+        Me.Guna2ToggleSwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch1.Location = New System.Drawing.Point(1566, 398)
+        Me.Guna2ToggleSwitch1.Name = "Guna2ToggleSwitch1"
+        Me.Guna2ToggleSwitch1.Size = New System.Drawing.Size(35, 20)
+        Me.Guna2ToggleSwitch1.TabIndex = 74
+        Me.Guna2ToggleSwitch1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2ToggleSwitch1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2ToggleSwitch1.UncheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch1.UncheckedState.InnerColor = System.Drawing.Color.White
         '
-        'Guna2PictureBox1
+        'Guna2ToggleSwitch2
         '
-        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.Image = Global.Hercycle.My.Resources.Resources.femme_flow__1_
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(1270, 26)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(300, 200)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2PictureBox1.TabIndex = 73
-        Me.Guna2PictureBox1.TabStop = False
-        Me.Guna2PictureBox1.UseTransparentBackground = True
+        Me.Guna2ToggleSwitch2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ToggleSwitch2.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ToggleSwitch2.CheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch2.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch2.Location = New System.Drawing.Point(1566, 528)
+        Me.Guna2ToggleSwitch2.Name = "Guna2ToggleSwitch2"
+        Me.Guna2ToggleSwitch2.Size = New System.Drawing.Size(35, 20)
+        Me.Guna2ToggleSwitch2.TabIndex = 75
+        Me.Guna2ToggleSwitch2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2ToggleSwitch2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2ToggleSwitch2.UncheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch2.UncheckedState.InnerColor = System.Drawing.Color.White
         '
         'SignUp
         '
@@ -490,4 +524,6 @@ Partial Class SignUp
     Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
     Friend WithEvents lbl_agevalue As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2ToggleSwitch2 As Guna.UI2.WinForms.Guna2ToggleSwitch
+    Friend WithEvents Guna2ToggleSwitch1 As Guna.UI2.WinForms.Guna2ToggleSwitch
 End Class

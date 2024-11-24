@@ -120,4 +120,7 @@
   <data name="lbl_message.Text" xml:space="preserve">
     <value>To provide you with a personalized menstrual cycle tracking experience, we’ll start with a few quick questions about your health and lifestyle. Your responses will help us tailor insights, recommend healthy habits, and ensure accurate predictions for your cycle. Let’s get started!</value>
   </data>
+  <metadata name="Guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

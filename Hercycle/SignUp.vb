@@ -79,4 +79,19 @@ Public Class SignUp
         datetmpick_birthdate.MaxDate = DateTime.Today ' Prevent selecting future dates
     End Sub
 
+    Private Sub Guna2ToggleSwitch1_CheckedChanged(sender As Object, e As EventArgs) Handles Guna2ToggleSwitch1.CheckedChanged
+        If Guna2ToggleSwitch1.Checked Then
+            txt_password.PasswordChar = ""
+        Else
+            txt_password.PasswordChar = "*"c
+        End If
+    End Sub
+
+    Private Sub Guna2ToggleSwitch2_CheckedChanged(sender As Object, e As EventArgs) Handles Guna2ToggleSwitch2.CheckedChanged
+        If Guna2ToggleSwitch2.Checked Then
+            txt_cnfirmpassword.PasswordChar = ""
+        Else
+            txt_cnfirmpassword.PasswordChar = "*"c
+        End If
+    End Sub
 End Class

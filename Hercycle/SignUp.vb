@@ -37,7 +37,7 @@ Public Class SignUp
                 cmd.Parameters.AddWithValue("@middleinitial", txt_middleint.Text)
                 cmd.Parameters.AddWithValue("@lastname", txt_surname.Text)
                 cmd.Parameters.AddWithValue("@email", txt_email.Text)
-                cmd.Parameters.AddWithValue("@age", txt_age.Text)
+                cmd.Parameters.AddWithValue("@age", lbl_agevalue.Text)
                 cmd.Parameters.AddWithValue("@birthdate", datetmpick_birthdate.Text)
 
                 cmd.Parameters.AddWithValue("@username", txt_username.Text)
@@ -60,4 +60,23 @@ Public Class SignUp
         LogIn.Show()
         Me.Hide()
     End Sub
+
+    Private Sub datetmpick_birthdate_ValueChanged(sender As Object, e As EventArgs) Handles datetmpick_birthdate.ValueChanged
+        Try
+            Dim birthdate As DateTime = datetmpick_birthdate.Value
+            Dim today As DateTime = DateTime.Today
+            Dim age As Integer = today.Year - birthdate.Year
+            If birthdate > today.AddYears(-age) Then age -= 1
+            lbl_agevalue.Text = age.ToString()
+            lbl_agevalue.Visible = True
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub SignUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lbl_agevalue.Visible = False
+        datetmpick_birthdate.MaxDate = DateTime.Today ' Prevent selecting future dates
+    End Sub
+
 End Class

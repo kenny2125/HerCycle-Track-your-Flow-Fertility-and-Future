@@ -440,7 +440,9 @@ Partial Class SignUp
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(1731, 696)
         Me.Controls.Add(Me.pnl_signup)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "SignUp"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sign Up"
         Me.pnl_signup.ResumeLayout(False)
         Me.pnl_signup.PerformLayout()

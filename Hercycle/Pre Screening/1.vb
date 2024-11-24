@@ -7,13 +7,13 @@ Public Class _1
     ' Assuming you have an instance of the DbConnect class for the connection
     Private db As New dbconnect()
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
         InsertAnswer("Yes")
         _2.Show()
         Me.Hide()
     End Sub
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs)
         InsertAnswer("No")
         _2.Show()
         Me.Hide()
@@ -38,5 +38,9 @@ Public Class _1
                 MessageBox.Show("Error: " & ex.Message)
             End Try
         End Using
+    End Sub
+
+    Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles btn_no.Click
+
     End Sub
 End Class

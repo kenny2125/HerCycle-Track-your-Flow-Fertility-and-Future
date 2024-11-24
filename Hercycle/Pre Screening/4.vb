@@ -4,15 +4,15 @@ Public Class _4
     Private currentUserId As Integer = CurrentUser.UserId
     Private db As New dbconnect()
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
         ' Get the value from the TextBox (assuming the TextBox is named TextBox1)
-        Dim answer As String = Guna2TextBox1.Text
+        Dim answer As String = txt_input.Text
         UpdateAnswer(answer)
         _5.ShowDialog()
         Me.Hide()
     End Sub
 
-    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs)
         ' For Button 4, update with "No"
         UpdateAnswer("No")
         _3.ShowDialog()
@@ -38,5 +38,9 @@ Public Class _4
                 MessageBox.Show("Error: " & ex.Message)
             End Try
         End Using
+    End Sub
+
+    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txt_input.TextChanged
+
     End Sub
 End Class

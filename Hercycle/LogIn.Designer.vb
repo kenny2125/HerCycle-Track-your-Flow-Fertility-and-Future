@@ -125,7 +125,7 @@ Partial Class LogIn
         Me.pnl_login.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.pnl_login.Location = New System.Drawing.Point(1, 0)
         Me.pnl_login.Name = "pnl_login"
-        Me.pnl_login.Size = New System.Drawing.Size(575, 535)
+        Me.pnl_login.Size = New System.Drawing.Size(575, 534)
         Me.pnl_login.TabIndex = 14
         '
         'lbl_question
@@ -167,6 +167,7 @@ Partial Class LogIn
         Me.ControlBox = False
         Me.Controls.Add(Me.pnl_login)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(592, 585)
         Me.MinimizeBox = False

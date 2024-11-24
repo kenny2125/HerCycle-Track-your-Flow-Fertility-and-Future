@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MyProfile
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class MyProfile
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btn_logout = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_close = New Guna.UI2.WinForms.Guna2Button()
@@ -236,13 +236,13 @@ Partial Class MyProfile
         Me.txt_age.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
         Me.txt_age.ForeColor = System.Drawing.Color.Black
         Me.txt_age.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_age.Location = New System.Drawing.Point(349, 280)
+        Me.txt_age.Location = New System.Drawing.Point(264, 351)
         Me.txt_age.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txt_age.Name = "txt_age"
         Me.txt_age.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_age.PlaceholderText = ""
         Me.txt_age.SelectedText = ""
-        Me.txt_age.Size = New System.Drawing.Size(54, 28)
+        Me.txt_age.Size = New System.Drawing.Size(139, 28)
         Me.txt_age.TabIndex = 66
         '
         'txt_birthdate
@@ -273,24 +273,24 @@ Partial Class MyProfile
         '
         Me.lbl_age.BackColor = System.Drawing.Color.Transparent
         Me.lbl_age.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_age.Location = New System.Drawing.Point(361, 243)
+        Me.lbl_age.Location = New System.Drawing.Point(264, 314)
         Me.lbl_age.Name = "lbl_age"
         Me.lbl_age.Size = New System.Drawing.Size(31, 31)
         Me.lbl_age.TabIndex = 64
         Me.lbl_age.Text = "Age"
-        '
-        'lbl_birthdate
-        '
+        Me.txt_age.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_age.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_age.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lbl_birthdate.BackColor = System.Drawing.Color.Transparent
         Me.lbl_birthdate.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_birthdate.Location = New System.Drawing.Point(228, 243)
+        Me.lbl_birthdate.Location = New System.Drawing.Point(224, 243)
         Me.lbl_birthdate.Name = "lbl_birthdate"
         Me.lbl_birthdate.Size = New System.Drawing.Size(75, 31)
         Me.lbl_birthdate.TabIndex = 63
         Me.lbl_birthdate.Text = "Birthdate"
-        '
-        'txt_password
-        '
+        Me.txt_age.PlaceholderText = ""
+        Me.txt_age.SelectedText = ""
+        Me.txt_age.Size = New System.Drawing.Size(139, 28)
         Me.txt_password.BackColor = System.Drawing.Color.Transparent
         Me.txt_password.BorderColor = System.Drawing.Color.White
         Me.txt_password.BorderThickness = 0
@@ -304,14 +304,42 @@ Partial Class MyProfile
         Me.txt_password.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
         Me.txt_password.ForeColor = System.Drawing.Color.Black
         Me.txt_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_password.Location = New System.Drawing.Point(18, 351)
+        Me.txt_password.Location = New System.Drawing.Point(20, 351)
         Me.txt_password.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_password.PlaceholderText = ""
         Me.txt_password.SelectedText = ""
-        Me.txt_password.Size = New System.Drawing.Size(185, 28)
+        Me.txt_password.Size = New System.Drawing.Size(235, 28)
         Me.txt_password.TabIndex = 62
+        Me.txt_age.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.txt_age.Name = "txt_age"
+        Me.txt_age.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_age.PlaceholderText = ""
+        Me.txt_age.SelectedText = ""
+        Me.txt_age.Size = New System.Drawing.Size(139, 28)
+        Me.txt_age.TabIndex = 66
+        '
+        'lbl_birthdate
+        '
+        Me.lbl_subheader.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_subheader.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_subheader.Location = New System.Drawing.Point(454, 41)
+        Me.lbl_subheader.Name = "lbl_subheader"
+        Me.lbl_subheader.Size = New System.Drawing.Size(191, 31)
+        Me.lbl_subheader.TabIndex = 67
+        Me.lbl_subheader.Text = "Pre Screening Answers"
+        '
+        'txt_password
+        '
+        Me.dvd_myprofile.BackColor = System.Drawing.Color.White
+        Me.dvd_myprofile.Depth = 0
+        Me.dvd_myprofile.Location = New System.Drawing.Point(427, 41)
+        Me.dvd_myprofile.MouseState = MaterialSkin.MouseState.HOVER
+        Me.dvd_myprofile.Name = "dvd_myprofile"
+        Me.dvd_myprofile.Size = New System.Drawing.Size(10, 338)
+        Me.dvd_myprofile.TabIndex = 68
+        Me.dvd_myprofile.Text = "MaterialDivider1"
         '
         'txt_username
         '
@@ -365,13 +393,27 @@ Partial Class MyProfile
         Me.txt_email.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txt_email.DefaultText = ""
         Me.txt_email.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_email.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_email.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.txt_email.ForeColor = System.Drawing.Color.Black
-        Me.txt_email.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_name.BackColor = System.Drawing.Color.Transparent
+        Me.txt_name.BorderColor = System.Drawing.Color.White
+        Me.txt_name.BorderThickness = 0
+        Me.txt_name.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_name.DefaultText = ""
+        Me.txt_name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_name.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_name.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_name.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
+        Me.txt_name.ForeColor = System.Drawing.Color.Black
+        Me.txt_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_name.Location = New System.Drawing.Point(17, 138)
+        Me.txt_name.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.txt_name.Name = "txt_name"
+        Me.txt_name.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_name.PlaceholderText = ""
+        Me.txt_name.SelectedText = ""
+        Me.txt_name.Size = New System.Drawing.Size(385, 28)
+        Me.txt_name.TabIndex = 56
         Me.txt_email.Location = New System.Drawing.Point(18, 209)
         Me.txt_email.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txt_email.Name = "txt_email"
@@ -393,27 +435,13 @@ Partial Class MyProfile
         '
         'txt_name
         '
-        Me.txt_name.BackColor = System.Drawing.Color.Transparent
-        Me.txt_name.BorderColor = System.Drawing.Color.White
-        Me.txt_name.BorderThickness = 0
-        Me.txt_name.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_name.DefaultText = ""
-        Me.txt_name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_name.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_name.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_name.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.txt_name.ForeColor = System.Drawing.Color.Black
-        Me.txt_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_name.Location = New System.Drawing.Point(17, 138)
-        Me.txt_name.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.txt_name.Name = "txt_name"
-        Me.txt_name.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_name.PlaceholderText = ""
-        Me.txt_name.SelectedText = ""
-        Me.txt_name.Size = New System.Drawing.Size(386, 28)
-        Me.txt_name.TabIndex = 56
+        Me.lbl_ans2.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_ans2.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_ans2.Location = New System.Drawing.Point(463, 181)
+        Me.lbl_ans2.Name = "lbl_ans2"
+        Me.lbl_ans2.Size = New System.Drawing.Size(29, 31)
+        Me.lbl_ans2.TabIndex = 74
+        Me.lbl_ans2.Text = "NO"
         '
         'lbl_name
         '
@@ -442,7 +470,9 @@ Partial Class MyProfile
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(948, 415)
         Me.Controls.Add(Me.pnl_tracking)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "MyProfile"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MyProfile"
         Me.pnl_tracking.ResumeLayout(False)
         Me.pnl_tracking.PerformLayout()

@@ -24,7 +24,7 @@ Public Class dbconnect
                     Case Else
                         Console.WriteLine(ex.Message)
                 End Select
-                MessageBox.Show("Please check your internet connection")
+                MessageBox.Show("Please check your database connection")
             End Try
         Else
             Console.WriteLine("Connection is already open")

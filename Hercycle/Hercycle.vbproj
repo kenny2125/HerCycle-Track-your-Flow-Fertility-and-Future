@@ -325,6 +325,7 @@
     <None Include="bin\Assets\Pre Screening 4.png" />
     <None Include="bin\Assets\Pre Screening 5.png" />
     <None Include="bin\Assets\MY Profile.png" />
+    <Content Include="bin\Assets\femme flow %281%29.png" />
     <Content Include="bin\femme flow %281%29.ico" />
     <Content Include="bin\Assets\Login.jpg" />
   </ItemGroup>

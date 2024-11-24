@@ -136,6 +136,9 @@
   <data name="Sign Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Assets\Sign Up.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MY Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Assets\MY Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Pre Screening  1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Assets\Pre Screening  1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,7 +151,7 @@
   <data name="Pre Screening 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Assets\Pre Screening 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MY Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Assets\MY Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="femme flow (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Assets\femme flow (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

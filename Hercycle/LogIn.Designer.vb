@@ -27,9 +27,9 @@ Partial Class LogIn
         Me.txt_password = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txt_username = New Guna.UI2.WinForms.Guna2TextBox()
         Me.pnl_login = New Guna.UI2.WinForms.Guna2GradientPanel()
-        Me.lbl_username = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lbl_password = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_question = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_password = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_username = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_login.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -37,7 +37,7 @@ Partial Class LogIn
         '
         Me.btn_login.AutoRoundedCorners = True
         Me.btn_login.BackColor = System.Drawing.Color.Transparent
-        Me.btn_login.BorderRadius = 15
+        Me.btn_login.BorderRadius = 31
         Me.btn_login.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_login.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btn_login.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -81,7 +81,7 @@ Partial Class LogIn
         Me.txt_password.Location = New System.Drawing.Point(37, 308)
         Me.txt_password.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.txt_password.Name = "txt_password"
-        Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_password.PlaceholderText = ""
         Me.txt_password.SelectedText = ""
         Me.txt_password.Size = New System.Drawing.Size(496, 56)
@@ -125,28 +125,8 @@ Partial Class LogIn
         Me.pnl_login.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.pnl_login.Location = New System.Drawing.Point(1, 0)
         Me.pnl_login.Name = "pnl_login"
-        Me.pnl_login.Size = New System.Drawing.Size(575, 509)
+        Me.pnl_login.Size = New System.Drawing.Size(575, 535)
         Me.pnl_login.TabIndex = 14
-        '
-        'lbl_username
-        '
-        Me.lbl_username.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_username.Font = New System.Drawing.Font("Sitka Banner", 20.0!)
-        Me.lbl_username.Location = New System.Drawing.Point(37, 140)
-        Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(109, 41)
-        Me.lbl_username.TabIndex = 8
-        Me.lbl_username.Text = "Username"
-        '
-        'lbl_password
-        '
-        Me.lbl_password.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_password.Font = New System.Drawing.Font("Sitka Banner", 20.0!)
-        Me.lbl_password.Location = New System.Drawing.Point(37, 261)
-        Me.lbl_password.Name = "lbl_password"
-        Me.lbl_password.Size = New System.Drawing.Size(101, 41)
-        Me.lbl_password.TabIndex = 13
-        Me.lbl_password.Text = "Password"
         '
         'lbl_question
         '
@@ -158,12 +138,32 @@ Partial Class LogIn
         Me.lbl_question.TabIndex = 14
         Me.lbl_question.Text = "Don't have an account?"
         '
+        'lbl_password
+        '
+        Me.lbl_password.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_password.Font = New System.Drawing.Font("Sitka Banner", 20.0!)
+        Me.lbl_password.Location = New System.Drawing.Point(37, 261)
+        Me.lbl_password.Name = "lbl_password"
+        Me.lbl_password.Size = New System.Drawing.Size(102, 41)
+        Me.lbl_password.TabIndex = 13
+        Me.lbl_password.Text = "Password"
+        '
+        'lbl_username
+        '
+        Me.lbl_username.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_username.Font = New System.Drawing.Font("Sitka Banner", 20.0!)
+        Me.lbl_username.Location = New System.Drawing.Point(37, 140)
+        Me.lbl_username.Name = "lbl_username"
+        Me.lbl_username.Size = New System.Drawing.Size(109, 41)
+        Me.lbl_username.TabIndex = 8
+        Me.lbl_username.Text = "Username"
+        '
         'LogIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(576, 507)
+        Me.ClientSize = New System.Drawing.Size(576, 530)
         Me.ControlBox = False
         Me.Controls.Add(Me.pnl_login)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)

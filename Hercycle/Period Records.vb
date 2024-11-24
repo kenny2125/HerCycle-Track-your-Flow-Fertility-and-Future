@@ -6,10 +6,6 @@ Public Class Period_Records
 
     Private currentUserId As Integer = CurrentUser.UserId
 
-    Private Sub Period_Records_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Any initialization code here if needed
-    End Sub
-
     Private Sub btn_addnew_Click(sender As Object, e As EventArgs)
         Try
             ' Ensure that duration is set correctly before attempting to insert
@@ -62,11 +58,4 @@ Public Class Period_Records
         End If
     End Sub
 
-    Private Sub lbl_subheader_Click(sender As Object, e As EventArgs) Handles lbl_startdate.Click
-
-    End Sub
-
-    Private Sub txt_givenname_TextChanged(sender As Object, e As EventArgs) Handles txt_prduration.TextChanged
-
-    End Sub
 End Class

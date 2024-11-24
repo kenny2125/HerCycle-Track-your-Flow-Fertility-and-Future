@@ -90,69 +90,9 @@ Public Class MyProfile
         Me.Hide()
         Dashboard.Hide()
 
-
-
         ' Alternatively, you can dispose the form explicitly to free up resources
         ' Me.Dispose()
     End Sub
 
-    Private Sub lbl_header_Click(sender As Object, e As EventArgs) Handles lbl_header.Click
 
-    End Sub
-
-    Private Sub Guna2TextBox4_TextChanged(sender As Object, e As EventArgs) Handles txt_birthdate.TextChanged
-
-    End Sub
-
-    Private Sub Guna2HtmlLabel5_Click(sender As Object, e As EventArgs) Handles lbl_age.Click
-
-    End Sub
-
-    Private Sub Guna2HtmlLabel4_Click(sender As Object, e As EventArgs) Handles lbl_birthdate.Click
-
-    End Sub
-
-    Private Sub Guna2TextBox3_TextChanged(sender As Object, e As EventArgs) Handles txt_password.TextChanged
-
-    End Sub
-
-    Private Sub Guna2TextBox2_TextChanged(sender As Object, e As EventArgs) Handles txt_username.TextChanged
-
-    End Sub
-
-    Private Sub Guna2HtmlLabel3_Click(sender As Object, e As EventArgs) Handles lbl_password.Click
-
-    End Sub
-
-    Private Sub Guna2HtmlLabel2_Click(sender As Object, e As EventArgs) Handles lbl_username.Click
-
-    End Sub
-
-    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txt_email.TextChanged
-
-    End Sub
-
-    Private Sub Guna2HtmlLabel1_Click(sender As Object, e As EventArgs) Handles lbl_email.Click
-
-    End Sub
-
-    Private Sub txt_passwordfield_TextChanged(sender As Object, e As EventArgs) Handles txt_name.TextChanged
-
-    End Sub
-
-    Private Sub lbl_givenname_Click(sender As Object, e As EventArgs) Handles lbl_name.Click
-
-    End Sub
-
-    Private Sub Guna2TextBox5_TextChanged(sender As Object, e As EventArgs) Handles txt_age.TextChanged
-
-    End Sub
-
-    Private Sub Guna2HtmlLabel10_Click(sender As Object, e As EventArgs) Handles lbl_ques4.Click
-
-    End Sub
-
-    Private Sub Guna2HtmlLabel11_Click(sender As Object, e As EventArgs) Handles lbl_ans1.Click
-
-    End Sub
 End Class

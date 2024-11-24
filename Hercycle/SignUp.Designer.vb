@@ -126,7 +126,7 @@ Partial Class SignUp
         Me.txt_cnfirmpassword.Location = New System.Drawing.Point(1204, 445)
         Me.txt_cnfirmpassword.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.txt_cnfirmpassword.Name = "txt_cnfirmpassword"
-        Me.txt_cnfirmpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_cnfirmpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_cnfirmpassword.PlaceholderText = ""
         Me.txt_cnfirmpassword.SelectedText = ""
         Me.txt_cnfirmpassword.Size = New System.Drawing.Size(415, 74)
@@ -149,7 +149,7 @@ Partial Class SignUp
         Me.txt_password.Location = New System.Drawing.Point(1204, 284)
         Me.txt_password.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.txt_password.Name = "txt_password"
-        Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_password.PlaceholderText = ""
         Me.txt_password.SelectedText = ""
         Me.txt_password.Size = New System.Drawing.Size(415, 74)

@@ -7,13 +7,12 @@
         pictureBox.Dock = DockStyle.Fill
         Me.Controls.Add(pictureBox)
 
-        'Dim dbconnect As New dbconnect
-        'dbconnect.connect()
+
 
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
-        LogIn.Show()
 
+    Private Sub btn_getstarted_Click(sender As Object, e As EventArgs) Handles btn_getstarted.Click
+        LogIn.Show()
     End Sub
 End Class

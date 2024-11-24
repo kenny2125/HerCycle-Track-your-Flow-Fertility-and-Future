@@ -21,7 +21,7 @@ Public Class MyProfile
         db.connect()
 
         ' SQL query to get user data (assuming fields: name, email, etc. in tbl_user)
-        Dim query As String = "SELECT firstname, middleinitial, lastname, email, age, gender, username, password FROM tbl_user WHERE user_ID = @user_ID"
+        Dim query As String = "SELECT firstname, middleinitial, lastname, email, gender, username, password FROM tbl_user WHERE user_ID = @user_ID"
 
         ' Use the connection object from DbConnect class
         Using cmd As New MySqlCommand(query, db.conn)
@@ -32,13 +32,13 @@ Public Class MyProfile
                 Using reader As MySqlDataReader = cmd.ExecuteReader()
                     If reader.Read() Then
                         ' Concatenate the first and last name for label1
-                        Label1.Text = reader("firstname").ToString() & " " & reader("middleinitial").ToString() & reader("lastname").ToString()
+                        txt_name.Text = reader("firstname").ToString() & " " & reader("middleinitial").ToString() & reader("lastname").ToString()
                         ' Set other labels with user data
-                        Label2.Text = reader("email").ToString()
-                        Label3.Text = reader("username").ToString()
-                        Label4.Text = reader("password").ToString()
-                        Label5.Text = reader("age").ToString()
-                        Label6.Text = reader("gender").ToString()
+                        txt_email.Text = reader("email").ToString()
+                        txt_username.Text = reader("username").ToString()
+                        txt_birthdate.Text = reader("password").ToString()
+                        txt_age.Text = reader("age").ToString()
+
 
                     End If
                 End Using
@@ -64,10 +64,10 @@ Public Class MyProfile
                 Using reader As MySqlDataReader = cmd.ExecuteReader()
                     If reader.Read() Then
                         ' Set labels for Q1 to Q4 from tbl_answers
-                        Label7.Text = reader("Q1").ToString()
-                        Label8.Text = reader("Q2").ToString()
-                        Label9.Text = reader("Q3").ToString()
-                        Label10.Text = reader("Q4").ToString()
+                        lbl_ans1.Text = reader("Q1").ToString()
+                        lbl_ans2.Text = reader("Q2").ToString()
+                        lbl_ans3.Text = reader("Q3").ToString()
+                        lbl_ans4.Text = reader("Q4").ToString()
                     End If
                 End Using
             Catch ex As Exception

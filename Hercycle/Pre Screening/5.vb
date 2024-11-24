@@ -1,5 +1,5 @@
 ﻿Public Class _5
-    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs)
         Period_Records.Show()
         Me.Hide()
 

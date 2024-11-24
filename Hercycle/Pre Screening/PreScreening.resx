@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lbl_message.Text" xml:space="preserve">
+    <value>To provide you with a personalized menstrual cycle tracking experience, we’ll start with a few quick questions about your health and lifestyle. Your responses will help us tailor insights, recommend healthy habits, and ensure accurate predictions for your cycle. Let’s get started!</value>
+  </data>
 </root>

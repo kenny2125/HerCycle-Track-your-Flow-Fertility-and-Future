@@ -22,92 +22,116 @@ Partial Class _4
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.lbl_header = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_subheader = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.txt_input = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btn_enter = New Guna.UI2.WinForms.Guna2Button()
+        Me.btn_no = New Guna.UI2.WinForms.Guna2Button()
         Me.SuspendLayout()
         '
-        'Guna2Button4
+        'lbl_header
         '
-        Me.Guna2Button4.BorderRadius = 20
-        Me.Guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button4.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(163, Byte), Integer), CType(CType(163, Byte), Integer))
-        Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button4.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Button4.Location = New System.Drawing.Point(228, 426)
-        Me.Guna2Button4.Name = "Guna2Button4"
-        Me.Guna2Button4.Size = New System.Drawing.Size(180, 27)
-        Me.Guna2Button4.TabIndex = 8
-        Me.Guna2Button4.Text = "Yes"
+        Me.lbl_header.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_header.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
+        Me.lbl_header.ForeColor = System.Drawing.Color.White
+        Me.lbl_header.Location = New System.Drawing.Point(207, 12)
+        Me.lbl_header.Name = "lbl_header"
+        Me.lbl_header.Size = New System.Drawing.Size(229, 37)
+        Me.lbl_header.TabIndex = 54
+        Me.lbl_header.Text = "Pre-Screening Questions"
         '
-        'Guna2PictureBox1
+        'lbl_subheader
         '
-        Me.Guna2PictureBox1.Image = Global.Hercycle.My.Resources.Resources.Pre_Screening_4
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(-5, -1)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(652, 486)
-        Me.Guna2PictureBox1.TabIndex = 0
-        Me.Guna2PictureBox1.TabStop = False
+        Me.lbl_subheader.AutoSize = False
+        Me.lbl_subheader.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_subheader.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_subheader.ForeColor = System.Drawing.Color.White
+        Me.lbl_subheader.Location = New System.Drawing.Point(72, 55)
+        Me.lbl_subheader.Name = "lbl_subheader"
+        Me.lbl_subheader.Size = New System.Drawing.Size(500, 88)
+        Me.lbl_subheader.TabIndex = 57
+        Me.lbl_subheader.Text = "What is the average length of your menstrual cycle (in days)?"
+        Me.lbl_subheader.TextAlignment = System.Drawing.ContentAlignment.TopCenter
         '
-        'Guna2TextBox1
+        'txt_input
         '
-        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox1.DefaultText = ""
-        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(193, 375)
-        Me.Guna2TextBox1.Name = "Guna2TextBox1"
-        Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox1.PlaceholderText = ""
-        Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(130, 36)
-        Me.Guna2TextBox1.TabIndex = 9
+        Me.txt_input.BackColor = System.Drawing.Color.Transparent
+        Me.txt_input.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(163, Byte), Integer), CType(CType(163, Byte), Integer))
+        Me.txt_input.BorderRadius = 20
+        Me.txt_input.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_input.DefaultText = ""
+        Me.txt_input.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_input.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_input.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_input.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_input.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(163, Byte), Integer), CType(CType(163, Byte), Integer))
+        Me.txt_input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_input.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_input.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_input.Location = New System.Drawing.Point(178, 363)
+        Me.txt_input.Name = "txt_input"
+        Me.txt_input.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_input.PlaceholderText = ""
+        Me.txt_input.SelectedText = ""
+        Me.txt_input.Size = New System.Drawing.Size(158, 41)
+        Me.txt_input.TabIndex = 58
         '
-        'Guna2Button1
+        'btn_enter
         '
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(344, 366)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(180, 45)
-        Me.Guna2Button1.TabIndex = 10
-        Me.Guna2Button1.Text = "Guna2Button1"
+        Me.btn_enter.BorderRadius = 20
+        Me.btn_enter.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_enter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_enter.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_enter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_enter.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(163, Byte), Integer), CType(CType(163, Byte), Integer))
+        Me.btn_enter.Font = New System.Drawing.Font("Sitka Banner", 18.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_enter.ForeColor = System.Drawing.Color.Black
+        Me.btn_enter.Location = New System.Drawing.Point(342, 363)
+        Me.btn_enter.Name = "btn_enter"
+        Me.btn_enter.Size = New System.Drawing.Size(112, 41)
+        Me.btn_enter.TabIndex = 59
+        Me.btn_enter.Text = "Enter"
+        Me.btn_enter.TextOffset = New System.Drawing.Point(0, -3)
+        '
+        'btn_no
+        '
+        Me.btn_no.BorderRadius = 20
+        Me.btn_no.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_no.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_no.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_no.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_no.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(163, Byte), Integer), CType(CType(163, Byte), Integer))
+        Me.btn_no.Font = New System.Drawing.Font("Sitka Banner", 18.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_no.ForeColor = System.Drawing.Color.Black
+        Me.btn_no.Location = New System.Drawing.Point(251, 417)
+        Me.btn_no.Name = "btn_no"
+        Me.btn_no.Size = New System.Drawing.Size(130, 41)
+        Me.btn_no.TabIndex = 60
+        Me.btn_no.Text = "Not Sure"
+        Me.btn_no.TextOffset = New System.Drawing.Point(0, -3)
         '
         '_4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(649, 481)
-        Me.Controls.Add(Me.Guna2Button1)
-        Me.Controls.Add(Me.Guna2TextBox1)
-        Me.Controls.Add(Me.Guna2Button4)
-        Me.Controls.Add(Me.Guna2PictureBox1)
+        Me.Controls.Add(Me.btn_no)
+        Me.Controls.Add(Me.btn_enter)
+        Me.Controls.Add(Me.txt_input)
+        Me.Controls.Add(Me.lbl_subheader)
+        Me.Controls.Add(Me.lbl_header)
         Me.Name = "_4"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
         Me.Text = "_4"
         Me.TopMost = True
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents lbl_header As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_subheader As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents txt_input As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btn_enter As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btn_no As Guna.UI2.WinForms.Guna2Button
 End Class

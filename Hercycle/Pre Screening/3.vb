@@ -5,13 +5,13 @@ Public Class _3
     Private currentUserId As Integer = CurrentUser.UserId
     Private db As New dbconnect()
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
         UpdateAnswer("Yes")
         _4.ShowDialog()
         Me.Hide()
     End Sub
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs)
         UpdateAnswer("No")
         _4.ShowDialog()
         Me.Hide()
@@ -38,4 +38,7 @@ Public Class _3
         End Using
     End Sub
 
+    Private Sub lbl_subheader_Click(sender As Object, e As EventArgs) Handles lbl_header.Click
+
+    End Sub
 End Class

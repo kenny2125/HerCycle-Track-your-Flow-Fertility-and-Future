@@ -4,7 +4,8 @@ Public Class LogIn
 
     Private dbconnect As New dbconnect
 
-
+    Public Event RecordAdded()
+    Public Event UserLoggedIn()
 
 
     Private Sub LogIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -16,6 +17,8 @@ Public Class LogIn
         ' Get the username and password
         Dim username As String = txt_password.Text
         Dim password As String = txt_username.Text
+
+        RaiseEvent RecordAdded()
 
         ' SQL query to check if the username and password matched from the database
         Dim query As String = "SELECT user_id FROM tbl_user WHERE username = @username AND password = @password"
@@ -32,7 +35,9 @@ Public Class LogIn
                 MsgBox("Login Success")
 
                 ' Store user ID in a static class or variable for global access
-                CurrentUser.UserId = userId
+                CurrentUser.UserId = userId ' Set the current user ID
+
+                ' Raise the UserLoggedIn event
 
 
                 Dashboard.Show()
@@ -44,6 +49,9 @@ Public Class LogIn
             reader.Close()
         End Using
     End Sub
+
+
+
 
 
     Private Sub linklbl_create_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklbl_create.LinkClicked

@@ -39,14 +39,14 @@ Public Class _4
         Dim answer As String = txt_input.Text
         UpdateAnswer(answer)
         _5.ShowDialog()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub btn_no_Click(sender As Object, e As EventArgs) Handles btn_no.Click
         ' For Button 4, update with "No"
         UpdateAnswer("No")
         _5.ShowDialog()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
@@ -54,6 +54,6 @@ Public Class _4
         Dim answer As String = txt_input.Text
         UpdateAnswer(answer)
         _5.ShowDialog()
-        Me.Hide()
+        Me.Close()
     End Sub
 End Class

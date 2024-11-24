@@ -31,12 +31,8 @@ Public Class _5
 
     Private Sub btn_start_Click(sender As Object, e As EventArgs) Handles btn_start.Click
         Period_Records.Show()
-        PreScreening.Hide()
-        _1.Hide()
-        _2.Hide()
-        _3.Hide()
-        _4.Hide()
-        Me.Hide()
+        PreScreening.Close()
+        Me.Close()
         UpdateAnswer()
     End Sub
 End Class

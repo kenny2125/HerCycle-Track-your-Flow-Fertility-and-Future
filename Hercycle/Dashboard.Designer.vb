@@ -23,9 +23,10 @@ Partial Class Dashboard
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2ShapesTool1 = New Guna.UI2.WinForms.Guna2ShapesTool(Me.components)
         Me.pnl_dashboard = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -36,14 +37,11 @@ Partial Class Dashboard
         Me.lbl_profname = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_dashboardbg = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.pnl_periodtracker = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.btn_save = New Guna.UI2.WinForms.Guna2Button()
+        Me.btn_edit = New Guna.UI2.WinForms.Guna2Button()
+        Me.gridview_tracker = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.lbl_periodtracker = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_addnew = New Guna.UI2.WinForms.Guna2Button()
-        Me.gridview_tracker = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.col1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnl_dailydigest = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.linklbl_details = New System.Windows.Forms.LinkLabel()
         Me.lbl_dailydigest = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -198,15 +196,120 @@ Partial Class Dashboard
         '
         Me.pnl_periodtracker.BackColor = System.Drawing.Color.Transparent
         Me.pnl_periodtracker.BorderRadius = 25
+        Me.pnl_periodtracker.Controls.Add(Me.btn_save)
+        Me.pnl_periodtracker.Controls.Add(Me.btn_edit)
+        Me.pnl_periodtracker.Controls.Add(Me.gridview_tracker)
         Me.pnl_periodtracker.Controls.Add(Me.lbl_periodtracker)
         Me.pnl_periodtracker.Controls.Add(Me.btn_addnew)
-        Me.pnl_periodtracker.Controls.Add(Me.gridview_tracker)
         Me.pnl_periodtracker.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.pnl_periodtracker.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.pnl_periodtracker.Location = New System.Drawing.Point(751, 501)
         Me.pnl_periodtracker.Name = "pnl_periodtracker"
         Me.pnl_periodtracker.Size = New System.Drawing.Size(1129, 346)
         Me.pnl_periodtracker.TabIndex = 6
+        '
+        'btn_save
+        '
+        Me.btn_save.BorderRadius = 6
+        Me.btn_save.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_save.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_save.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_save.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_save.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_save.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
+        Me.btn_save.Font = New System.Drawing.Font("Sitka Banner", 13.0!)
+        Me.btn_save.ForeColor = System.Drawing.Color.White
+        Me.btn_save.Location = New System.Drawing.Point(546, 13)
+        Me.btn_save.Name = "btn_save"
+        Me.btn_save.Size = New System.Drawing.Size(172, 37)
+        Me.btn_save.TabIndex = 22
+        Me.btn_save.Text = "Save"
+        '
+        'btn_edit
+        '
+        Me.btn_edit.BorderRadius = 6
+        Me.btn_edit.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_edit.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_edit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_edit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_edit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_edit.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
+        Me.btn_edit.Font = New System.Drawing.Font("Sitka Banner", 13.0!)
+        Me.btn_edit.ForeColor = System.Drawing.Color.White
+        Me.btn_edit.Location = New System.Drawing.Point(741, 13)
+        Me.btn_edit.Name = "btn_edit"
+        Me.btn_edit.Size = New System.Drawing.Size(172, 37)
+        Me.btn_edit.TabIndex = 21
+        Me.btn_edit.Text = "Enable Editing"
+        '
+        'gridview_tracker
+        '
+        Me.gridview_tracker.AllowUserToAddRows = False
+        Me.gridview_tracker.AllowUserToDeleteRows = False
+        Me.gridview_tracker.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.gridview_tracker.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.gridview_tracker.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gridview_tracker.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.gridview_tracker.ColumnHeadersHeight = 30
+        Me.gridview_tracker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.gridview_tracker.DefaultCellStyle = DataGridViewCellStyle3
+        Me.gridview_tracker.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridview_tracker.Location = New System.Drawing.Point(30, 56)
+        Me.gridview_tracker.Name = "gridview_tracker"
+        Me.gridview_tracker.ReadOnly = True
+        Me.gridview_tracker.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gridview_tracker.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.gridview_tracker.RowHeadersVisible = False
+        Me.gridview_tracker.RowTemplate.Height = 34
+        Me.gridview_tracker.Size = New System.Drawing.Size(1075, 266)
+        Me.gridview_tracker.TabIndex = 20
+        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.gridview_tracker.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.gridview_tracker.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridview_tracker.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridview_tracker.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.gridview_tracker.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gridview_tracker.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.gridview_tracker.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.gridview_tracker.ThemeStyle.HeaderStyle.Height = 30
+        Me.gridview_tracker.ThemeStyle.ReadOnly = True
+        Me.gridview_tracker.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.gridview_tracker.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.gridview_tracker.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gridview_tracker.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.gridview_tracker.ThemeStyle.RowsStyle.Height = 34
+        Me.gridview_tracker.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridview_tracker.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
         'lbl_periodtracker
         '
@@ -234,86 +337,6 @@ Partial Class Dashboard
         Me.btn_addnew.Size = New System.Drawing.Size(172, 37)
         Me.btn_addnew.TabIndex = 19
         Me.btn_addnew.Text = "Add New Record"
-        '
-        'gridview_tracker
-        '
-        Me.gridview_tracker.AllowUserToAddRows = False
-        Me.gridview_tracker.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Sitka Text", 15.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        Me.gridview_tracker.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(161, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Sitka Banner", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.gridview_tracker.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.gridview_tracker.ColumnHeadersHeight = 35
-        Me.gridview_tracker.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col1, Me.col2, Me.col3, Me.col4, Me.col5})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(161, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.gridview_tracker.DefaultCellStyle = DataGridViewCellStyle6
-        Me.gridview_tracker.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.gridview_tracker.Location = New System.Drawing.Point(27, 63)
-        Me.gridview_tracker.Name = "gridview_tracker"
-        Me.gridview_tracker.RowHeadersVisible = False
-        Me.gridview_tracker.Size = New System.Drawing.Size(1078, 253)
-        Me.gridview_tracker.TabIndex = 20
-        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.gridview_tracker.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.gridview_tracker.ThemeStyle.BackColor = System.Drawing.Color.White
-        Me.gridview_tracker.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.gridview_tracker.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.gridview_tracker.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.gridview_tracker.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gridview_tracker.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.gridview_tracker.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.gridview_tracker.ThemeStyle.HeaderStyle.Height = 35
-        Me.gridview_tracker.ThemeStyle.ReadOnly = False
-        Me.gridview_tracker.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.gridview_tracker.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.gridview_tracker.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gridview_tracker.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.gridview_tracker.ThemeStyle.RowsStyle.Height = 22
-        Me.gridview_tracker.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.gridview_tracker.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'col1
-        '
-        Me.col1.HeaderText = "Date"
-        Me.col1.Name = "col1"
-        '
-        'col2
-        '
-        Me.col2.HeaderText = "Start"
-        Me.col2.Name = "col2"
-        '
-        'col3
-        '
-        Me.col3.HeaderText = "End"
-        Me.col3.Name = "col3"
-        '
-        'col4
-        '
-        Me.col4.HeaderText = "Period Duration"
-        Me.col4.Name = "col4"
-        '
-        'col5
-        '
-        Me.col5.HeaderText = "Notes"
-        Me.col5.Name = "col5"
         '
         'pnl_dailydigest
         '
@@ -729,12 +752,6 @@ Partial Class Dashboard
     Friend WithEvents txt_ovulation As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txt_follicular As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btn_addnew As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents gridview_tracker As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents col1 As DataGridViewTextBoxColumn
-    Friend WithEvents col2 As DataGridViewTextBoxColumn
-    Friend WithEvents col3 As DataGridViewTextBoxColumn
-    Friend WithEvents col4 As DataGridViewTextBoxColumn
-    Friend WithEvents col5 As DataGridViewTextBoxColumn
     Friend WithEvents pnl_cycle As Guna.UI2.WinForms.Guna2GradientPanel
     Friend WithEvents pnl_tracking As Guna.UI2.WinForms.Guna2GradientPanel
     Friend WithEvents lbl_periodtitle As Guna.UI2.WinForms.Guna2HtmlLabel
@@ -749,4 +766,7 @@ Partial Class Dashboard
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents gridview_tracker As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents btn_edit As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btn_save As Guna.UI2.WinForms.Guna2Button
 End Class

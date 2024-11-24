@@ -40,4 +40,8 @@ Public Class CurrentUser
     Public Shared Property UserId As Integer
 End Class
 
-
+Public Class CurrentUserEvents
+    ' Declare the event
+    Public Shared Event UserLoggedIn As EventHandler
+    Public Shared Event UserLoggedOut As EventHandler
+End Class

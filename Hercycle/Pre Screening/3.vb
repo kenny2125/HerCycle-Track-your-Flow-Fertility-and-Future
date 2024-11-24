@@ -30,12 +30,12 @@ Public Class _3
     Private Sub btn_yes_Click(sender As Object, e As EventArgs) Handles btn_yes.Click
         UpdateAnswer("Yes")
         _4.ShowDialog()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub btn_no_Click(sender As Object, e As EventArgs) Handles btn_no.Click
         UpdateAnswer("No")
         _4.ShowDialog()
-        Me.Hide()
+        Me.Close()
     End Sub
 End Class

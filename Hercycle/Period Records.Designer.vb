@@ -24,6 +24,7 @@ Partial Class Period_Records
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.pnl_record = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.lbl_duration = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_add = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_reset = New Guna.UI2.WinForms.Guna2Button()
         Me.lbl_notes = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -35,14 +36,15 @@ Partial Class Period_Records
         Me.lbl_startdate = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_header = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
-        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.pnl_record.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnl_record
         '
         Me.pnl_record.BackColor = System.Drawing.Color.Transparent
-        Me.pnl_record.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.pnl_record.Controls.Add(Me.Guna2Button1)
+        Me.pnl_record.Controls.Add(Me.lbl_duration)
         Me.pnl_record.Controls.Add(Me.btn_add)
         Me.pnl_record.Controls.Add(Me.btn_reset)
         Me.pnl_record.Controls.Add(Me.lbl_notes)
@@ -57,8 +59,20 @@ Partial Class Period_Records
         Me.pnl_record.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.pnl_record.Location = New System.Drawing.Point(-2, 0)
         Me.pnl_record.Name = "pnl_record"
-        Me.pnl_record.Size = New System.Drawing.Size(550, 585)
+        Me.pnl_record.Size = New System.Drawing.Size(550, 528)
         Me.pnl_record.TabIndex = 6
+        '
+        'lbl_duration
+        '
+        Me.lbl_duration.AutoSize = False
+        Me.lbl_duration.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_duration.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_duration.Location = New System.Drawing.Point(156, 274)
+        Me.lbl_duration.Name = "lbl_duration"
+        Me.lbl_duration.Size = New System.Drawing.Size(87, 60)
+        Me.lbl_duration.TabIndex = 78
+        Me.lbl_duration.Text = "Period Duration"
+        Me.lbl_duration.TextAlignment = System.Drawing.ContentAlignment.TopCenter
         '
         'btn_add
         '
@@ -71,7 +85,7 @@ Partial Class Period_Records
         Me.btn_add.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
         Me.btn_add.Font = New System.Drawing.Font("Sylfaen", 18.0!, System.Drawing.FontStyle.Bold)
         Me.btn_add.ForeColor = System.Drawing.Color.White
-        Me.btn_add.Location = New System.Drawing.Point(289, 429)
+        Me.btn_add.Location = New System.Drawing.Point(289, 456)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(189, 43)
         Me.btn_add.TabIndex = 77
@@ -88,9 +102,9 @@ Partial Class Period_Records
         Me.btn_reset.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
         Me.btn_reset.Font = New System.Drawing.Font("Sylfaen", 18.0!, System.Drawing.FontStyle.Bold)
         Me.btn_reset.ForeColor = System.Drawing.Color.White
-        Me.btn_reset.Location = New System.Drawing.Point(63, 429)
+        Me.btn_reset.Location = New System.Drawing.Point(63, 456)
         Me.btn_reset.Name = "btn_reset"
-        Me.btn_reset.Size = New System.Drawing.Size(136, 43)
+        Me.btn_reset.Size = New System.Drawing.Size(180, 43)
         Me.btn_reset.TabIndex = 76
         Me.btn_reset.Text = "Reset"
         '
@@ -99,9 +113,9 @@ Partial Class Period_Records
         Me.lbl_notes.AutoSize = False
         Me.lbl_notes.BackColor = System.Drawing.Color.Transparent
         Me.lbl_notes.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_notes.Location = New System.Drawing.Point(63, 317)
+        Me.lbl_notes.Location = New System.Drawing.Point(63, 366)
         Me.lbl_notes.Name = "lbl_notes"
-        Me.lbl_notes.Size = New System.Drawing.Size(87, 31)
+        Me.lbl_notes.Size = New System.Drawing.Size(87, 33)
         Me.lbl_notes.TabIndex = 75
         Me.lbl_notes.Text = "Notes"
         Me.lbl_notes.TextAlignment = System.Drawing.ContentAlignment.TopCenter
@@ -111,7 +125,7 @@ Partial Class Period_Records
         Me.lbl_prduration.AutoSize = False
         Me.lbl_prduration.BackColor = System.Drawing.Color.Transparent
         Me.lbl_prduration.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_prduration.Location = New System.Drawing.Point(63, 236)
+        Me.lbl_prduration.Location = New System.Drawing.Point(63, 274)
         Me.lbl_prduration.Name = "lbl_prduration"
         Me.lbl_prduration.Size = New System.Drawing.Size(87, 60)
         Me.lbl_prduration.TabIndex = 74
@@ -123,7 +137,7 @@ Partial Class Period_Records
         Me.lbl_enddate.AutoSize = False
         Me.lbl_enddate.BackColor = System.Drawing.Color.Transparent
         Me.lbl_enddate.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_enddate.Location = New System.Drawing.Point(63, 183)
+        Me.lbl_enddate.Location = New System.Drawing.Point(63, 220)
         Me.lbl_enddate.Name = "lbl_enddate"
         Me.lbl_enddate.Size = New System.Drawing.Size(87, 31)
         Me.lbl_enddate.TabIndex = 73
@@ -144,13 +158,13 @@ Partial Class Period_Records
         Me.txt_notes.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
         Me.txt_notes.ForeColor = System.Drawing.Color.Black
         Me.txt_notes.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_notes.Location = New System.Drawing.Point(166, 317)
+        Me.txt_notes.Location = New System.Drawing.Point(166, 344)
         Me.txt_notes.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.txt_notes.Name = "txt_notes"
         Me.txt_notes.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_notes.PlaceholderText = ""
         Me.txt_notes.SelectedText = ""
-        Me.txt_notes.Size = New System.Drawing.Size(327, 45)
+        Me.txt_notes.Size = New System.Drawing.Size(312, 78)
         Me.txt_notes.TabIndex = 72
         '
         'datetmpick_end
@@ -164,11 +178,11 @@ Partial Class Period_Records
         Me.datetmpick_end.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
         Me.datetmpick_end.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.datetmpick_end.IndicateFocus = True
-        Me.datetmpick_end.Location = New System.Drawing.Point(166, 177)
+        Me.datetmpick_end.Location = New System.Drawing.Point(166, 220)
         Me.datetmpick_end.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.datetmpick_end.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.datetmpick_end.Name = "datetmpick_end"
-        Me.datetmpick_end.Size = New System.Drawing.Size(327, 45)
+        Me.datetmpick_end.Size = New System.Drawing.Size(312, 45)
         Me.datetmpick_end.TabIndex = 70
         Me.datetmpick_end.Value = New Date(2024, 11, 24, 2, 20, 27, 767)
         '
@@ -183,11 +197,11 @@ Partial Class Period_Records
         Me.datetmpick_start.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
         Me.datetmpick_start.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.datetmpick_start.IndicateFocus = True
-        Me.datetmpick_start.Location = New System.Drawing.Point(166, 114)
+        Me.datetmpick_start.Location = New System.Drawing.Point(166, 154)
         Me.datetmpick_start.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.datetmpick_start.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.datetmpick_start.Name = "datetmpick_start"
-        Me.datetmpick_start.Size = New System.Drawing.Size(327, 45)
+        Me.datetmpick_start.Size = New System.Drawing.Size(312, 45)
         Me.datetmpick_start.TabIndex = 69
         Me.datetmpick_start.Value = New Date(2024, 11, 24, 2, 20, 27, 767)
         '
@@ -196,7 +210,7 @@ Partial Class Period_Records
         Me.lbl_startdate.AutoSize = False
         Me.lbl_startdate.BackColor = System.Drawing.Color.Transparent
         Me.lbl_startdate.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_startdate.Location = New System.Drawing.Point(63, 119)
+        Me.lbl_startdate.Location = New System.Drawing.Point(63, 154)
         Me.lbl_startdate.Name = "lbl_startdate"
         Me.lbl_startdate.Size = New System.Drawing.Size(87, 31)
         Me.lbl_startdate.TabIndex = 68
@@ -206,12 +220,12 @@ Partial Class Period_Records
         'lbl_header
         '
         Me.lbl_header.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_header.Font = New System.Drawing.Font("Sitka Banner", 50.0!, System.Drawing.FontStyle.Bold)
-        Me.lbl_header.Location = New System.Drawing.Point(63, 9)
+        Me.lbl_header.Font = New System.Drawing.Font("Sitka Banner", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_header.Location = New System.Drawing.Point(77, 46)
         Me.lbl_header.Name = "lbl_header"
-        Me.lbl_header.Size = New System.Drawing.Size(415, 99)
+        Me.lbl_header.Size = New System.Drawing.Size(386, 71)
         Me.lbl_header.TabIndex = 52
-        Me.lbl_header.Text = "Period Records"
+        Me.lbl_header.Text = "Add Period Records"
         Me.lbl_header.TextAlignment = System.Drawing.ContentAlignment.TopCenter
         '
         'Guna2BorderlessForm1
@@ -220,23 +234,28 @@ Partial Class Period_Records
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
-        'Guna2HtmlLabel1
+        'Guna2Button1
         '
-        Me.Guna2HtmlLabel1.AutoSize = False
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(156, 236)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(87, 60)
-        Me.Guna2HtmlLabel1.TabIndex = 78
-        Me.Guna2HtmlLabel1.Text = "Period Duration"
-        Me.Guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.TopCenter
+        Me.Guna2Button1.BorderRadius = 10
+        Me.Guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
+        Me.Guna2Button1.Font = New System.Drawing.Font("Sylfaen", 18.0!, System.Drawing.FontStyle.Bold)
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.Location = New System.Drawing.Point(494, 12)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.Size = New System.Drawing.Size(43, 43)
+        Me.Guna2Button1.TabIndex = 79
+        Me.Guna2Button1.Text = "X"
         '
         'Period_Records
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(547, 583)
+        Me.ClientSize = New System.Drawing.Size(547, 530)
         Me.Controls.Add(Me.pnl_record)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Period_Records"
@@ -260,5 +279,6 @@ Partial Class Period_Records
     Friend WithEvents btn_add As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_reset As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
-    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_duration As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
 End Class

@@ -34,12 +34,12 @@ Public Class _1
     Private Sub btn_yes_Click(sender As Object, e As EventArgs) Handles btn_yes.Click
         InsertAnswer("Yes")
         _2.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub btn_no_Click(sender As Object, e As EventArgs) Handles btn_no.Click
         InsertAnswer("No")
         _2.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 End Class

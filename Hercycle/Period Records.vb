@@ -6,28 +6,32 @@ Public Class Period_Records
 
     Private currentUserId As Integer = CurrentUser.UserId
 
+    Public Event RecordAdded()
 
-    Private Sub Guna2DateTimePicker3_ValueChanged(sender As Object, e As EventArgs)
-        CalculateDuration()
-    End Sub
-
-    Private Sub Guna2DateTimePicker2_ValueChanged(sender As Object, e As EventArgs)
-        CalculateDuration()
-    End Sub
 
     Private Sub CalculateDuration()
         ' Check if both date pickers have valid dates
         If datetmpick_start.Value <= datetmpick_end.Value Then
             ' Calculate the difference in days
             duration = (datetmpick_end.Value - datetmpick_start.Value).Days
-            txt_prduration.Text = duration.ToString() & " days"
+            lbl_duration.Text = duration.ToString() & " days"
+            lbl_duration.Visible = True
         Else
-            txt_prduration.Text = "Invalid date range"
+            lbl_duration.Text = "Invalid date range"
+            lbl_duration.Visible = True
         End If
     End Sub
 
     Private Sub btn_reset_Click(sender As Object, e As EventArgs) Handles btn_reset.Click
+        ' Reset the date pickers to the current date
+        datetmpick_start.Value = DateTime.Now
+        datetmpick_end.Value = DateTime.Now
 
+        ' Hide the duration label
+        lbl_duration.Visible = False
+
+        ' Clear the notes textbox
+        txt_notes.Clear()
     End Sub
 
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
@@ -57,9 +61,30 @@ Public Class Period_Records
             End Using
 
             MessageBox.Show("Successfully Inserted")
+            RaiseEvent RecordAdded() ' Raise the event to notify the parent form
 
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub datetmpick_start_ValueChanged(sender As Object, e As EventArgs) Handles datetmpick_start.ValueChanged
+        CalculateDuration()
+    End Sub
+
+    Private Sub datetmpick_end_ValueChanged(sender As Object, e As EventArgs) Handles datetmpick_end.ValueChanged
+        CalculateDuration()
+    End Sub
+
+    Private Sub Period_Records_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lbl_duration.Visible = False
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        Me.Close()
+    End Sub
+
+    Private Sub lbl_header_Click(sender As Object, e As EventArgs) Handles lbl_header.Click
+
     End Sub
 End Class

@@ -78,23 +78,20 @@ Public Class MyProfile
         End Using
     End Sub
 
-    Private Sub btn_addnew_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
-        ' Reset the current user ID to 0
-        CurrentUser.UserId = 0
+    Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
+        ' Reset the current user ID when logging out
+        CurrentUser.UserId = 0  ' Reset the user ID to 0
 
-        ' Optionally, you can show a message confirming the reset
-        MessageBox.Show("User session reset. Please log in again.", "Session Reset", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ' Raise the UserLoggedOut event
+        Me.Close()
+        Dashboard.Close()
+        ' Optionally, show splash or login screen
+        Splashscreen.Show()
+        Me.Hide()  ' Hide the dashboard or current form
 
-        ' Open the login form or the form where the user will log in again
-        LogIn.Show()
-
-        ' Hide the current form instead of closing it
-        Me.Hide()
-        Dashboard.Hide()
-
-        ' Alternatively, you can dispose the form explicitly to free up resources
-        ' Me.Dispose()
+        MsgBox("Logged out successfully.")
     End Sub
+
 
     Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         Me.Hide()

@@ -4,20 +4,9 @@ Public Class _4
     Private currentUserId As Integer = CurrentUser.UserId
     Private db As New dbconnect()
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
-        ' Get the value from the TextBox (assuming the TextBox is named TextBox1)
-        Dim answer As String = txt_input.Text
-        UpdateAnswer(answer)
-        _5.ShowDialog()
-        Me.Hide()
-    End Sub
 
-    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs)
-        ' For Button 4, update with "No"
-        UpdateAnswer("No")
-        _3.ShowDialog()
-        Me.Hide()
-    End Sub
+
+
 
     Private Sub UpdateAnswer(answer As String)
         ' Ensure connection is open
@@ -49,5 +38,22 @@ Public Class _4
         ' Get the value from the TextBox
         Dim answer As String = txt_input.Text
         UpdateAnswer(answer)
+        _5.ShowDialog()
+        Me.Hide()
+    End Sub
+
+    Private Sub btn_no_Click(sender As Object, e As EventArgs) Handles btn_no.Click
+        ' For Button 4, update with "No"
+        UpdateAnswer("No")
+        _5.ShowDialog()
+        Me.Hide()
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
+        ' Get the value from the TextBox (assuming the TextBox is named TextBox1)
+        Dim answer As String = txt_input.Text
+        UpdateAnswer(answer)
+        _5.ShowDialog()
+        Me.Hide()
     End Sub
 End Class

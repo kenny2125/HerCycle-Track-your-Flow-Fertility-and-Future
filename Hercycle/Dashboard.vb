@@ -54,9 +54,37 @@ Public Class Dashboard
 
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadUserRecords()
-        PreScreening.Show()
+
+        If Not IsAnswered() Then
+            PreScreening.Show()
+        End If
+
         CalculateAverageDuration() ' Call the function to calculate average duration
     End Sub
+
+    Private Function IsAnswered() As Boolean
+        Dim dbconnect As New dbconnect
+        dbconnect.connect()
+
+        Try
+            ' Query to check if the current user has answered set to 1
+            Dim query As String = "SELECT answered FROM tbl_answers WHERE user_ID = @user_ID"
+            Dim cmd As New MySqlCommand(query, dbconnect.conn)
+            cmd.Parameters.AddWithValue("@user_ID", CurrentUser.UserId)
+
+            Dim result As Object = cmd.ExecuteScalar()
+            If result IsNot DBNull.Value AndAlso Convert.ToInt32(result) = 1 Then
+                Return True ' User has already answered
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error checking answered status: " & ex.Message)
+        Finally
+            dbconnect.conn.Close()
+        End Try
+
+        Return False ' Default to false if no result or an error occurs
+    End Function
+
 
     Private Sub picb_profile_Click(sender As Object, e As EventArgs) Handles picb_profile.Click
         MyProfile.Show()
@@ -97,5 +125,6 @@ Public Class Dashboard
         ' Clean up
         dbconnect.conn.Close() ' Ensure the connection is closed after use
     End Sub
+
 
 End Class

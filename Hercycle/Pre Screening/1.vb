@@ -7,17 +7,6 @@ Public Class _1
     ' Assuming you have an instance of the DbConnect class for the connection
     Private db As New dbconnect()
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
-        InsertAnswer("Yes")
-        _2.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs)
-        InsertAnswer("No")
-        _2.Show()
-        Me.Hide()
-    End Sub
 
     Private Sub InsertAnswer(answer As String)
         ' Ensure connection is open
@@ -40,7 +29,17 @@ Public Class _1
         End Using
     End Sub
 
-    Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles btn_no.Click
 
+
+    Private Sub btn_yes_Click(sender As Object, e As EventArgs) Handles btn_yes.Click
+        InsertAnswer("Yes")
+        _2.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btn_no_Click(sender As Object, e As EventArgs) Handles btn_no.Click
+        InsertAnswer("No")
+        _2.Show()
+        Me.Hide()
     End Sub
 End Class

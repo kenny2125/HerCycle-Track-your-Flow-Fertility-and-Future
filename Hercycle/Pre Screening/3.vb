@@ -5,18 +5,6 @@ Public Class _3
     Private currentUserId As Integer = CurrentUser.UserId
     Private db As New dbconnect()
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
-        UpdateAnswer("Yes")
-        _4.ShowDialog()
-        Me.Hide()
-    End Sub
-
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs)
-        UpdateAnswer("No")
-        _4.ShowDialog()
-        Me.Hide()
-    End Sub
-
     Private Sub UpdateAnswer(answer As String)
         ' Ensure connection is open
         db.connect()
@@ -38,7 +26,16 @@ Public Class _3
         End Using
     End Sub
 
-    Private Sub lbl_subheader_Click(sender As Object, e As EventArgs) Handles lbl_header.Click
 
+    Private Sub btn_yes_Click(sender As Object, e As EventArgs) Handles btn_yes.Click
+        UpdateAnswer("Yes")
+        _4.ShowDialog()
+        Me.Hide()
+    End Sub
+
+    Private Sub btn_no_Click(sender As Object, e As EventArgs) Handles btn_no.Click
+        UpdateAnswer("No")
+        _4.ShowDialog()
+        Me.Hide()
     End Sub
 End Class

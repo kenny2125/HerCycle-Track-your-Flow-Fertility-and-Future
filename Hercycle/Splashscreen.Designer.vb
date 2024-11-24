@@ -43,7 +43,7 @@ Partial Class Splashscreen
         Me.pnl_splashscreen.Controls.Add(Me.lbl_header)
         Me.pnl_splashscreen.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.pnl_splashscreen.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.pnl_splashscreen.Location = New System.Drawing.Point(300, 234)
+        Me.pnl_splashscreen.Location = New System.Drawing.Point(258, 234)
         Me.pnl_splashscreen.Name = "pnl_splashscreen"
         Me.pnl_splashscreen.Size = New System.Drawing.Size(1415, 622)
         Me.pnl_splashscreen.TabIndex = 7
@@ -52,7 +52,7 @@ Partial Class Splashscreen
         '
         Me.Guna2PictureBox1.Image = Global.Hercycle.My.Resources.Resources.femme_flow__1_
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(552, 52)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(579, 60)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
         Me.Guna2PictureBox1.Size = New System.Drawing.Size(300, 200)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -72,7 +72,7 @@ Partial Class Splashscreen
         Me.btn_getstarted.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
         Me.btn_getstarted.Font = New System.Drawing.Font("Sylfaen", 23.0!, System.Drawing.FontStyle.Bold)
         Me.btn_getstarted.ForeColor = System.Drawing.Color.White
-        Me.btn_getstarted.Location = New System.Drawing.Point(581, 463)
+        Me.btn_getstarted.Location = New System.Drawing.Point(610, 471)
         Me.btn_getstarted.Name = "btn_getstarted"
         Me.btn_getstarted.Size = New System.Drawing.Size(238, 65)
         Me.btn_getstarted.TabIndex = 8
@@ -82,7 +82,7 @@ Partial Class Splashscreen
         '
         Me.lbl_subheader.BackColor = System.Drawing.Color.Transparent
         Me.lbl_subheader.Font = New System.Drawing.Font("Sitka Banner", 20.0!)
-        Me.lbl_subheader.Location = New System.Drawing.Point(453, 380)
+        Me.lbl_subheader.Location = New System.Drawing.Point(487, 388)
         Me.lbl_subheader.Name = "lbl_subheader"
         Me.lbl_subheader.Size = New System.Drawing.Size(485, 41)
         Me.lbl_subheader.TabIndex = 5
@@ -92,7 +92,7 @@ Partial Class Splashscreen
         '
         Me.lbl_header.BackColor = System.Drawing.Color.Transparent
         Me.lbl_header.Font = New System.Drawing.Font("Sitka Banner", 100.0!, System.Drawing.FontStyle.Bold)
-        Me.lbl_header.Location = New System.Drawing.Point(105, 168)
+        Me.lbl_header.Location = New System.Drawing.Point(133, 176)
         Me.lbl_header.Name = "lbl_header"
         Me.lbl_header.Size = New System.Drawing.Size(1192, 195)
         Me.lbl_header.TabIndex = 2

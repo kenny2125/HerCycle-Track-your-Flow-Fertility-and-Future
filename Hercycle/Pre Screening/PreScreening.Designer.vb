@@ -105,6 +105,7 @@ Partial Class PreScreening
         Me.Controls.Add(Me.lbl_subheader)
         Me.Controls.Add(Me.lbl_header)
         Me.Controls.Add(Me.btn_start)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "PreScreening"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PreScreening"

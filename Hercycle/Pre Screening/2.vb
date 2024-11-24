@@ -38,4 +38,7 @@ Public Class _2
         End Using
     End Sub
 
+    Private Sub _2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

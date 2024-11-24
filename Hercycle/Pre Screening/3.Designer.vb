@@ -94,7 +94,9 @@ Partial Class _3
         Me.Controls.Add(Me.btn_yes)
         Me.Controls.Add(Me.lbl_subheader)
         Me.Controls.Add(Me.lbl_header)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "_3"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "_3"
         Me.TopMost = True
         Me.ResumeLayout(False)

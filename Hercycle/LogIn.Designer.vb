@@ -163,10 +163,11 @@ Partial Class LogIn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(576, 507)
+        Me.ClientSize = New System.Drawing.Size(576, 530)
         Me.ControlBox = False
         Me.Controls.Add(Me.pnl_login)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(592, 585)
         Me.MinimizeBox = False

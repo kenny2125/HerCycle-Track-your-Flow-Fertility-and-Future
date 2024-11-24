@@ -92,6 +92,7 @@ Partial Class _5
         Me.Controls.Add(Me.btn_start)
         Me.Controls.Add(Me.pnl_message)
         Me.Controls.Add(Me.lbl_header)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "_5"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "_5"

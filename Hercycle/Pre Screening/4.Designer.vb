@@ -121,8 +121,9 @@ Partial Class _4
         Me.Controls.Add(Me.txt_input)
         Me.Controls.Add(Me.lbl_subheader)
         Me.Controls.Add(Me.lbl_header)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "_4"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "_4"
         Me.TopMost = True
         Me.ResumeLayout(False)

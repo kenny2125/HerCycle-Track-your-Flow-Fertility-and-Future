@@ -94,6 +94,7 @@ Partial Class _2
         Me.Controls.Add(Me.btn_yes)
         Me.Controls.Add(Me.lbl_subheader)
         Me.Controls.Add(Me.lbl_header)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "_2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "_2"

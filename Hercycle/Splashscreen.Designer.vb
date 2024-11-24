@@ -39,7 +39,7 @@ Partial Class Splashscreen
         Me.pnl_splashscreen.Controls.Add(Me.lbl_header)
         Me.pnl_splashscreen.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.pnl_splashscreen.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.pnl_splashscreen.Location = New System.Drawing.Point(252, 229)
+        Me.pnl_splashscreen.Location = New System.Drawing.Point(252, 187)
         Me.pnl_splashscreen.Name = "pnl_splashscreen"
         Me.pnl_splashscreen.Size = New System.Drawing.Size(1415, 622)
         Me.pnl_splashscreen.TabIndex = 7
@@ -68,7 +68,7 @@ Partial Class Splashscreen
         Me.lbl_subheader.Font = New System.Drawing.Font("Sitka Banner", 20.0!)
         Me.lbl_subheader.Location = New System.Drawing.Point(453, 380)
         Me.lbl_subheader.Name = "lbl_subheader"
-        Me.lbl_subheader.Size = New System.Drawing.Size(485, 41)
+        Me.lbl_subheader.Size = New System.Drawing.Size(484, 41)
         Me.lbl_subheader.TabIndex = 5
         Me.lbl_subheader.Text = "Start to know yourself better by using this app!"
         '
@@ -90,6 +90,7 @@ Partial Class Splashscreen
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
         Me.Controls.Add(Me.pnl_splashscreen)
         Me.Cursor = System.Windows.Forms.Cursors.Default
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Splashscreen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

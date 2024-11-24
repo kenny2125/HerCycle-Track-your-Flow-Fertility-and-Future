@@ -21,7 +21,7 @@ Public Class MyProfile
         db.connect()
 
         ' SQL query to get user data (assuming fields: name, email, etc. in tbl_user)
-        Dim query As String = "SELECT firstname, middleinitial, lastname, email, gender, username, password FROM tbl_user WHERE user_ID = @user_ID"
+        Dim query As String = "SELECT firstname, middleinitial, lastname, email, age, birthdate, username, password FROM tbl_user WHERE user_ID = @user_ID"
 
         ' Use the connection object from DbConnect class
         Using cmd As New MySqlCommand(query, db.conn)
@@ -32,12 +32,14 @@ Public Class MyProfile
                 Using reader As MySqlDataReader = cmd.ExecuteReader()
                     If reader.Read() Then
                         ' Concatenate the first and last name for label1
-                        txt_name.Text = reader("firstname").ToString() & " " & reader("middleinitial").ToString() & reader("lastname").ToString()
+                        lbl_nameval.Text = reader("firstname").ToString() & " " & reader("middleinitial").ToString() & " " & reader("lastname").ToString()
                         ' Set other labels with user data
-                        txt_email.Text = reader("email").ToString()
-                        txt_username.Text = reader("username").ToString()
-                        txt_birthdate.Text = reader("password").ToString()
-                        txt_age.Text = reader("age").ToString()
+                        lbl_emailval.Text = reader("email").ToString()
+                        lbl_ageval.Text = reader("age").ToString()
+                        lbl_bdayval.Text = reader("birthdate").ToString()
+                        lbl_usernameval.Text = reader("username").ToString()
+                        lbl_bdayval.Text = reader("password").ToString()
+
 
 
                     End If
@@ -94,5 +96,7 @@ Public Class MyProfile
         ' Me.Dispose()
     End Sub
 
-
+    Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        Me.Hide()
+    End Sub
 End Class

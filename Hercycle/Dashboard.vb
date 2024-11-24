@@ -1,5 +1,4 @@
-﻿Imports Guna.UI2.WinForms
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class Dashboard
 
@@ -54,6 +53,7 @@ Public Class Dashboard
 
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadUserRecords()
+        LoadName()
 
         If Not IsAnswered() Then
             PreScreening.Show()
@@ -61,6 +61,35 @@ Public Class Dashboard
 
         CalculateAverageDuration() ' Call the function to calculate average duration
     End Sub
+
+    Private Sub LoadName()
+        Dim dbconnect As New dbconnect
+        dbconnect.connect()
+
+        Try
+            ' Query to get first name and last name for the current user
+            Dim query As String = "SELECT firstname, lastname FROM tbl_user WHERE user_ID = @user_ID"
+            Dim cmd As New MySqlCommand(query, dbconnect.conn)
+            cmd.Parameters.AddWithValue("@user_ID", CurrentUser.UserId)
+
+            Dim reader As MySqlDataReader = cmd.ExecuteReader()
+
+            If reader.Read() Then
+                ' Concatenate first name and last name
+                Dim fullName As String = $"{reader("firstname")} {reader("lastname")}"
+                lbl_profname.Text = fullName
+            Else
+                lbl_profname.Text = "User not found"
+            End If
+
+            reader.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error loading user name: " & ex.Message)
+        Finally
+            dbconnect.conn.Close()
+        End Try
+    End Sub
+
 
     Private Function IsAnswered() As Boolean
         Dim dbconnect As New dbconnect

@@ -37,8 +37,6 @@ Partial Class Dashboard
         Me.lbl_profname = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_dashboardbg = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.pnl_periodtracker = New Guna.UI2.WinForms.Guna2GradientPanel()
-        Me.btn_save = New Guna.UI2.WinForms.Guna2Button()
-        Me.btn_edit = New Guna.UI2.WinForms.Guna2Button()
         Me.gridview_tracker = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.lbl_periodtracker = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_addnew = New Guna.UI2.WinForms.Guna2Button()
@@ -196,8 +194,6 @@ Partial Class Dashboard
         '
         Me.pnl_periodtracker.BackColor = System.Drawing.Color.Transparent
         Me.pnl_periodtracker.BorderRadius = 25
-        Me.pnl_periodtracker.Controls.Add(Me.btn_save)
-        Me.pnl_periodtracker.Controls.Add(Me.btn_edit)
         Me.pnl_periodtracker.Controls.Add(Me.gridview_tracker)
         Me.pnl_periodtracker.Controls.Add(Me.lbl_periodtracker)
         Me.pnl_periodtracker.Controls.Add(Me.btn_addnew)
@@ -207,40 +203,6 @@ Partial Class Dashboard
         Me.pnl_periodtracker.Name = "pnl_periodtracker"
         Me.pnl_periodtracker.Size = New System.Drawing.Size(1129, 346)
         Me.pnl_periodtracker.TabIndex = 6
-        '
-        'btn_save
-        '
-        Me.btn_save.BorderRadius = 20
-        Me.btn_save.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_save.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_save.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_save.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_save.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_save.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
-        Me.btn_save.Font = New System.Drawing.Font("Sitka Banner", 13.0!)
-        Me.btn_save.ForeColor = System.Drawing.Color.White
-        Me.btn_save.Location = New System.Drawing.Point(546, 13)
-        Me.btn_save.Name = "btn_save"
-        Me.btn_save.Size = New System.Drawing.Size(172, 37)
-        Me.btn_save.TabIndex = 22
-        Me.btn_save.Text = "Delete Selected"
-        '
-        'btn_edit
-        '
-        Me.btn_edit.BorderRadius = 20
-        Me.btn_edit.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_edit.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_edit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_edit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_edit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_edit.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
-        Me.btn_edit.Font = New System.Drawing.Font("Sitka Banner", 13.0!)
-        Me.btn_edit.ForeColor = System.Drawing.Color.White
-        Me.btn_edit.Location = New System.Drawing.Point(741, 13)
-        Me.btn_edit.Name = "btn_edit"
-        Me.btn_edit.Size = New System.Drawing.Size(172, 37)
-        Me.btn_edit.TabIndex = 21
-        Me.btn_edit.Text = "Enable Editing"
         '
         'gridview_tracker
         '
@@ -497,9 +459,9 @@ Partial Class Dashboard
         Me.pnl_others.Controls.Add(Me.lbl_follicular)
         Me.pnl_others.Controls.Add(Me.lbl_menstruation)
         Me.pnl_others.Controls.Add(Me.lbl_currenttime)
-        Me.pnl_others.Location = New System.Drawing.Point(29, 504)
+        Me.pnl_others.Location = New System.Drawing.Point(29, 501)
         Me.pnl_others.Name = "pnl_others"
-        Me.pnl_others.Size = New System.Drawing.Size(701, 343)
+        Me.pnl_others.Size = New System.Drawing.Size(701, 346)
         Me.pnl_others.TabIndex = 4
         '
         'txt_luteal
@@ -767,6 +729,4 @@ Partial Class Dashboard
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents gridview_tracker As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents btn_edit As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btn_save As Guna.UI2.WinForms.Guna2Button
 End Class

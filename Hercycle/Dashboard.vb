@@ -163,8 +163,8 @@ Public Class Dashboard
                 lbl_phasesub.Text = "Irregular"
             End If
         Else
-            lbl_phasedayno.Text = "No data available"
-            lbl_phasesub.Text = "N/A"
+            lbl_phasedayno.Text = "|"
+            lbl_phasesub.Text = "|"
         End If
 
         ' Clean up

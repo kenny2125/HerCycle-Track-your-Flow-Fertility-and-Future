@@ -24,6 +24,7 @@ Partial Class Period_Records
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.pnl_record = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_dateadded = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_recordID = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -43,7 +44,6 @@ Partial Class Period_Records
         Me.lbl_startdate = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_header = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
-        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_record.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -75,6 +75,17 @@ Partial Class Period_Records
         Me.pnl_record.Name = "pnl_record"
         Me.pnl_record.Size = New System.Drawing.Size(550, 579)
         Me.pnl_record.TabIndex = 6
+        '
+        'Guna2HtmlLabel2
+        '
+        Me.Guna2HtmlLabel2.AutoSize = False
+        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(63, 136)
+        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(107, 31)
+        Me.Guna2HtmlLabel2.TabIndex = 86
+        Me.Guna2HtmlLabel2.Text = "Date Added"
         '
         'lbl_dateadded
         '
@@ -272,7 +283,7 @@ Partial Class Period_Records
         Me.txt_notes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_notes.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_notes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_notes.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
+        Me.txt_notes.Font = New System.Drawing.Font("Lucida Sans", 12.0!)
         Me.txt_notes.ForeColor = System.Drawing.Color.Black
         Me.txt_notes.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_notes.Location = New System.Drawing.Point(166, 358)
@@ -351,17 +362,6 @@ Partial Class Period_Records
         Me.Guna2BorderlessForm1.ContainerControl = Me
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2BorderlessForm1.TransparentWhileDrag = True
-        '
-        'Guna2HtmlLabel2
-        '
-        Me.Guna2HtmlLabel2.AutoSize = False
-        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(63, 136)
-        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(107, 31)
-        Me.Guna2HtmlLabel2.TabIndex = 86
-        Me.Guna2HtmlLabel2.Text = "Date Added"
         '
         'Period_Records
         '

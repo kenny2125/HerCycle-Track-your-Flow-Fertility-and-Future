@@ -316,6 +316,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\phasepics\High Fertility Follicular.png" />
+    <Content Include="bin\phasepics\High Fertility Ovulation.png" />
+    <Content Include="bin\phasepics\Low Fertility Luteal.png" />
+    <Content Include="bin\phasepics\Low Fertility.png" />
+    <Content Include="bin\phasepics\No chance.png" />
     <None Include="bin\Assets\Splashscreen Form.jpg" />
     <None Include="bin\Assets\Sign Up.jpg" />
     <None Include="bin\Assets\Frame 10.png" />

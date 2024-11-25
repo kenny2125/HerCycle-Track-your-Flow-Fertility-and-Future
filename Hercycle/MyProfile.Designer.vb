@@ -26,6 +26,13 @@ Partial Class MyProfile
         Me.btn_logout = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_close = New Guna.UI2.WinForms.Guna2Button()
         Me.pnl_tracking = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.lbl_ageval = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_bdayval = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_passwordval = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_usernameval = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_emailval = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_nameval = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_ans4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_ans3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_ans2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -43,14 +50,6 @@ Partial Class MyProfile
         Me.lbl_name = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_header = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
-        Me.lbl_nameval = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lbl_emailval = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lbl_usernameval = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lbl_passwordval = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lbl_bdayval = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lbl_ageval = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.dvd_myprofile = New MaterialSkin.Controls.MaterialDivider()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.pnl_tracking.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -106,7 +105,6 @@ Partial Class MyProfile
         Me.pnl_tracking.Controls.Add(Me.lbl_ques3)
         Me.pnl_tracking.Controls.Add(Me.lbl_ques2)
         Me.pnl_tracking.Controls.Add(Me.lbl_ques1)
-        Me.pnl_tracking.Controls.Add(Me.dvd_myprofile)
         Me.pnl_tracking.Controls.Add(Me.lbl_subheader)
         Me.pnl_tracking.Controls.Add(Me.lbl_age)
         Me.pnl_tracking.Controls.Add(Me.lbl_birthdate)
@@ -123,6 +121,84 @@ Partial Class MyProfile
         Me.pnl_tracking.Name = "pnl_tracking"
         Me.pnl_tracking.Size = New System.Drawing.Size(838, 364)
         Me.pnl_tracking.TabIndex = 27
+        '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.BorderRadius = 10
+        Me.Guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
+        Me.Guna2Button1.Font = New System.Drawing.Font("Sylfaen", 15.0!, System.Drawing.FontStyle.Bold)
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.Location = New System.Drawing.Point(789, 12)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.Size = New System.Drawing.Size(38, 32)
+        Me.Guna2Button1.TabIndex = 83
+        Me.Guna2Button1.Text = "X"
+        '
+        'lbl_ageval
+        '
+        Me.lbl_ageval.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_ageval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
+        Me.lbl_ageval.Location = New System.Drawing.Point(195, 233)
+        Me.lbl_ageval.Name = "lbl_ageval"
+        Me.lbl_ageval.Size = New System.Drawing.Size(31, 31)
+        Me.lbl_ageval.TabIndex = 82
+        Me.lbl_ageval.Text = "Age"
+        '
+        'lbl_bdayval
+        '
+        Me.lbl_bdayval.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_bdayval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
+        Me.lbl_bdayval.Location = New System.Drawing.Point(195, 198)
+        Me.lbl_bdayval.Name = "lbl_bdayval"
+        Me.lbl_bdayval.Size = New System.Drawing.Size(75, 31)
+        Me.lbl_bdayval.TabIndex = 81
+        Me.lbl_bdayval.Text = "Birthdate"
+        '
+        'lbl_passwordval
+        '
+        Me.lbl_passwordval.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_passwordval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
+        Me.lbl_passwordval.Location = New System.Drawing.Point(195, 303)
+        Me.lbl_passwordval.Name = "lbl_passwordval"
+        Me.lbl_passwordval.Size = New System.Drawing.Size(76, 31)
+        Me.lbl_passwordval.TabIndex = 80
+        Me.lbl_passwordval.Text = "Password"
+        '
+        'lbl_usernameval
+        '
+        Me.lbl_usernameval.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_usernameval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
+        Me.lbl_usernameval.Location = New System.Drawing.Point(195, 268)
+        Me.lbl_usernameval.Name = "lbl_usernameval"
+        Me.lbl_usernameval.Size = New System.Drawing.Size(79, 31)
+        Me.lbl_usernameval.TabIndex = 79
+        Me.lbl_usernameval.Text = "Username"
+        '
+        'lbl_emailval
+        '
+        Me.lbl_emailval.AutoSize = False
+        Me.lbl_emailval.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_emailval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
+        Me.lbl_emailval.Location = New System.Drawing.Point(195, 136)
+        Me.lbl_emailval.Name = "lbl_emailval"
+        Me.lbl_emailval.Size = New System.Drawing.Size(113, 66)
+        Me.lbl_emailval.TabIndex = 78
+        Me.lbl_emailval.Text = "Email" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Address"
+        '
+        'lbl_nameval
+        '
+        Me.lbl_nameval.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_nameval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
+        Me.lbl_nameval.Location = New System.Drawing.Point(195, 101)
+        Me.lbl_nameval.Name = "lbl_nameval"
+        Me.lbl_nameval.Size = New System.Drawing.Size(48, 31)
+        Me.lbl_nameval.TabIndex = 77
+        Me.lbl_nameval.Text = "Name"
         '
         'lbl_ans4
         '
@@ -219,7 +295,7 @@ Partial Class MyProfile
         '
         Me.lbl_age.BackColor = System.Drawing.Color.Transparent
         Me.lbl_age.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_age.Location = New System.Drawing.Point(27, 206)
+        Me.lbl_age.Location = New System.Drawing.Point(27, 233)
         Me.lbl_age.Name = "lbl_age"
         Me.lbl_age.Size = New System.Drawing.Size(33, 31)
         Me.lbl_age.TabIndex = 64
@@ -229,7 +305,7 @@ Partial Class MyProfile
         '
         Me.lbl_birthdate.BackColor = System.Drawing.Color.Transparent
         Me.lbl_birthdate.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_birthdate.Location = New System.Drawing.Point(26, 171)
+        Me.lbl_birthdate.Location = New System.Drawing.Point(26, 198)
         Me.lbl_birthdate.Name = "lbl_birthdate"
         Me.lbl_birthdate.Size = New System.Drawing.Size(80, 31)
         Me.lbl_birthdate.TabIndex = 63
@@ -239,7 +315,7 @@ Partial Class MyProfile
         '
         Me.lbl_password.BackColor = System.Drawing.Color.Transparent
         Me.lbl_password.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_password.Location = New System.Drawing.Point(26, 276)
+        Me.lbl_password.Location = New System.Drawing.Point(26, 303)
         Me.lbl_password.Name = "lbl_password"
         Me.lbl_password.Size = New System.Drawing.Size(81, 31)
         Me.lbl_password.TabIndex = 60
@@ -249,7 +325,7 @@ Partial Class MyProfile
         '
         Me.lbl_username.BackColor = System.Drawing.Color.Transparent
         Me.lbl_username.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_username.Location = New System.Drawing.Point(26, 241)
+        Me.lbl_username.Location = New System.Drawing.Point(26, 268)
         Me.lbl_username.Name = "lbl_username"
         Me.lbl_username.Size = New System.Drawing.Size(86, 31)
         Me.lbl_username.TabIndex = 59
@@ -293,94 +369,6 @@ Partial Class MyProfile
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
-        'lbl_nameval
-        '
-        Me.lbl_nameval.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_nameval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_nameval.Location = New System.Drawing.Point(195, 101)
-        Me.lbl_nameval.Name = "lbl_nameval"
-        Me.lbl_nameval.Size = New System.Drawing.Size(48, 31)
-        Me.lbl_nameval.TabIndex = 77
-        Me.lbl_nameval.Text = "Name"
-        '
-        'lbl_emailval
-        '
-        Me.lbl_emailval.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_emailval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_emailval.Location = New System.Drawing.Point(195, 136)
-        Me.lbl_emailval.Name = "lbl_emailval"
-        Me.lbl_emailval.Size = New System.Drawing.Size(113, 31)
-        Me.lbl_emailval.TabIndex = 78
-        Me.lbl_emailval.Text = "Email Address"
-        '
-        'lbl_usernameval
-        '
-        Me.lbl_usernameval.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_usernameval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_usernameval.Location = New System.Drawing.Point(195, 241)
-        Me.lbl_usernameval.Name = "lbl_usernameval"
-        Me.lbl_usernameval.Size = New System.Drawing.Size(79, 31)
-        Me.lbl_usernameval.TabIndex = 79
-        Me.lbl_usernameval.Text = "Username"
-        '
-        'lbl_passwordval
-        '
-        Me.lbl_passwordval.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_passwordval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_passwordval.Location = New System.Drawing.Point(195, 276)
-        Me.lbl_passwordval.Name = "lbl_passwordval"
-        Me.lbl_passwordval.Size = New System.Drawing.Size(76, 31)
-        Me.lbl_passwordval.TabIndex = 80
-        Me.lbl_passwordval.Text = "Password"
-        '
-        'lbl_bdayval
-        '
-        Me.lbl_bdayval.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_bdayval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_bdayval.Location = New System.Drawing.Point(195, 171)
-        Me.lbl_bdayval.Name = "lbl_bdayval"
-        Me.lbl_bdayval.Size = New System.Drawing.Size(75, 31)
-        Me.lbl_bdayval.TabIndex = 81
-        Me.lbl_bdayval.Text = "Birthdate"
-        '
-        'lbl_ageval
-        '
-        Me.lbl_ageval.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_ageval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_ageval.Location = New System.Drawing.Point(195, 206)
-        Me.lbl_ageval.Name = "lbl_ageval"
-        Me.lbl_ageval.Size = New System.Drawing.Size(31, 31)
-        Me.lbl_ageval.TabIndex = 82
-        Me.lbl_ageval.Text = "Age"
-        '
-        'dvd_myprofile
-        '
-        Me.dvd_myprofile.BackColor = System.Drawing.Color.White
-        Me.dvd_myprofile.Depth = 0
-        Me.dvd_myprofile.Location = New System.Drawing.Point(333, 101)
-        Me.dvd_myprofile.MouseState = MaterialSkin.MouseState.HOVER
-        Me.dvd_myprofile.Name = "dvd_myprofile"
-        Me.dvd_myprofile.Size = New System.Drawing.Size(10, 206)
-        Me.dvd_myprofile.TabIndex = 68
-        Me.dvd_myprofile.Text = "MaterialDivider1"
-        '
-        'Guna2Button1
-        '
-        Me.Guna2Button1.BorderRadius = 10
-        Me.Guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
-        Me.Guna2Button1.Font = New System.Drawing.Font("Sylfaen", 15.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(789, 12)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(38, 32)
-        Me.Guna2Button1.TabIndex = 83
-        Me.Guna2Button1.Text = "X"
-        '
         'MyProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -422,6 +410,6 @@ Partial Class MyProfile
     Friend WithEvents lbl_usernameval As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lbl_emailval As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lbl_nameval As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents dvd_myprofile As MaterialSkin.Controls.MaterialDivider
+
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
 End Class

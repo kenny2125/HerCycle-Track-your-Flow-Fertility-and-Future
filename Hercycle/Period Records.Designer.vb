@@ -24,6 +24,12 @@ Partial Class Period_Records
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.pnl_record = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.lbl_dateadded = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_recordID = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.lbl_duration = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_add = New Guna.UI2.WinForms.Guna2Button()
@@ -37,18 +43,14 @@ Partial Class Period_Records
         Me.lbl_startdate = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_header = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lbl_recordID = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lbl_dateadded = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_record.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnl_record
         '
         Me.pnl_record.BackColor = System.Drawing.Color.Transparent
+        Me.pnl_record.Controls.Add(Me.Guna2HtmlLabel2)
         Me.pnl_record.Controls.Add(Me.lbl_dateadded)
         Me.pnl_record.Controls.Add(Me.lbl_recordID)
         Me.pnl_record.Controls.Add(Me.Guna2HtmlLabel1)
@@ -71,8 +73,94 @@ Partial Class Period_Records
         Me.pnl_record.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.pnl_record.Location = New System.Drawing.Point(-2, 0)
         Me.pnl_record.Name = "pnl_record"
-        Me.pnl_record.Size = New System.Drawing.Size(550, 528)
+        Me.pnl_record.Size = New System.Drawing.Size(550, 579)
         Me.pnl_record.TabIndex = 6
+        '
+        'lbl_dateadded
+        '
+        Me.lbl_dateadded.AutoSize = False
+        Me.lbl_dateadded.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_dateadded.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_dateadded.Location = New System.Drawing.Point(176, 136)
+        Me.lbl_dateadded.Name = "lbl_dateadded"
+        Me.lbl_dateadded.Size = New System.Drawing.Size(124, 31)
+        Me.lbl_dateadded.TabIndex = 85
+        Me.lbl_dateadded.Text = "Record_ID"
+        '
+        'lbl_recordID
+        '
+        Me.lbl_recordID.AutoSize = False
+        Me.lbl_recordID.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_recordID.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_recordID.Location = New System.Drawing.Point(176, 99)
+        Me.lbl_recordID.Name = "lbl_recordID"
+        Me.lbl_recordID.Size = New System.Drawing.Size(87, 31)
+        Me.lbl_recordID.TabIndex = 84
+        Me.lbl_recordID.Text = "Record_ID"
+        Me.lbl_recordID.TextAlignment = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Guna2HtmlLabel1
+        '
+        Me.Guna2HtmlLabel1.AutoSize = False
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(63, 99)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(87, 31)
+        Me.Guna2HtmlLabel1.TabIndex = 83
+        Me.Guna2HtmlLabel1.Text = "Record_ID"
+        Me.Guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Guna2Button4
+        '
+        Me.Guna2Button4.BorderRadius = 6
+        Me.Guna2Button4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button4.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
+        Me.Guna2Button4.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button4.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button4.Location = New System.Drawing.Point(63, 447)
+        Me.Guna2Button4.Name = "Guna2Button4"
+        Me.Guna2Button4.Size = New System.Drawing.Size(171, 43)
+        Me.Guna2Button4.TabIndex = 82
+        Me.Guna2Button4.Text = "Delete"
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.BorderRadius = 6
+        Me.Guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
+        Me.Guna2Button2.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.Location = New System.Drawing.Point(376, 505)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Size = New System.Drawing.Size(102, 43)
+        Me.Guna2Button2.TabIndex = 81
+        Me.Guna2Button2.Text = "Next"
+        '
+        'Guna2Button3
+        '
+        Me.Guna2Button3.BorderRadius = 6
+        Me.Guna2Button3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button3.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
+        Me.Guna2Button3.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button3.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button3.Location = New System.Drawing.Point(249, 505)
+        Me.Guna2Button3.Name = "Guna2Button3"
+        Me.Guna2Button3.Size = New System.Drawing.Size(121, 43)
+        Me.Guna2Button3.TabIndex = 80
+        Me.Guna2Button3.Text = "Previous"
         '
         'Guna2Button1
         '
@@ -96,7 +184,7 @@ Partial Class Period_Records
         Me.lbl_duration.AutoSize = False
         Me.lbl_duration.BackColor = System.Drawing.Color.Transparent
         Me.lbl_duration.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_duration.Location = New System.Drawing.Point(156, 243)
+        Me.lbl_duration.Location = New System.Drawing.Point(156, 288)
         Me.lbl_duration.Name = "lbl_duration"
         Me.lbl_duration.Size = New System.Drawing.Size(87, 60)
         Me.lbl_duration.TabIndex = 78
@@ -114,7 +202,7 @@ Partial Class Period_Records
         Me.btn_add.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
         Me.btn_add.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_add.ForeColor = System.Drawing.Color.White
-        Me.btn_add.Location = New System.Drawing.Point(249, 400)
+        Me.btn_add.Location = New System.Drawing.Point(249, 446)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(229, 43)
         Me.btn_add.TabIndex = 77
@@ -131,7 +219,7 @@ Partial Class Period_Records
         Me.btn_reset.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
         Me.btn_reset.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_reset.ForeColor = System.Drawing.Color.White
-        Me.btn_reset.Location = New System.Drawing.Point(63, 459)
+        Me.btn_reset.Location = New System.Drawing.Point(63, 505)
         Me.btn_reset.Name = "btn_reset"
         Me.btn_reset.Size = New System.Drawing.Size(171, 43)
         Me.btn_reset.TabIndex = 76
@@ -142,7 +230,7 @@ Partial Class Period_Records
         Me.lbl_notes.AutoSize = False
         Me.lbl_notes.BackColor = System.Drawing.Color.Transparent
         Me.lbl_notes.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_notes.Location = New System.Drawing.Point(63, 335)
+        Me.lbl_notes.Location = New System.Drawing.Point(63, 380)
         Me.lbl_notes.Name = "lbl_notes"
         Me.lbl_notes.Size = New System.Drawing.Size(87, 33)
         Me.lbl_notes.TabIndex = 75
@@ -154,7 +242,7 @@ Partial Class Period_Records
         Me.lbl_prduration.AutoSize = False
         Me.lbl_prduration.BackColor = System.Drawing.Color.Transparent
         Me.lbl_prduration.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_prduration.Location = New System.Drawing.Point(63, 243)
+        Me.lbl_prduration.Location = New System.Drawing.Point(63, 288)
         Me.lbl_prduration.Name = "lbl_prduration"
         Me.lbl_prduration.Size = New System.Drawing.Size(87, 60)
         Me.lbl_prduration.TabIndex = 74
@@ -166,7 +254,7 @@ Partial Class Period_Records
         Me.lbl_enddate.AutoSize = False
         Me.lbl_enddate.BackColor = System.Drawing.Color.Transparent
         Me.lbl_enddate.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_enddate.Location = New System.Drawing.Point(63, 199)
+        Me.lbl_enddate.Location = New System.Drawing.Point(63, 244)
         Me.lbl_enddate.Name = "lbl_enddate"
         Me.lbl_enddate.Size = New System.Drawing.Size(87, 31)
         Me.lbl_enddate.TabIndex = 73
@@ -187,7 +275,7 @@ Partial Class Period_Records
         Me.txt_notes.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
         Me.txt_notes.ForeColor = System.Drawing.Color.Black
         Me.txt_notes.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_notes.Location = New System.Drawing.Point(166, 313)
+        Me.txt_notes.Location = New System.Drawing.Point(166, 358)
         Me.txt_notes.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.txt_notes.Name = "txt_notes"
         Me.txt_notes.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -207,7 +295,7 @@ Partial Class Period_Records
         Me.datetmpick_end.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
         Me.datetmpick_end.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.datetmpick_end.IndicateFocus = True
-        Me.datetmpick_end.Location = New System.Drawing.Point(166, 192)
+        Me.datetmpick_end.Location = New System.Drawing.Point(166, 237)
         Me.datetmpick_end.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.datetmpick_end.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.datetmpick_end.Name = "datetmpick_end"
@@ -226,7 +314,7 @@ Partial Class Period_Records
         Me.datetmpick_start.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
         Me.datetmpick_start.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.datetmpick_start.IndicateFocus = True
-        Me.datetmpick_start.Location = New System.Drawing.Point(166, 141)
+        Me.datetmpick_start.Location = New System.Drawing.Point(166, 186)
         Me.datetmpick_start.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.datetmpick_start.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.datetmpick_start.Name = "datetmpick_start"
@@ -239,7 +327,7 @@ Partial Class Period_Records
         Me.lbl_startdate.AutoSize = False
         Me.lbl_startdate.BackColor = System.Drawing.Color.Transparent
         Me.lbl_startdate.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_startdate.Location = New System.Drawing.Point(63, 148)
+        Me.lbl_startdate.Location = New System.Drawing.Point(63, 193)
         Me.lbl_startdate.Name = "lbl_startdate"
         Me.lbl_startdate.Size = New System.Drawing.Size(87, 31)
         Me.lbl_startdate.TabIndex = 68
@@ -264,98 +352,22 @@ Partial Class Period_Records
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
-        'Guna2Button2
+        'Guna2HtmlLabel2
         '
-        Me.Guna2Button2.BorderRadius = 6
-        Me.Guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
-        Me.Guna2Button2.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(376, 459)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(102, 43)
-        Me.Guna2Button2.TabIndex = 81
-        Me.Guna2Button2.Text = "Next"
-        '
-        'Guna2Button3
-        '
-        Me.Guna2Button3.BorderRadius = 6
-        Me.Guna2Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button3.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
-        Me.Guna2Button3.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button3.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.Location = New System.Drawing.Point(249, 459)
-        Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.Size = New System.Drawing.Size(121, 43)
-        Me.Guna2Button3.TabIndex = 80
-        Me.Guna2Button3.Text = "Previous"
-        '
-        'Guna2Button4
-        '
-        Me.Guna2Button4.BorderRadius = 6
-        Me.Guna2Button4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button4.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
-        Me.Guna2Button4.Font = New System.Drawing.Font("Sylfaen", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button4.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button4.Location = New System.Drawing.Point(63, 401)
-        Me.Guna2Button4.Name = "Guna2Button4"
-        Me.Guna2Button4.Size = New System.Drawing.Size(171, 43)
-        Me.Guna2Button4.TabIndex = 82
-        Me.Guna2Button4.Text = "Delete"
-        '
-        'Guna2HtmlLabel1
-        '
-        Me.Guna2HtmlLabel1.AutoSize = False
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(63, 99)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(87, 31)
-        Me.Guna2HtmlLabel1.TabIndex = 83
-        Me.Guna2HtmlLabel1.Text = "Record_ID"
-        Me.Guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.TopCenter
-        '
-        'lbl_recordID
-        '
-        Me.lbl_recordID.AutoSize = False
-        Me.lbl_recordID.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_recordID.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_recordID.Location = New System.Drawing.Point(166, 99)
-        Me.lbl_recordID.Name = "lbl_recordID"
-        Me.lbl_recordID.Size = New System.Drawing.Size(87, 31)
-        Me.lbl_recordID.TabIndex = 84
-        Me.lbl_recordID.Text = "Record_ID"
-        Me.lbl_recordID.TextAlignment = System.Drawing.ContentAlignment.TopCenter
-        '
-        'lbl_dateadded
-        '
-        Me.lbl_dateadded.AutoSize = False
-        Me.lbl_dateadded.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_dateadded.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_dateadded.Location = New System.Drawing.Point(313, 99)
-        Me.lbl_dateadded.Name = "lbl_dateadded"
-        Me.lbl_dateadded.Size = New System.Drawing.Size(87, 31)
-        Me.lbl_dateadded.TabIndex = 85
-        Me.lbl_dateadded.Text = "Record_ID"
-        Me.lbl_dateadded.TextAlignment = System.Drawing.ContentAlignment.TopCenter
+        Me.Guna2HtmlLabel2.AutoSize = False
+        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(63, 136)
+        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(107, 31)
+        Me.Guna2HtmlLabel2.TabIndex = 86
+        Me.Guna2HtmlLabel2.Text = "Date Added"
         '
         'Period_Records
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(547, 530)
+        Me.ClientSize = New System.Drawing.Size(547, 580)
         Me.Controls.Add(Me.pnl_record)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Period_Records"
@@ -387,4 +399,5 @@ Partial Class Period_Records
     Friend WithEvents lbl_recordID As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lbl_dateadded As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class

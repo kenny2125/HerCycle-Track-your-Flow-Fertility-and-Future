@@ -16,11 +16,11 @@ Public Class Period_Records
             duration = (datetmpick_end.Value - datetmpick_start.Value).Days
             lbl_duration.Text = duration.ToString() & " days"
             lbl_duration.Visible = True
-            btn_add.Text = "Save Record"
+            'btn_add.Text = "Save Record"
         Else
             lbl_duration.Text = "Invalid date range"
             lbl_duration.Visible = True
-            btn_add.Text = "Save Record"
+            'btn_add.Text = "Save Record"
         End If
     End Sub
 
@@ -28,9 +28,11 @@ Public Class Period_Records
         ' Reset the date pickers to the current date
         datetmpick_start.Value = DateTime.Now
         datetmpick_end.Value = DateTime.Now
-
+        btn_add.Text = "Save Record"
+        lbl_recordID.Visible = False
         ' Hide the duration label
         lbl_duration.Visible = False
+
         lbl_dateadded.Text = DateTime.Now.ToString("MM/dd/yyyy")
 
         ' Clear the notes textbox
@@ -40,18 +42,27 @@ Public Class Period_Records
 
     Private currentRecordIndex As Integer = 0
 
-
-
-
-
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         Try
-            ' Ensure that duration is set correctly before attempting to insert
+            ' Ensure that duration is set correctly before proceeding
             If duration = 0 Then
                 MessageBox.Show("Please calculate a valid duration.")
                 Return
             End If
 
+            ' Call the appropriate method based on the button text
+            If btn_add.Text = "Save Record" Then
+                SaveRecord()
+            ElseIf btn_add.Text = "Update Record" Then
+                UpdateRecord()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SaveRecord()
+        Try
             ' Connect to the database
             Dim dbconnect As New dbconnect
             dbconnect.connect()
@@ -70,13 +81,55 @@ Public Class Period_Records
                 cmd.ExecuteNonQuery()
             End Using
 
-            MessageBox.Show("Successfully Inserted")
+            MessageBox.Show("Record successfully saved.")
             RaiseEvent RecordAdded() ' Raise the event to notify the parent form
-
         Catch ex As Exception
-            MessageBox.Show("An error occurred: " & ex.Message)
+            MessageBox.Show("An error occurred while saving: " & ex.Message)
         End Try
     End Sub
+
+    Private Sub UpdateRecord()
+        Try
+            ' Ensure a record is selected
+            If String.IsNullOrEmpty(lbl_recordID.Text) Then
+                MessageBox.Show("No record selected to update.")
+                Return
+            End If
+
+            ' Convert lbl_recordID.Text to Integer
+            Dim recordId As Integer = Convert.ToInt32(lbl_recordID.Text)
+
+            ' Connect to the database
+            Dim dbconnect As New dbconnect
+            dbconnect.connect()
+
+            ' Prepare the SQL update statement
+            Dim query As String = "UPDATE tbl_records SET datestart = @datestart, dateend = @dateend, duration = @duration, notes = @notes WHERE records_id = @recordId"
+            Using cmd As New MySqlCommand(query, dbconnect.conn)
+                ' Add parameters with the parsed dates and record ID
+                cmd.Parameters.AddWithValue("@datestart", datetmpick_start.Value.Date)
+                cmd.Parameters.AddWithValue("@dateend", datetmpick_end.Value.Date)
+                cmd.Parameters.AddWithValue("@duration", duration)
+                cmd.Parameters.AddWithValue("@notes", txt_notes.Text)
+                cmd.Parameters.AddWithValue("@recordId", recordId) ' Use the converted Integer value
+
+                ' Execute the command
+                Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+                ' Output the result
+                If rowsAffected > 0 Then
+                    MessageBox.Show($"Record with ID {recordId} successfully updated.")
+                    RaiseEvent RecordAdded() ' Raise the event to notify the parent form
+                Else
+                    MessageBox.Show("No changes were made. Please verify the record exists.")
+                End If
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("An error occurred while updating: " & ex.Message)
+        End Try
+    End Sub
+
+
 
     Private Sub datetmpick_start_ValueChanged(sender As Object, e As EventArgs) Handles datetmpick_start.ValueChanged
         CalculateDuration()
@@ -90,20 +143,10 @@ Public Class Period_Records
     Private Sub Period_Records_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lbl_duration.Visible = False
         btn_add.Text = "Save Record"
-
-
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         Me.Close()
-    End Sub
-
-    Private Sub lbl_header_Click(sender As Object, e As EventArgs) Handles lbl_header.Click
-
-    End Sub
-
-    Private Sub txt_notes_TextChanged(sender As Object, e As EventArgs) Handles txt_notes.TextChanged
-
     End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
@@ -125,31 +168,28 @@ Public Class Period_Records
         cmd.Parameters.AddWithValue("@userId", currentUserId) ' Use the current user's ID
 
         Dim reader As MySqlDataReader = cmd.ExecuteReader()
-
-        ' Show on the DataGridView
-        If reader.HasRows Then
-            Dim dt As New DataTable
-            dt.Load(reader)
-
+        btn_add.Text = "Update Record"
+        ' Load data into a DataTable
+        Dim dt As New DataTable
+        dt.Load(reader)
+        If dt.Rows.Count > 0 Then
             ' Check if there are more records to display
-            If currentRecordIndex < dt.Rows.Count Then
+            If currentRecordIndex > 0 Then
+                currentRecordIndex -= 1
                 Dim currentRecord As DataRow = dt.Rows(currentRecordIndex)
-                Dim currentRecordDuration As Integer = Convert.ToInt32(currentRecord("duration"))
 
-                ' Update lbl_recordID, datestarted, dateended, and txt_notes
+                ' Update labels and textboxes with the record's data
+
+                lbl_recordID.Visible = True
                 lbl_recordID.Text = currentRecord("records_id").ToString()
-                datetmpick_start.Text = Convert.ToDateTime(currentRecord("datestart")).ToString("MM/dd/yyyy")
-                datetmpick_end.Text = Convert.ToDateTime(currentRecord("dateend")).ToString("MM/dd/yyyy")
-                lbl_duration.Text = currentRecordDuration.ToString() & " days"
+                datetmpick_start.Value = Convert.ToDateTime(currentRecord("datestart"))
+                datetmpick_end.Value = Convert.ToDateTime(currentRecord("dateend"))
+                lbl_duration.Text = currentRecord("duration").ToString() & " days"
                 lbl_duration.Visible = True
-                txt_notes.Text = currentRecord("notes").ToString() ' Load the notes into the TextBox
-                lbl_dateadded.Text = currentRecord("date_added").ToString() ' Load the notes into the TextBox
-
-                ' Increment the record index for the next call
-                currentRecordIndex += -1
+                txt_notes.Text = currentRecord("notes").ToString()
+                lbl_dateadded.Text = Convert.ToDateTime(currentRecord("date_added")).ToString("MM/dd/yyyy")
             Else
-                MessageBox.Show("No more records found for the current user.")
-                currentRecordIndex = 0 ' Reset the index if no more records
+                MessageBox.Show("You are already at the first record.")
             End If
         Else
             MessageBox.Show("No records found for the current user.")
@@ -158,7 +198,6 @@ Public Class Period_Records
         ' Clean up
         reader.Close()
         dbconnect.conn.Close() ' Ensure the connection is closed after use
-
     End Sub
 
 
@@ -175,30 +214,28 @@ Public Class Period_Records
 
         Dim reader As MySqlDataReader = cmd.ExecuteReader()
 
-        ' Show on the DataGridView
-        If reader.HasRows Then
-            Dim dt As New DataTable
-            dt.Load(reader)
+        ' Load data into a DataTable
+        Dim dt As New DataTable
+        dt.Load(reader)
 
+        If dt.Rows.Count > 0 Then
             ' Check if there are more records to display
-            If currentRecordIndex < dt.Rows.Count Then
-                Dim currentRecord As DataRow = dt.Rows(currentRecordIndex)
-                Dim currentRecordDuration As Integer = Convert.ToInt32(currentRecord("duration"))
-
-                ' Update lbl_recordID, datestarted, dateended, and txt_notes
-                lbl_recordID.Text = currentRecord("records_id").ToString()
-                datetmpick_start.Text = Convert.ToDateTime(currentRecord("datestart")).ToString("MM/dd/yyyy")
-                datetmpick_end.Text = Convert.ToDateTime(currentRecord("dateend")).ToString("MM/dd/yyyy")
-                lbl_duration.Text = currentRecordDuration.ToString() & " days"
-                lbl_duration.Visible = True
-                txt_notes.Text = currentRecord("notes").ToString() ' Load the notes into the TextBox
-                lbl_dateadded.Text = currentRecord("date_added").ToString() ' Load the notes into the TextBox
-
-                ' Increment the record index for the next call
+            If currentRecordIndex < dt.Rows.Count - 1 Then
                 currentRecordIndex += 1
+                Dim currentRecord As DataRow = dt.Rows(currentRecordIndex)
+
+                ' Update labels and textboxes with the record's data
+                btn_add.Text = "Update Record"
+                lbl_recordID.Visible = True
+                lbl_recordID.Text = currentRecord("records_id").ToString()
+                datetmpick_start.Value = Convert.ToDateTime(currentRecord("datestart"))
+                datetmpick_end.Value = Convert.ToDateTime(currentRecord("dateend"))
+                lbl_duration.Text = currentRecord("duration").ToString() & " days"
+                lbl_duration.Visible = True
+                txt_notes.Text = currentRecord("notes").ToString()
+                lbl_dateadded.Text = Convert.ToDateTime(currentRecord("date_added")).ToString("MM/dd/yyyy")
             Else
-                MessageBox.Show("No more records found for the current user.")
-                currentRecordIndex = 0 ' Reset the index if no more records
+                MessageBox.Show("You are already at the last record.")
             End If
         Else
             MessageBox.Show("No records found for the current user.")
@@ -208,6 +245,7 @@ Public Class Period_Records
         reader.Close()
         dbconnect.conn.Close() ' Ensure the connection is closed after use
     End Sub
+
 
     Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
         Try
@@ -223,6 +261,9 @@ Public Class Period_Records
                 Return
             End If
 
+            ' Convert lbl_recordID.Text to Integer
+            Dim recordId As Integer = Convert.ToInt32(lbl_recordID.Text)
+
             ' Connect to the database
             Dim dbconnect As New dbconnect
             dbconnect.connect()
@@ -231,23 +272,26 @@ Public Class Period_Records
             Dim query As String = "DELETE FROM tbl_records WHERE records_id = @recordId"
             Using cmd As New MySqlCommand(query, dbconnect.conn)
                 ' Add parameter with the record ID
-                cmd.Parameters.AddWithValue("@recordId", lbl_recordID.Text)
+                cmd.Parameters.AddWithValue("@recordId", recordId)
 
                 ' Execute the command
-                cmd.ExecuteNonQuery()
-            End Using
+                Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
 
-            MessageBox.Show("Record successfully deleted.")
-            RaiseEvent RecordAdded() ' Raise the event to notify the parent form
+                ' Output result
+                If rowsAffected > 0 Then
+                    MessageBox.Show("Record successfully deleted.")
+                    RaiseEvent RecordAdded() ' Raise the event to notify the parent form
+                Else
+                    MessageBox.Show("No record found with the given ID.")
+                End If
+            End Using
 
             ' Reset the form
             btn_reset_Click(sender, e)
-
-            ' Reset the currentRecordIndex
-            currentRecordIndex = 0
 
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
     End Sub
+
 End Class

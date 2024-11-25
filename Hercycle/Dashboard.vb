@@ -135,7 +135,7 @@ Public Class Dashboard
 
     Private Sub IdentifyCurrentCycleDay()
         ' Get today's date
-        Dim today As DateTime = New DateTime(2024, 11, 26) ' Hardcoded for testing, replace with DateTime.Today in production
+        Dim today As DateTime = New DateTime(2024, 11, 27) ' Hardcoded for testing, replace with DateTime.Today in production
         'Dim today As DateTime = DateTime.Today
 
         ' Connect to the database
@@ -213,7 +213,7 @@ Public Class Dashboard
             lbl_periodtitle.Text = phaseTitle
 
         Else
-            lbl_cycleday.Text = "No data available for cycle."
+            lbl_cycleday.Text = ""
         End If
 
         ' Clean up
@@ -252,7 +252,7 @@ Public Class Dashboard
             gridview_tracker.Columns("records_id").Visible = True
             gridview_tracker.Columns("date_added").Visible = True
         Else
-            MessageBox.Show("No records found for the current user.")
+            'MessageBox.Show("No records found for the current user.")
         End If
 
         ' Clean up
@@ -384,13 +384,12 @@ Public Class Dashboard
             lastEndDate = endDate
         End While
 
-        ' Check if there are enough intervals to evaluate regularity
-        If cycleIntervals.Count >= 2 Then ' At least two intervals are required to determine regularity
-            ' Calculate the average and standard deviation of the intervals
+        ' Check if there are intervals to evaluate
+        If cycleIntervals.Count > 0 Then
+            ' Calculate the average interval
             Dim averageInterval As Integer = CInt(cycleIntervals.Average())
 
             ' Determine if the cycle is regular based on intervals
-            ' For example, if the interval is consistently between 24 and 38 days, it's regular
             If cycleIntervals.All(Function(i) i >= 24 And i <= 38) Then
                 lbl_phasesub.Text = "Regular"
             Else
@@ -399,9 +398,14 @@ Public Class Dashboard
 
             ' Display the average interval
             lbl_phasedayno.Text = averageInterval.ToString()
+        ElseIf lastEndDate.HasValue Then
+            ' If only one record is available, display a default message
+            lbl_phasesub.Text = ""
+            lbl_phasedayno.Text = ""
         Else
-            lbl_phasedayno.Text = "|"
-            lbl_phasesub.Text = "Insufficient data"
+            ' Handle the case with no records
+            lbl_phasesub.Text = "No Data"
+            lbl_phasedayno.Text = ""
         End If
 
         ' Clean up
@@ -454,7 +458,7 @@ Public Class Dashboard
                 lbl_menstruationval.Text = "No data available to calculate next menstruation phase."
             End If
         Else
-            lbl_menstruationval.Text = "Invalid cycle length value."
+            lbl_menstruationval.Text = ""
         End If
 
         ' Clean up
@@ -463,12 +467,12 @@ Public Class Dashboard
 
 
     Private Sub CalculateNextMonthFollicular()
-        ' Get the most recent menstruation data for the user (highest records_id)
+        ' Connect to the database
         Dim dbconnect As New dbconnect
         dbconnect.connect()
 
         ' Query to get the most recent menstruation data (based on records_id)
-        Dim query As String = "SELECT datestart, dateend, duration FROM tbl_records WHERE user_id = @userId ORDER BY records_id DESC LIMIT 1"
+        Dim query As String = "SELECT datestart, dateend FROM tbl_records WHERE user_id = @userId ORDER BY records_id DESC LIMIT 1"
         Dim cmd As New MySqlCommand(query, dbconnect.conn)
         cmd.Parameters.AddWithValue("@userId", currentUserId)
 
@@ -479,25 +483,32 @@ Public Class Dashboard
             reader.Read()
             Dim menstruationStart As DateTime = reader.GetDateTime("datestart")
             Dim menstruationEnd As DateTime = reader.GetDateTime("dateend")
-            Dim cycleDuration As Integer = reader.GetInt32("duration")
 
-            ' Project the next menstruation start date by adding the cycle duration to the current menstruation start date
-            Dim nextMenstruationStart As DateTime = menstruationStart.AddDays(cycleDuration) ' Add cycle duration for next month
+            ' Validate and parse the cycle average from lbl_phasedayno
+            Dim cycleAverage As Integer
+            If Integer.TryParse(lbl_phasedayno.Text, cycleAverage) AndAlso cycleAverage > 0 Then
+                ' Calculate the projected next menstruation start date
+                Dim nextMenstruationStart As DateTime = menstruationEnd.AddDays(cycleAverage)
 
-            ' Calculate the Follicular Phase: Starts on the next menstruation day and lasts until ovulation
-            ' Assuming the Follicular Phase lasts 14 days
-            Dim follicularPhaseEnd As DateTime = nextMenstruationStart.AddDays(13) ' 14 days for the follicular phase
+                ' Calculate the Follicular Phase: Starts from the next menstruation day
+                ' and lasts until ovulation (approximately the first 14 days of the cycle)
+                Dim follicularPhaseEnd As DateTime = nextMenstruationStart.AddDays(-14 + 13) ' Align with ovulation start
 
-            ' Display the projected Follicular Phase in the label
-            lbl_follicularval.Text = nextMenstruationStart.ToString("MM/dd/yyyy") & " - " & follicularPhaseEnd.ToString("MM/dd/yyyy")
+                ' Display the projected Follicular Phase in the label
+                lbl_follicularval.Text = nextMenstruationStart.ToString("MM/dd/yyyy") & " - " & follicularPhaseEnd.ToString("MM/dd/yyyy")
+            Else
+                ' Handle invalid or missing cycle average
+                lbl_follicularval.Text = ""
+            End If
         Else
             ' Handle case where there is no data for menstruation
-            lbl_follicularval.Text = "No menstruation data found."
+            lbl_follicularval.Text = "No data available for follicular calculation."
         End If
 
         reader.Close()
         dbconnect.conn.Close()
     End Sub
+
 
 
     Private Sub CalculateNextMonthOvulation()
@@ -516,20 +527,26 @@ Public Class Dashboard
         If reader.HasRows Then
             reader.Read()
             Dim menstruationEnd As DateTime = reader.GetDateTime("dateend")
-            Dim cycleAverage As Integer = Integer.Parse(lbl_phasedayno.Text) ' Use average cycle duration from lbl_phasedayno
 
-            ' Calculate the projected next menstruation start date
-            Dim nextMenstruationStart As DateTime = menstruationEnd.AddDays(cycleAverage)
+            ' Validate and parse the cycle average from lbl_phasedayno
+            Dim cycleAverage As Integer
+            If Integer.TryParse(lbl_phasedayno.Text, cycleAverage) AndAlso cycleAverage > 0 Then
+                ' Calculate the projected next menstruation start date
+                Dim nextMenstruationStart As DateTime = menstruationEnd.AddDays(cycleAverage)
 
-            ' Calculate ovulation range (10–14 days before next menstruation start)
-            Dim ovulationStart As DateTime = nextMenstruationStart.AddDays(-14)
-            Dim ovulationEnd As DateTime = nextMenstruationStart.AddDays(-10)
+                ' Calculate ovulation range (10–14 days before next menstruation start)
+                Dim ovulationStart As DateTime = nextMenstruationStart.AddDays(-14)
+                Dim ovulationEnd As DateTime = nextMenstruationStart.AddDays(-10)
 
-            ' Display the ovulation range
-            lbl_ovulationval.Text = ovulationStart.ToString("MM/dd/yyyy") & " - " & ovulationEnd.ToString("MM/dd/yyyy")
+                ' Display the ovulation range
+                lbl_ovulationval.Text = ovulationStart.ToString("MM/dd/yyyy") & " - " & ovulationEnd.ToString("MM/dd/yyyy")
+            Else
+                ' Handle invalid or missing cycle average
+                lbl_ovulationval.Text = ""
+            End If
         Else
             ' Handle case where there is no data for menstruation
-            lbl_ovulationval.Text = "No menstruation data found."
+            lbl_ovulationval.Text = "No data available for ovulation calculation."
         End If
 
         reader.Close()
@@ -552,25 +569,32 @@ Public Class Dashboard
         If reader.HasRows Then
             reader.Read()
             Dim menstruationEnd As DateTime = reader.GetDateTime("dateend")
-            Dim cycleAverage As Integer = Integer.Parse(lbl_phasedayno.Text) ' Use average cycle duration from lbl_phasedayno
 
-            ' Calculate the projected next menstruation start date
-            Dim nextMenstruationStart As DateTime = menstruationEnd.AddDays(cycleAverage)
+            ' Validate and parse the cycle average from lbl_phasedayno
+            Dim cycleAverage As Integer
+            If Integer.TryParse(lbl_phasedayno.Text, cycleAverage) AndAlso cycleAverage > 0 Then
+                ' Calculate the projected next menstruation start date
+                Dim nextMenstruationStart As DateTime = menstruationEnd.AddDays(cycleAverage)
 
-            ' Calculate luteal phase range
-            Dim lutealPhaseStart As DateTime = nextMenstruationStart.AddDays(-9) ' Luteal phase starts 9 days before menstruation
-            Dim lutealPhaseEnd As DateTime = nextMenstruationStart.AddDays(-1)  ' Ends the day before menstruation
+                ' Calculate luteal phase range
+                Dim lutealPhaseStart As DateTime = nextMenstruationStart.AddDays(-9) ' Luteal phase starts 9 days before menstruation
+                Dim lutealPhaseEnd As DateTime = nextMenstruationStart.AddDays(-1)  ' Ends the day before menstruation
 
-            ' Display the luteal phase range
-            lbl_lutealval.Text = lutealPhaseStart.ToString("MM/dd/yyyy") & " - " & lutealPhaseEnd.ToString("MM/dd/yyyy")
+                ' Display the luteal phase range
+                lbl_lutealval.Text = lutealPhaseStart.ToString("MM/dd/yyyy") & " - " & lutealPhaseEnd.ToString("MM/dd/yyyy")
+            Else
+                ' Handle invalid or missing cycle average
+                lbl_lutealval.Text = ""
+            End If
         Else
             ' Handle case where there is no data for menstruation
-            lbl_lutealval.Text = "No menstruation data found."
+            lbl_lutealval.Text = "No data available for luteal phase calculation."
         End If
 
         reader.Close()
         dbconnect.conn.Close()
     End Sub
+
 
 
     Private Sub DisplayCurrentPeriod()
@@ -590,7 +614,7 @@ Public Class Dashboard
                 Dim endDate As DateTime = Convert.ToDateTime(reader("dateend"))
                 lbl_currentperiod.Text = startDate.ToString("MM/dd/yyyy") & " - " & endDate.ToString("MM/dd/yyyy")
             Else
-                lbl_currentperiod.Text = "No current period data found."
+                lbl_currentperiod.Text = ""
             End If
 
             reader.Close()

@@ -157,6 +157,12 @@
   <data name="femme flow (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Assets\femme flow (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="No chance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\phasepics\No chance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Group 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Assets\Group 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PADS IMAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Assets\PADS IMAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,7 +172,16 @@
   <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Assets\Login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Group 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Assets\Group 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="High Fertility Follicular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\phasepics\High Fertility Follicular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="High Fertility Ovulation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\phasepics\High Fertility Ovulation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Low Fertility Luteal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\phasepics\Low Fertility Luteal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Low Fertility" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\phasepics\Low Fertility.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

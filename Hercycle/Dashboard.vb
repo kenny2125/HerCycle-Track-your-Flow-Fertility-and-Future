@@ -19,13 +19,124 @@ Public Class Dashboard
         CalculateNextMonthLuteal()
         CalculateNextMonthMenstruation()
         IdentifyCurrentCycleDay()
+        UpdateFertilityWatcher()
     End Sub
+
+
+    Public Sub UpdateCycleDayInfo(cycleDay As String)
+        Select Case cycleDay
+        ' **Menstrual Phase (Days 1-5)**
+            Case "Day 1"
+                lbl_dailydigestval.Text = "Cycle Day 1: Menstruation starts. Advice: Rest as the cycle begins. Use heat packs for cramps and hydrate well."
+            Case "Day 2"
+                lbl_dailydigestval.Text = "Cycle Day 2: Menstruation. Advice: Consume iron-rich foods (e.g., spinach, lentils) to replenish energy."
+            Case "Day 3"
+                lbl_dailydigestval.Text = "Cycle Day 3: Menstruation. Advice: Engage in light yoga or stretching to relieve menstrual discomfort."
+            Case "Day 4"
+                lbl_dailydigestval.Text = "Cycle Day 4: Menstruation. Advice: Monitor the flow for irregularities and continue self-care."
+            Case "Day 5"
+                lbl_dailydigestval.Text = "Cycle Day 5: Menstruation ends. Advice: Prepare for the follicular phase by focusing on balanced meals and hydration."
+
+        ' **Follicular Phase (Days 6-13)**
+            Case "Day 6"
+                lbl_dailydigestval.Text = "Cycle Day 6: Low fertility. Advice: Begin tracking cervical mucus. Stay active with light exercise."
+            Case "Day 7"
+                lbl_dailydigestval.Text = "Cycle Day 7: Low fertility. Advice: Maintain a diet rich in protein and vitamins to support follicle development."
+            Case "Day 8"
+                lbl_dailydigestval.Text = "Cycle Day 8: Fertility begins to rise. Advice: Look for changes in cervical mucus (sticky texture)."
+            Case "Day 9"
+                lbl_dailydigestval.Text = "Cycle Day 9: Fertility rising. Advice: Stay hydrated and ensure sleep quality to support hormone production."
+            Case "Day 10"
+                lbl_dailydigestval.Text = "Cycle Day 10: High fertility. Advice: Fertility is high. Focus on reducing stress."
+            Case "Day 11"
+                lbl_dailydigestval.Text = "Cycle Day 11: High fertility. Advice: Engage in intercourse if trying to conceive. Limit caffeine and alcohol."
+            Case "Day 12"
+                lbl_dailydigestval.Text = "Cycle Day 12: High fertility. Advice: Maintain physical activity to promote blood circulation."
+            Case "Day 13"
+                lbl_dailydigestval.Text = "Cycle Day 13: Peak fertility. Advice: Prioritize intimacy if conception is the goal."
+
+        ' **Ovulation Phase (Day 14)**
+            Case "Day 14"
+                lbl_dailydigestval.Text = "Cycle Day 14: Ovulation. Advice: Maximize this day for conception if desired. Avoid high-intensity stress and maintain hydration."
+
+        ' **Luteal Phase (Days 15-28)**
+            Case "Day 15"
+                lbl_dailydigestval.Text = "Cycle Day 15: High fertility lingers briefly. Advice: Maintain hydration and monitor for ovulation-related cramping."
+            Case "Day 16"
+                lbl_dailydigestval.Text = "Cycle Day 16: Fertility declines. Advice: Focus on nutrient-dense foods like leafy greens and nuts."
+            Case "Day 17"
+                lbl_dailydigestval.Text = "Cycle Day 17: Low fertility. Advice: Consider light meditation to manage mood swings."
+            Case "Day 18"
+                lbl_dailydigestval.Text = "Cycle Day 18: Low fertility. Advice: Avoid overexertion. Include healthy fats (e.g., avocados) in your meals."
+            Case "Day 19"
+                lbl_dailydigestval.Text = "Cycle Day 19: Low fertility. Advice: Maintain stable blood sugar by eating small, frequent meals."
+            Case "Day 20"
+                lbl_dailydigestval.Text = "Cycle Day 20: Low fertility. Advice: Engage in light exercise, such as walking, to improve mood and circulation."
+            Case "Day 21"
+                lbl_dailydigestval.Text = "Cycle Day 21: If conception occurred, implantation may begin. Advice: Avoid alcohol or smoking."
+            Case "Day 22"
+                lbl_dailydigestval.Text = "Cycle Day 22: Low fertility. Advice: Combat bloating with water-rich foods like cucumber."
+            Case "Day 23"
+                lbl_dailydigestval.Text = "Cycle Day 23: PMS symptoms may appear. Advice: Include magnesium-rich foods (e.g., dark chocolate) to ease cramps or irritability."
+            Case "Day 24"
+                lbl_dailydigestval.Text = "Cycle Day 24: Low fertility. Advice: Prioritize sleep to manage fatigue and hormonal changes."
+            Case "Day 25"
+                lbl_dailydigestval.Text = "Cycle Day 25: PMS symptoms may increase. Advice: Practice mindfulness to alleviate stress or anxiety."
+            Case "Day 26"
+                lbl_dailydigestval.Text = "Cycle Day 26: PMS symptoms may worsen. Advice: Focus on gentle stretches and a calming routine."
+            Case "Day 27"
+                lbl_dailydigestval.Text = "Cycle Day 27: Prepare for menstruation. Advice: Avoid salty foods to reduce bloating."
+            Case "Day 28"
+                lbl_dailydigestval.Text = "Cycle Day 28: End of cycle. Advice: Monitor for menstrual onset. Take a pregnancy test if trying to conceive and there’s a delay."
+
+        ' **Days 29-31 (If cycle extends beyond 28 days)**
+            Case "Day 29"
+                lbl_dailydigestval.Text = "Cycle Day 29: Extended luteal phase. Advice: Continue hydration and rest."
+            Case "Day 30"
+                lbl_dailydigestval.Text = "Cycle Day 30: Extended luteal phase. Advice: Monitor for signs of delayed menstruation or early pregnancy."
+            Case "Day 31"
+                lbl_dailydigestval.Text = "Cycle Day 31: Extended luteal phase. Advice: If menstruation hasn’t started, consult a healthcare provider for clarity."
+
+                ' Default case for any other days (not within 1-31)
+            Case Else
+                lbl_dailydigestval.Text = "Cycle Day: " & cycleDay
+        End Select
+    End Sub
+
+    Private Sub UpdateFertilityWatcher()
+        Select Case lbl_periodtitle.Text
+            Case "Menstruation"
+                lbl_fertilityphase.Text = "Menstruation Phase"
+                pic_fertility.Image = Hercycle.My.Resources.Resources.No_chance ' Reference to the image in resources
+                pic_fertility.SizeMode = PictureBoxSizeMode.StretchImage
+
+
+            Case "Follicular Phase"
+                lbl_fertilityphase.Text = "Follicular Phase"
+                pic_fertility.Image = Hercycle.My.Resources.Resources.Low_Fertility
+                pic_fertility.SizeMode = PictureBoxSizeMode.StretchImage
+
+            Case "Ovulation"
+                lbl_fertilityphase.Text = "Ovulation Phase"
+                pic_fertility.Image = Hercycle.My.Resources.Resources.High_Fertility_Ovulation
+                pic_fertility.SizeMode = PictureBoxSizeMode.StretchImage
+
+            Case "Luteal Phase"
+                lbl_fertilityphase.Text = "Luteal Phase"
+                pic_fertility.Image = Hercycle.My.Resources.Resources.Low_Fertility_Luteal
+
+                pic_fertility.SizeMode = PictureBoxSizeMode.StretchImage
+
+        End Select
+    End Sub
+
+
 
 
     Private Sub IdentifyCurrentCycleDay()
         ' Get today's date
-        'Dim today As DateTime = New DateTime(2024, 12, 10) ' Hardcoded for testing, replace with DateTime.Today in production
-        Dim today As DateTime = DateTime.Today
+        Dim today As DateTime = New DateTime(2024, 11, 26) ' Hardcoded for testing, replace with DateTime.Today in production
+        'Dim today As DateTime = DateTime.Today
 
         ' Connect to the database
         Dim dbconnect As New dbconnect
@@ -63,8 +174,10 @@ Public Class Dashboard
             ' Ensure cycle day starts from Day 1
             If cycleDay < 1 Then
                 lbl_cycleday.Text = "Day 1"
+                UpdateCycleDayInfo(lbl_cycleday.Text)
             Else
                 lbl_cycleday.Text = "Day " & cycleDay.ToString()
+                UpdateCycleDayInfo(lbl_cycleday.Text)
             End If
 
             ' Check for the current phase and update lbl_periodtitle accordingly
@@ -166,6 +279,15 @@ Public Class Dashboard
 
     Private Sub RefreshDashboard()
         LoadUserRecords() ' Refresh the DataGridView
+        CalculateAverageDuration() ' Call the function to calculate average duration
+
+        DisplayCurrentPeriod()
+        CalculateNextMonthFollicular()
+        CalculateNextMonthOvulation()
+        CalculateNextMonthLuteal()
+        CalculateNextMonthMenstruation()
+        IdentifyCurrentCycleDay()
+        UpdateFertilityWatcher()
     End Sub
 
 
@@ -481,5 +603,6 @@ Public Class Dashboard
 
     Private Sub lbl_period_Click(sender As Object, e As EventArgs) Handles lbl_period.Click
         IdentifyCurrentCycleDay()
+        UpdateFertilityWatcher()
     End Sub
 End Class

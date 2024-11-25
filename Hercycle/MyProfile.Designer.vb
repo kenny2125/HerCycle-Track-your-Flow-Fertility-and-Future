@@ -64,7 +64,7 @@ Partial Class MyProfile
         Me.btn_logout.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
         Me.btn_logout.Font = New System.Drawing.Font("Sylfaen", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_logout.ForeColor = System.Drawing.Color.White
-        Me.btn_logout.Location = New System.Drawing.Point(385, 320)
+        Me.btn_logout.Location = New System.Drawing.Point(230, 354)
         Me.btn_logout.Name = "btn_logout"
         Me.btn_logout.Size = New System.Drawing.Size(171, 32)
         Me.btn_logout.TabIndex = 21
@@ -81,7 +81,7 @@ Partial Class MyProfile
         Me.btn_close.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
         Me.btn_close.Font = New System.Drawing.Font("Sylfaen", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_close.ForeColor = System.Drawing.Color.White
-        Me.btn_close.Location = New System.Drawing.Point(595, 320)
+        Me.btn_close.Location = New System.Drawing.Point(417, 354)
         Me.btn_close.Name = "btn_close"
         Me.btn_close.Size = New System.Drawing.Size(197, 32)
         Me.btn_close.TabIndex = 22
@@ -119,7 +119,7 @@ Partial Class MyProfile
         Me.pnl_tracking.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.pnl_tracking.Location = New System.Drawing.Point(-1, 0)
         Me.pnl_tracking.Name = "pnl_tracking"
-        Me.pnl_tracking.Size = New System.Drawing.Size(838, 364)
+        Me.pnl_tracking.Size = New System.Drawing.Size(838, 400)
         Me.pnl_tracking.TabIndex = 27
         '
         'Guna2Button1
@@ -373,7 +373,7 @@ Partial Class MyProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(838, 364)
+        Me.ClientSize = New System.Drawing.Size(838, 398)
         Me.Controls.Add(Me.pnl_tracking)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MyProfile"

@@ -20,6 +20,33 @@ Public Class Dashboard
         CalculateNextMonthMenstruation()
         IdentifyCurrentCycleDay()
         UpdateFertilityWatcher()
+        CheckRecords()
+
+    End Sub
+
+    Private Sub CheckRecords()
+        Try
+            ' Connect to the database
+            Dim dbconnect As New dbconnect
+            dbconnect.connect()
+
+            ' Query to check if the current user has any records
+            Dim query As String = "SELECT COUNT(*) FROM tbl_records WHERE user_id = @userId"
+            Dim cmd As New MySqlCommand(query, dbconnect.conn)
+            cmd.Parameters.AddWithValue("@userId", currentUserId)
+
+            ' Execute the query and retrieve the count
+            Dim recordCount As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+
+            ' Check if there are no records
+            If recordCount = 0 Then
+                MessageBox.Show("No period records found. Please add your period records.", "No Records", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Period_Records.Show()
+
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred while checking records: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
 
@@ -109,23 +136,25 @@ Public Class Dashboard
                 lbl_fertilityphase.Text = "Menstruation Phase"
                 pic_fertility.Image = Hercycle.My.Resources.Resources.No_chance ' Reference to the image in resources
                 pic_fertility.SizeMode = PictureBoxSizeMode.StretchImage
-
+                lbl_prediction.Text = "No chance of pregnancy during menstruation."
 
             Case "Follicular Phase"
                 lbl_fertilityphase.Text = "Follicular Phase"
                 pic_fertility.Image = Hercycle.My.Resources.Resources.Low_Fertility
                 pic_fertility.SizeMode = PictureBoxSizeMode.StretchImage
-
+                lbl_prediction.Text = "Low chance of pregnancy during the follicular phase.
+"
             Case "Ovulation"
                 lbl_fertilityphase.Text = "Ovulation Phase"
                 pic_fertility.Image = Hercycle.My.Resources.Resources.High_Fertility_Ovulation
                 pic_fertility.SizeMode = PictureBoxSizeMode.StretchImage
+                lbl_prediction.Text = "High chance of pregnancy during ovulation. Consider contraception if not planning a pregnancy."
 
             Case "Luteal Phase"
                 lbl_fertilityphase.Text = "Luteal Phase"
                 pic_fertility.Image = Hercycle.My.Resources.Resources.Low_Fertility_Luteal
-
                 pic_fertility.SizeMode = PictureBoxSizeMode.StretchImage
+                lbl_prediction.Text = "Low chance of pregnancy during the luteal phase."
 
         End Select
     End Sub
@@ -455,7 +484,7 @@ Public Class Dashboard
                     lbl_menstruationval.Text = "is not in December."
                 End If
             Else
-                lbl_menstruationval.Text = "No data available to calculate next menstruation phase."
+                lbl_menstruationval.Text = ""
             End If
         Else
             lbl_menstruationval.Text = ""
@@ -502,7 +531,7 @@ Public Class Dashboard
             End If
         Else
             ' Handle case where there is no data for menstruation
-            lbl_follicularval.Text = "No data available for follicular calculation."
+            lbl_follicularval.Text = ""
         End If
 
         reader.Close()
@@ -546,7 +575,7 @@ Public Class Dashboard
             End If
         Else
             ' Handle case where there is no data for menstruation
-            lbl_ovulationval.Text = "No data available for ovulation calculation."
+            lbl_ovulationval.Text = ""
         End If
 
         reader.Close()
@@ -588,7 +617,7 @@ Public Class Dashboard
             End If
         Else
             ' Handle case where there is no data for menstruation
-            lbl_lutealval.Text = "No data available for luteal phase calculation."
+            lbl_lutealval.Text = ""
         End If
 
         reader.Close()

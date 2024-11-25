@@ -8,7 +8,19 @@ Public Class Period_Records
 
     Public Event RecordAdded()
 
+    Private Sub Period_Records_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lbl_duration.Visible = False
+        btn_add.Text = "Save Record"
+        lbl_dateadded.Text = DateTime.Now.ToString("MM/dd/yyyy")
+        datetmpick_start.Text = DateTime.Now
+        datetmpick_end.Text = DateTime.Now
 
+        ' Bring the form to the front
+        Me.BringToFront()
+        Me.Activate()
+        Me.BringToFront()
+        Me.Activate()
+    End Sub
     Private Sub CalculateDuration()
         ' Check if both date pickers have valid dates
         If datetmpick_start.Value <= datetmpick_end.Value Then
@@ -133,21 +145,42 @@ Public Class Period_Records
 
     Private Sub datetmpick_start_ValueChanged(sender As Object, e As EventArgs) Handles datetmpick_start.ValueChanged
         CalculateDuration()
+
     End Sub
 
     Private Sub datetmpick_end_ValueChanged(sender As Object, e As EventArgs) Handles datetmpick_end.ValueChanged
         CalculateDuration()
 
+
     End Sub
 
-    Private Sub Period_Records_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lbl_duration.Visible = False
-        btn_add.Text = "Save Record"
-    End Sub
+
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-        Me.Close()
+        Try
+            ' Connect to the database
+            Dim dbconnect As New dbconnect
+            dbconnect.connect()
+
+            ' Query to count records for the current user
+            Dim query As String = "SELECT COUNT(*) FROM tbl_records WHERE user_id = @userId"
+            Dim cmd As New MySqlCommand(query, dbconnect.conn)
+            cmd.Parameters.AddWithValue("@userId", currentUserId)
+
+            ' Execute the query and retrieve the count
+            Dim recordCount As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+
+            ' Check if the user has at least two records
+            If recordCount < 2 Then
+                MessageBox.Show("You need to add more records before closing.", "Insufficient Records", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                Me.Close() ' Close the form if the condition is met
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred while checking records: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
+
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
         Prev_LoadUserRecords()
@@ -293,5 +326,6 @@ Public Class Period_Records
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
     End Sub
+
 
 End Class

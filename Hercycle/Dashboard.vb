@@ -185,68 +185,68 @@ Public Class Dashboard
 
 
 
-    Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
-        ' Save changes made in the DataGridView to the database
-        Dim dbconnect As New dbconnect
-        dbconnect.connect()
+    '    Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
+    '        ' Save changes made in the DataGridView to the database
+    '        Dim dbconnect As New dbconnect
+    '        dbconnect.connect()
 
-        Try
-            For Each row As DataGridViewRow In gridview_tracker.Rows
-                If Not row.IsNewRow Then
-                    ' Assuming you have columns for ID and the fields you want to update
-                    Dim recordId As Integer = Convert.ToInt32(row.Cells("records_id").Value)
+    '        Try
+    '            For Each row As DataGridViewRow In gridview_tracker.Rows
+    '                If Not row.IsNewRow Then
+    '                    ' Assuming you have columns for ID and the fields you want to update
+    '                    Dim recordId As Integer = Convert.ToInt32(row.Cells("records_id").Value)
 
-                    ' Parse datestart and dateend as DateTime, handling any potential empty or invalid values
-                    Dim dateStart As DateTime
-                    Dim dateEnd As DateTime
+    '                    ' Parse datestart and dateend as DateTime, handling any potential empty or invalid values
+    '                    Dim dateStart As DateTime
+    '                    Dim dateEnd As DateTime
 
-                    If DateTime.TryParse(row.Cells("datestart").Value?.ToString(), dateStart) Then
-                        ' Valid dateStart
-                    Else
-                        ' Handle invalid or empty dateStart (e.g., assign a default value)
-                        dateStart = DateTime.MinValue
-                    End If
+    '                    If DateTime.TryParse(row.Cells("datestart").Value?.ToString(), dateStart) Then
+    '                        ' Valid dateStart
+    '                    Else
+    '                        ' Handle invalid or empty dateStart (e.g., assign a default value)
+    '                        dateStart = DateTime.MinValue
+    '                    End If
 
-                    If DateTime.TryParse(row.Cells("dateend").Value?.ToString(), dateEnd) Then
-                        ' Valid dateEnd
-                    Else
-                        ' Handle invalid or empty dateEnd (e.g., assign a default value)
-                        dateEnd = DateTime.MinValue
-                    End If
+    '                    If DateTime.TryParse(row.Cells("dateend").Value?.ToString(), dateEnd) Then
+    '                        ' Valid dateEnd
+    '                    Else
+    '                        ' Handle invalid or empty dateEnd (e.g., assign a default value)
+    '                        dateEnd = DateTime.MinValue
+    '                    End If
 
-                    Dim duration As Integer = If(IsDBNull(row.Cells("duration").Value), 0, Convert.ToInt32(row.Cells("duration").Value))
-                    Dim notes As String = row.Cells("notes").Value?.ToString() ?? String.Empty
+    '                    Dim duration As Integer = If(IsDBNull(row.Cells("duration").Value), 0, Convert.ToInt32(row.Cells("duration").Value))
+    '                    Dim notes As String = row.Cells("notes").Value?.ToString() ?? String.Empty
 
-' Update the database
-Dim query As String = "UPDATE tbl_records SET datestart = @dateStart, dateend = @dateEnd, duration = @duration, notes = @notes WHERE records_id = @records_id"
-                    Dim cmd As New MySqlCommand(query, dbconnect.conn)
+    '' Update the database
+    'Dim query As String = "UPDATE tbl_records SET datestart = @dateStart, dateend = @dateEnd, duration = @duration, notes = @notes WHERE records_id = @records_id"
+    '                    Dim cmd As New MySqlCommand(query, dbconnect.conn)
 
-                    cmd.Parameters.AddWithValue("@records_id", recordId)
-                    cmd.Parameters.AddWithValue("@dateStart", dateStart.ToString("yyyy-MM-dd")) ' Convert DateTime to MySQL DATE format
-                    cmd.Parameters.AddWithValue("@dateEnd", dateEnd.ToString("yyyy-MM-dd")) ' Convert DateTime to MySQL DATE format
-                    cmd.Parameters.AddWithValue("@duration", duration)
-                    cmd.Parameters.AddWithValue("@notes", notes)
+    '                    cmd.Parameters.AddWithValue("@records_id", recordId)
+    '                    cmd.Parameters.AddWithValue("@dateStart", dateStart.ToString("yyyy-MM-dd")) ' Convert DateTime to MySQL DATE format
+    '                    cmd.Parameters.AddWithValue("@dateEnd", dateEnd.ToString("yyyy-MM-dd")) ' Convert DateTime to MySQL DATE format
+    '                    cmd.Parameters.AddWithValue("@duration", duration)
+    '                    cmd.Parameters.AddWithValue("@notes", notes)
 
-                    cmd.ExecuteNonQuery()
-
-
-                    cmd.ExecuteNonQuery()
-                End If
-            Next
-
-            MessageBox.Show("Changes saved successfully.")
-        Catch ex As Exception
-            MessageBox.Show("Error saving changes: " & ex.Message)
-        Finally
-            dbconnect.conn.Close()
-            gridview_tracker.ReadOnly = True ' Disable editing after saving
-        End Try
-    End Sub
+    '                    cmd.ExecuteNonQuery()
 
 
-    Private Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
-        ' Enable editing mode for the DataGridView
-        gridview_tracker.ReadOnly = False
-        MessageBox.Show("Editing mode enabled. Click on a cell to edit.")
-    End Sub
+    '                    cmd.ExecuteNonQuery()
+    '                End If
+    '            Next
+
+    '            MessageBox.Show("Changes saved successfully.")
+    '        Catch ex As Exception
+    '            MessageBox.Show("Error saving changes: " & ex.Message)
+    '        Finally
+    '            dbconnect.conn.Close()
+    '            gridview_tracker.ReadOnly = True ' Disable editing after saving
+    '        End Try
+    '    End Sub
+
+
+    'Private Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
+    '    ' Enable editing mode for the DataGridView
+    '    gridview_tracker.ReadOnly = False
+    '    MessageBox.Show("Editing mode enabled. Click on a cell to edit.")
+    'End Sub
 End Class

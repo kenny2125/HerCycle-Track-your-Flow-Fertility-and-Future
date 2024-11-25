@@ -16,9 +16,11 @@ Public Class Period_Records
             duration = (datetmpick_end.Value - datetmpick_start.Value).Days
             lbl_duration.Text = duration.ToString() & " days"
             lbl_duration.Visible = True
+            btn_add.Text = "Save Record"
         Else
             lbl_duration.Text = "Invalid date range"
             lbl_duration.Visible = True
+            btn_add.Text = "Save Record"
         End If
     End Sub
 
@@ -29,10 +31,18 @@ Public Class Period_Records
 
         ' Hide the duration label
         lbl_duration.Visible = False
+        lbl_dateadded.Text = DateTime.Now.ToString("MM/dd/yyyy")
 
         ' Clear the notes textbox
         txt_notes.Clear()
+        currentRecordIndex = 0 ' Reset the index if no more records
     End Sub
+
+    Private currentRecordIndex As Integer = 0
+
+
+
+
 
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         Try
@@ -74,10 +84,14 @@ Public Class Period_Records
 
     Private Sub datetmpick_end_ValueChanged(sender As Object, e As EventArgs) Handles datetmpick_end.ValueChanged
         CalculateDuration()
+
     End Sub
 
     Private Sub Period_Records_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lbl_duration.Visible = False
+        btn_add.Text = "Save Record"
+
+
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
@@ -86,5 +100,154 @@ Public Class Period_Records
 
     Private Sub lbl_header_Click(sender As Object, e As EventArgs) Handles lbl_header.Click
 
+    End Sub
+
+    Private Sub txt_notes_TextChanged(sender As Object, e As EventArgs) Handles txt_notes.TextChanged
+
+    End Sub
+
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        Prev_LoadUserRecords()
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Next_LoadUserRecords()
+    End Sub
+
+    Private Sub Prev_LoadUserRecords()
+        ' Load the data from tbl_records for the current user
+        Dim dbconnect As New dbconnect
+        dbconnect.connect()
+
+        ' Explicitly select columns to ensure records_id is included
+        Dim query As String = "SELECT records_id, date_added, datestart, dateend, duration, notes FROM tbl_records WHERE user_id = @userId"
+        Dim cmd As New MySqlCommand(query, dbconnect.conn)
+        cmd.Parameters.AddWithValue("@userId", currentUserId) ' Use the current user's ID
+
+        Dim reader As MySqlDataReader = cmd.ExecuteReader()
+
+        ' Show on the DataGridView
+        If reader.HasRows Then
+            Dim dt As New DataTable
+            dt.Load(reader)
+
+            ' Check if there are more records to display
+            If currentRecordIndex < dt.Rows.Count Then
+                Dim currentRecord As DataRow = dt.Rows(currentRecordIndex)
+                Dim currentRecordDuration As Integer = Convert.ToInt32(currentRecord("duration"))
+
+                ' Update lbl_recordID, datestarted, dateended, and txt_notes
+                lbl_recordID.Text = currentRecord("records_id").ToString()
+                datetmpick_start.Text = Convert.ToDateTime(currentRecord("datestart")).ToString("MM/dd/yyyy")
+                datetmpick_end.Text = Convert.ToDateTime(currentRecord("dateend")).ToString("MM/dd/yyyy")
+                lbl_duration.Text = currentRecordDuration.ToString() & " days"
+                lbl_duration.Visible = True
+                txt_notes.Text = currentRecord("notes").ToString() ' Load the notes into the TextBox
+                lbl_dateadded.Text = currentRecord("date_added").ToString() ' Load the notes into the TextBox
+
+                ' Increment the record index for the next call
+                currentRecordIndex += -1
+            Else
+                MessageBox.Show("No more records found for the current user.")
+                currentRecordIndex = 0 ' Reset the index if no more records
+            End If
+        Else
+            MessageBox.Show("No records found for the current user.")
+        End If
+
+        ' Clean up
+        reader.Close()
+        dbconnect.conn.Close() ' Ensure the connection is closed after use
+
+    End Sub
+
+
+
+    Private Sub Next_LoadUserRecords()
+        ' Load the data from tbl_records for the current user
+        Dim dbconnect As New dbconnect
+        dbconnect.connect()
+
+        ' Explicitly select columns to ensure records_id is included
+        Dim query As String = "SELECT records_id, date_added, datestart, dateend, duration, notes FROM tbl_records WHERE user_id = @userId"
+        Dim cmd As New MySqlCommand(query, dbconnect.conn)
+        cmd.Parameters.AddWithValue("@userId", currentUserId) ' Use the current user's ID
+
+        Dim reader As MySqlDataReader = cmd.ExecuteReader()
+
+        ' Show on the DataGridView
+        If reader.HasRows Then
+            Dim dt As New DataTable
+            dt.Load(reader)
+
+            ' Check if there are more records to display
+            If currentRecordIndex < dt.Rows.Count Then
+                Dim currentRecord As DataRow = dt.Rows(currentRecordIndex)
+                Dim currentRecordDuration As Integer = Convert.ToInt32(currentRecord("duration"))
+
+                ' Update lbl_recordID, datestarted, dateended, and txt_notes
+                lbl_recordID.Text = currentRecord("records_id").ToString()
+                datetmpick_start.Text = Convert.ToDateTime(currentRecord("datestart")).ToString("MM/dd/yyyy")
+                datetmpick_end.Text = Convert.ToDateTime(currentRecord("dateend")).ToString("MM/dd/yyyy")
+                lbl_duration.Text = currentRecordDuration.ToString() & " days"
+                lbl_duration.Visible = True
+                txt_notes.Text = currentRecord("notes").ToString() ' Load the notes into the TextBox
+                lbl_dateadded.Text = currentRecord("date_added").ToString() ' Load the notes into the TextBox
+
+                ' Increment the record index for the next call
+                currentRecordIndex += 1
+            Else
+                MessageBox.Show("No more records found for the current user.")
+                currentRecordIndex = 0 ' Reset the index if no more records
+            End If
+        Else
+            MessageBox.Show("No records found for the current user.")
+        End If
+
+        ' Clean up
+        reader.Close()
+        dbconnect.conn.Close() ' Ensure the connection is closed after use
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Try
+            ' Ensure that a record is selected
+            If String.IsNullOrEmpty(lbl_recordID.Text) Then
+                MessageBox.Show("No record selected to delete.")
+                Return
+            End If
+
+            ' Confirm deletion
+            Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this record?", "Confirm Deletion", MessageBoxButtons.YesNo)
+            If result = DialogResult.No Then
+                Return
+            End If
+
+            ' Connect to the database
+            Dim dbconnect As New dbconnect
+            dbconnect.connect()
+
+            ' Prepare the SQL delete statement
+            Dim query As String = "DELETE FROM tbl_records WHERE records_id = @recordId"
+            Using cmd As New MySqlCommand(query, dbconnect.conn)
+                ' Add parameter with the record ID
+                cmd.Parameters.AddWithValue("@recordId", lbl_recordID.Text)
+
+                ' Execute the command
+                cmd.ExecuteNonQuery()
+            End Using
+
+            MessageBox.Show("Record successfully deleted.")
+            RaiseEvent RecordAdded() ' Raise the event to notify the parent form
+
+            ' Reset the form
+            btn_reset_Click(sender, e)
+
+            ' Reset the currentRecordIndex
+            currentRecordIndex = 0
+
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message)
+        End Try
     End Sub
 End Class

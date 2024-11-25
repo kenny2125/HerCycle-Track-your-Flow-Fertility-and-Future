@@ -210,7 +210,7 @@ Partial Class Dashboard
         '
         'btn_save
         '
-        Me.btn_save.BorderRadius = 6
+        Me.btn_save.BorderRadius = 20
         Me.btn_save.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_save.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_save.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -223,11 +223,11 @@ Partial Class Dashboard
         Me.btn_save.Name = "btn_save"
         Me.btn_save.Size = New System.Drawing.Size(172, 37)
         Me.btn_save.TabIndex = 22
-        Me.btn_save.Text = "Save"
+        Me.btn_save.Text = "Delete Selected"
         '
         'btn_edit
         '
-        Me.btn_edit.BorderRadius = 6
+        Me.btn_edit.BorderRadius = 20
         Me.btn_edit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_edit.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_edit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -323,7 +323,7 @@ Partial Class Dashboard
         '
         'btn_addnew
         '
-        Me.btn_addnew.BorderRadius = 6
+        Me.btn_addnew.BorderRadius = 20
         Me.btn_addnew.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_addnew.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_addnew.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray

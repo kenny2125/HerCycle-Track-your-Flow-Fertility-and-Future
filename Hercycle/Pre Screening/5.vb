@@ -22,7 +22,7 @@ Public Class _5
 
             Try
                 cmd.ExecuteNonQuery()
-                MessageBox.Show("Answer updated successfully!")
+
             Catch ex As Exception
                 MessageBox.Show("Error: " & ex.Message)
             End Try

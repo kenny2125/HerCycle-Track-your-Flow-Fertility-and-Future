@@ -40,7 +40,7 @@ Public Class Dashboard
 
             ' Check if there are no records
             If recordCount = 0 Then
-                MessageBox.Show("No period records found. Please add your period records.", "No Records", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
                 Period_Records.Show()
 
             End If

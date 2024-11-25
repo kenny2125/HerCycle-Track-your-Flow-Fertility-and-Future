@@ -535,11 +535,12 @@ Partial Class Dashboard
         '
         Me.lbl_currentperiod.BackColor = System.Drawing.Color.Transparent
         Me.lbl_currentperiod.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
-        Me.lbl_currentperiod.Location = New System.Drawing.Point(270, 48)
+        Me.lbl_currentperiod.Location = New System.Drawing.Point(270, 42)
         Me.lbl_currentperiod.Name = "lbl_currentperiod"
         Me.lbl_currentperiod.Size = New System.Drawing.Size(153, 41)
         Me.lbl_currentperiod.TabIndex = 16
         Me.lbl_currentperiod.Text = "Menstruation"
+        Me.lbl_currentperiod.TextAlignment = System.Drawing.ContentAlignment.TopCenter
         '
         'lbl_lutealval
         '

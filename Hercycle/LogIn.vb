@@ -41,8 +41,8 @@ Public Class LogIn
 
 
                 Dashboard.Show()
-                Me.Hide()
                 Splashscreen.Hide()
+                Me.Hide()
             Else
                 MsgBox("Login Failed. Please try again.")
             End If

@@ -85,9 +85,9 @@ Partial Class Period_Records
         Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Sitka Banner", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(80, 92)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(374, 31)
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(374, 50)
         Me.Guna2HtmlLabel3.TabIndex = 87
-        Me.Guna2HtmlLabel3.Text = "Add atleast two of your previous menstruation records"
+        Me.Guna2HtmlLabel3.Text = "Add atleast two consecutive previous records of menstruation "
         Me.Guna2HtmlLabel3.TextAlignment = System.Drawing.ContentAlignment.TopCenter
         Me.Guna2HtmlLabel3.Visible = False
         '

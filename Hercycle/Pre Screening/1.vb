@@ -22,7 +22,7 @@ Public Class _1
 
             Try
                 cmd.ExecuteNonQuery()
-                MessageBox.Show("Answer inserted successfully!")
+
             Catch ex As Exception
                 MessageBox.Show("Error: " & ex.Message)
             End Try

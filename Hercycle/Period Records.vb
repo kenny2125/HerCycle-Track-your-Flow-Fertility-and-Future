@@ -16,10 +16,14 @@ Public Class Period_Records
         datetmpick_end.Text = DateTime.Now
 
         ' Bring the form to the front
+
         Me.BringToFront()
         Me.Activate()
         Me.BringToFront()
         Me.Activate()
+        Me.BringToFront()
+        Me.Activate()
+
     End Sub
     Private Sub CalculateDuration()
         ' Check if both date pickers have valid dates

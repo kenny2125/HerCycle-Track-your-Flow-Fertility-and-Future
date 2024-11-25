@@ -317,9 +317,9 @@ Partial Class Dashboard
         Me.lbl_periodtracker.Font = New System.Drawing.Font("Sitka Banner", 20.0!, System.Drawing.FontStyle.Bold)
         Me.lbl_periodtracker.Location = New System.Drawing.Point(30, 9)
         Me.lbl_periodtracker.Name = "lbl_periodtracker"
-        Me.lbl_periodtracker.Size = New System.Drawing.Size(166, 41)
+        Me.lbl_periodtracker.Size = New System.Drawing.Size(168, 41)
         Me.lbl_periodtracker.TabIndex = 3
-        Me.lbl_periodtracker.Text = "Period Tracker"
+        Me.lbl_periodtracker.Text = "Period Records"
         '
         'btn_addnew
         '

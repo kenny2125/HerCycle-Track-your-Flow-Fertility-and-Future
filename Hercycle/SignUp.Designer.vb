@@ -25,6 +25,8 @@ Partial Class SignUp
         Me.components = New System.ComponentModel.Container()
         Me.lbl_surname = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_signup = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.Guna2ToggleSwitch2 = New Guna.UI2.WinForms.Guna2ToggleSwitch()
+        Me.Guna2ToggleSwitch1 = New Guna.UI2.WinForms.Guna2ToggleSwitch()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lbl_agevalue = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_signup = New Guna.UI2.WinForms.Guna2Button()
@@ -34,7 +36,6 @@ Partial Class SignUp
         Me.lbl_password = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.txt_username = New Guna.UI2.WinForms.Guna2TextBox()
         Me.lbl_username = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.dvd_signup = New MaterialSkin.Controls.MaterialDivider()
         Me.datetmpick_birthdate = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.lbl_birthdate = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_age = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -49,8 +50,6 @@ Partial Class SignUp
         Me.lbl_question = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_header = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
-        Me.Guna2ToggleSwitch1 = New Guna.UI2.WinForms.Guna2ToggleSwitch()
-        Me.Guna2ToggleSwitch2 = New Guna.UI2.WinForms.Guna2ToggleSwitch()
         Me.pnl_signup.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -78,7 +77,6 @@ Partial Class SignUp
         Me.pnl_signup.Controls.Add(Me.lbl_password)
         Me.pnl_signup.Controls.Add(Me.txt_username)
         Me.pnl_signup.Controls.Add(Me.lbl_username)
-        Me.pnl_signup.Controls.Add(Me.dvd_signup)
         Me.pnl_signup.Controls.Add(Me.datetmpick_birthdate)
         Me.pnl_signup.Controls.Add(Me.lbl_birthdate)
         Me.pnl_signup.Controls.Add(Me.lbl_age)
@@ -99,6 +97,36 @@ Partial Class SignUp
         Me.pnl_signup.Name = "pnl_signup"
         Me.pnl_signup.Size = New System.Drawing.Size(1731, 698)
         Me.pnl_signup.TabIndex = 49
+        '
+        'Guna2ToggleSwitch2
+        '
+        Me.Guna2ToggleSwitch2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ToggleSwitch2.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ToggleSwitch2.CheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch2.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch2.Location = New System.Drawing.Point(1566, 528)
+        Me.Guna2ToggleSwitch2.Name = "Guna2ToggleSwitch2"
+        Me.Guna2ToggleSwitch2.Size = New System.Drawing.Size(35, 20)
+        Me.Guna2ToggleSwitch2.TabIndex = 75
+        Me.Guna2ToggleSwitch2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2ToggleSwitch2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2ToggleSwitch2.UncheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch2.UncheckedState.InnerColor = System.Drawing.Color.White
+        '
+        'Guna2ToggleSwitch1
+        '
+        Me.Guna2ToggleSwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch1.Location = New System.Drawing.Point(1566, 398)
+        Me.Guna2ToggleSwitch1.Name = "Guna2ToggleSwitch1"
+        Me.Guna2ToggleSwitch1.Size = New System.Drawing.Size(35, 20)
+        Me.Guna2ToggleSwitch1.TabIndex = 74
+        Me.Guna2ToggleSwitch1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2ToggleSwitch1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2ToggleSwitch1.UncheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch1.UncheckedState.InnerColor = System.Drawing.Color.White
         '
         'Guna2PictureBox1
         '
@@ -152,7 +180,7 @@ Partial Class SignUp
         Me.txt_cnfirmpassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_cnfirmpassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_cnfirmpassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_cnfirmpassword.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
+        Me.txt_cnfirmpassword.Font = New System.Drawing.Font("Lucida Sans", 15.0!)
         Me.txt_cnfirmpassword.ForeColor = System.Drawing.Color.Black
         Me.txt_cnfirmpassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_cnfirmpassword.Location = New System.Drawing.Point(1204, 498)
@@ -175,7 +203,7 @@ Partial Class SignUp
         Me.txt_password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_password.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
+        Me.txt_password.Font = New System.Drawing.Font("Lucida Sans", 15.0!)
         Me.txt_password.ForeColor = System.Drawing.Color.Black
         Me.txt_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_password.Location = New System.Drawing.Point(1204, 367)
@@ -218,7 +246,7 @@ Partial Class SignUp
         Me.txt_username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_username.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
+        Me.txt_username.Font = New System.Drawing.Font("Lucida Sans", 15.0!)
         Me.txt_username.ForeColor = System.Drawing.Color.Black
         Me.txt_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_username.Location = New System.Drawing.Point(1204, 236)
@@ -239,17 +267,6 @@ Partial Class SignUp
         Me.lbl_username.Size = New System.Drawing.Size(97, 37)
         Me.lbl_username.TabIndex = 65
         Me.lbl_username.Text = "Username"
-        '
-        'dvd_signup
-        '
-        Me.dvd_signup.BackColor = System.Drawing.Color.White
-        Me.dvd_signup.Depth = 0
-        Me.dvd_signup.Location = New System.Drawing.Point(1133, 52)
-        Me.dvd_signup.MouseState = MaterialSkin.MouseState.HOVER
-        Me.dvd_signup.Name = "dvd_signup"
-        Me.dvd_signup.Size = New System.Drawing.Size(10, 571)
-        Me.dvd_signup.TabIndex = 64
-        Me.dvd_signup.Text = "MaterialDivider1"
         '
         'datetmpick_birthdate
         '
@@ -301,7 +318,7 @@ Partial Class SignUp
         Me.txt_email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_email.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
+        Me.txt_email.Font = New System.Drawing.Font("Lucida Sans", 15.0!)
         Me.txt_email.ForeColor = System.Drawing.Color.Black
         Me.txt_email.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_email.Location = New System.Drawing.Point(114, 367)
@@ -344,7 +361,7 @@ Partial Class SignUp
         Me.txt_middleint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_middleint.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_middleint.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_middleint.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
+        Me.txt_middleint.Font = New System.Drawing.Font("Lucida Sans", 15.0!)
         Me.txt_middleint.ForeColor = System.Drawing.Color.Black
         Me.txt_middleint.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_middleint.Location = New System.Drawing.Point(986, 236)
@@ -367,7 +384,7 @@ Partial Class SignUp
         Me.txt_givenname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_givenname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_givenname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_givenname.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
+        Me.txt_givenname.Font = New System.Drawing.Font("Lucida Sans", 15.0!)
         Me.txt_givenname.ForeColor = System.Drawing.Color.Black
         Me.txt_givenname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_givenname.Location = New System.Drawing.Point(545, 236)
@@ -400,7 +417,7 @@ Partial Class SignUp
         Me.txt_surname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_surname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_surname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_surname.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
+        Me.txt_surname.Font = New System.Drawing.Font("Lucida Sans", 15.0!)
         Me.txt_surname.ForeColor = System.Drawing.Color.Black
         Me.txt_surname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_surname.Location = New System.Drawing.Point(114, 236)
@@ -451,36 +468,6 @@ Partial Class SignUp
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
-        'Guna2ToggleSwitch1
-        '
-        Me.Guna2ToggleSwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White
-        Me.Guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White
-        Me.Guna2ToggleSwitch1.Location = New System.Drawing.Point(1566, 398)
-        Me.Guna2ToggleSwitch1.Name = "Guna2ToggleSwitch1"
-        Me.Guna2ToggleSwitch1.Size = New System.Drawing.Size(35, 20)
-        Me.Guna2ToggleSwitch1.TabIndex = 74
-        Me.Guna2ToggleSwitch1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Guna2ToggleSwitch1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Guna2ToggleSwitch1.UncheckedState.InnerBorderColor = System.Drawing.Color.White
-        Me.Guna2ToggleSwitch1.UncheckedState.InnerColor = System.Drawing.Color.White
-        '
-        'Guna2ToggleSwitch2
-        '
-        Me.Guna2ToggleSwitch2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ToggleSwitch2.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ToggleSwitch2.CheckedState.InnerBorderColor = System.Drawing.Color.White
-        Me.Guna2ToggleSwitch2.CheckedState.InnerColor = System.Drawing.Color.White
-        Me.Guna2ToggleSwitch2.Location = New System.Drawing.Point(1566, 528)
-        Me.Guna2ToggleSwitch2.Name = "Guna2ToggleSwitch2"
-        Me.Guna2ToggleSwitch2.Size = New System.Drawing.Size(35, 20)
-        Me.Guna2ToggleSwitch2.TabIndex = 75
-        Me.Guna2ToggleSwitch2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Guna2ToggleSwitch2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Guna2ToggleSwitch2.UncheckedState.InnerBorderColor = System.Drawing.Color.White
-        Me.Guna2ToggleSwitch2.UncheckedState.InnerColor = System.Drawing.Color.White
-        '
         'SignUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -517,7 +504,7 @@ Partial Class SignUp
     Friend WithEvents lbl_password As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents txt_username As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents lbl_username As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents dvd_signup As MaterialSkin.Controls.MaterialDivider
+
     Friend WithEvents txt_cnfirmpassword As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txt_password As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btn_signup As Guna.UI2.WinForms.Guna2Button

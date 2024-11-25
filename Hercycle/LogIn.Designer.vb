@@ -23,19 +23,19 @@ Partial Class LogIn
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation2 As Guna.UI2.AnimatorNS.Animation = New Guna.UI2.AnimatorNS.Animation()
+        Dim Animation23 As Guna.UI2.AnimatorNS.Animation = New Guna.UI2.AnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogIn))
         Me.btn_login = New Guna.UI2.WinForms.Guna2Button()
         Me.linklbl_create = New System.Windows.Forms.LinkLabel()
         Me.txt_password = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txt_username = New Guna.UI2.WinForms.Guna2TextBox()
         Me.pnl_login = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.Guna2ToggleSwitch1 = New Guna.UI2.WinForms.Guna2ToggleSwitch()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lbl_question = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_password = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_username = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Guna2ToggleSwitch1 = New Guna.UI2.WinForms.Guna2ToggleSwitch()
         Me.Guna2Transition1 = New Guna.UI2.WinForms.Guna2Transition()
         Me.pnl_login.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,7 +86,7 @@ Partial Class LogIn
         Me.txt_password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_password.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
+        Me.txt_password.Font = New System.Drawing.Font("Lucida Sans", 15.0!)
         Me.txt_password.ForeColor = System.Drawing.Color.Black
         Me.txt_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_password.Location = New System.Drawing.Point(48, 307)
@@ -112,11 +112,11 @@ Partial Class LogIn
         Me.txt_username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_username.Font = New System.Drawing.Font("Sitka Banner", 18.0!)
+        Me.txt_username.Font = New System.Drawing.Font("Lucida Sans", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_username.ForeColor = System.Drawing.Color.Black
         Me.txt_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_username.Location = New System.Drawing.Point(48, 187)
-        Me.txt_username.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txt_username.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.txt_username.Name = "txt_username"
         Me.txt_username.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_username.PlaceholderText = ""
@@ -143,6 +143,36 @@ Partial Class LogIn
         Me.pnl_login.Size = New System.Drawing.Size(594, 547)
         Me.pnl_login.TabIndex = 14
         '
+        'Guna2ToggleSwitch1
+        '
+        Me.Guna2ToggleSwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.Guna2Transition1.SetDecoration(Me.Guna2ToggleSwitch1, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.Guna2ToggleSwitch1.Location = New System.Drawing.Point(491, 326)
+        Me.Guna2ToggleSwitch1.Name = "Guna2ToggleSwitch1"
+        Me.Guna2ToggleSwitch1.Size = New System.Drawing.Size(35, 20)
+        Me.Guna2ToggleSwitch1.TabIndex = 16
+        Me.Guna2ToggleSwitch1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2ToggleSwitch1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2ToggleSwitch1.UncheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch1.UncheckedState.InnerColor = System.Drawing.Color.White
+        '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Transition1.SetDecoration(Me.Guna2PictureBox1, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.Guna2PictureBox1.Image = Global.Hercycle.My.Resources.Resources.femme_flow__1_
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(163, -20)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(300, 200)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2PictureBox1.TabIndex = 15
+        Me.Guna2PictureBox1.TabStop = False
+        Me.Guna2PictureBox1.UseTransparentBackground = True
+        '
         'lbl_question
         '
         Me.lbl_question.BackColor = System.Drawing.Color.Transparent
@@ -161,7 +191,7 @@ Partial Class LogIn
         Me.lbl_password.Font = New System.Drawing.Font("Sitka Banner", 20.0!)
         Me.lbl_password.Location = New System.Drawing.Point(48, 260)
         Me.lbl_password.Name = "lbl_password"
-        Me.lbl_password.Size = New System.Drawing.Size(102, 41)
+        Me.lbl_password.Size = New System.Drawing.Size(101, 41)
         Me.lbl_password.TabIndex = 13
         Me.lbl_password.Text = "Password"
         '
@@ -183,56 +213,26 @@ Partial Class LogIn
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
-        'Guna2PictureBox1
-        '
-        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Transition1.SetDecoration(Me.Guna2PictureBox1, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.Guna2PictureBox1.Image = Global.Hercycle.My.Resources.Resources.femme_flow__1_
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(163, -20)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(300, 200)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2PictureBox1.TabIndex = 15
-        Me.Guna2PictureBox1.TabStop = False
-        Me.Guna2PictureBox1.UseTransparentBackground = True
-        '
-        'Guna2ToggleSwitch1
-        '
-        Me.Guna2ToggleSwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White
-        Me.Guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White
-        Me.Guna2Transition1.SetDecoration(Me.Guna2ToggleSwitch1, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.Guna2ToggleSwitch1.Location = New System.Drawing.Point(491, 326)
-        Me.Guna2ToggleSwitch1.Name = "Guna2ToggleSwitch1"
-        Me.Guna2ToggleSwitch1.Size = New System.Drawing.Size(35, 20)
-        Me.Guna2ToggleSwitch1.TabIndex = 16
-        Me.Guna2ToggleSwitch1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Guna2ToggleSwitch1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Guna2ToggleSwitch1.UncheckedState.InnerBorderColor = System.Drawing.Color.White
-        Me.Guna2ToggleSwitch1.UncheckedState.InnerColor = System.Drawing.Color.White
-        '
         'Guna2Transition1
         '
         Me.Guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent
         Me.Guna2Transition1.Cursor = Nothing
-        Animation2.AnimateOnlyDifferences = True
-        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
-        Animation2.LeafCoeff = 0!
-        Animation2.MaxTime = 1.0!
-        Animation2.MinTime = 0!
-        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
-        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
-        Animation2.MosaicSize = 0
-        Animation2.Padding = New System.Windows.Forms.Padding(0, 0, 0, 0)
-        Animation2.RotateCoeff = 0!
-        Animation2.RotateLimit = 0!
-        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
-        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
-        Animation2.TimeCoeff = 0!
-        Animation2.TransparencyCoeff = 1.0!
-        Me.Guna2Transition1.DefaultAnimation = Animation2
+        Animation23.AnimateOnlyDifferences = True
+        Animation23.BlindCoeff = CType(resources.GetObject("Animation23.BlindCoeff"), System.Drawing.PointF)
+        Animation23.LeafCoeff = 0!
+        Animation23.MaxTime = 1.0!
+        Animation23.MinTime = 0!
+        Animation23.MosaicCoeff = CType(resources.GetObject("Animation23.MosaicCoeff"), System.Drawing.PointF)
+        Animation23.MosaicShift = CType(resources.GetObject("Animation23.MosaicShift"), System.Drawing.PointF)
+        Animation23.MosaicSize = 0
+        Animation23.Padding = New System.Windows.Forms.Padding(0)
+        Animation23.RotateCoeff = 0!
+        Animation23.RotateLimit = 0!
+        Animation23.ScaleCoeff = CType(resources.GetObject("Animation23.ScaleCoeff"), System.Drawing.PointF)
+        Animation23.SlideCoeff = CType(resources.GetObject("Animation23.SlideCoeff"), System.Drawing.PointF)
+        Animation23.TimeCoeff = 0!
+        Animation23.TransparencyCoeff = 1.0!
+        Me.Guna2Transition1.DefaultAnimation = Animation23
         '
         'LogIn
         '

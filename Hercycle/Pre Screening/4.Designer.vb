@@ -69,7 +69,8 @@ Partial Class _4
         Me.txt_input.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_input.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_input.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_input.Font = New System.Drawing.Font("Lucida Sans", 15.0!)
+        Me.txt_input.ForeColor = System.Drawing.SystemColors.ControlText
         Me.txt_input.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_input.Location = New System.Drawing.Point(178, 363)
         Me.txt_input.Name = "txt_input"
@@ -78,6 +79,7 @@ Partial Class _4
         Me.txt_input.SelectedText = ""
         Me.txt_input.Size = New System.Drawing.Size(158, 41)
         Me.txt_input.TabIndex = 58
+        Me.txt_input.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btn_enter
         '

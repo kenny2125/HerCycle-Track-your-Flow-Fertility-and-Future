@@ -94,4 +94,8 @@ Public Class SignUp
             txt_cnfirmpassword.PasswordChar = "*"c
         End If
     End Sub
+
+    Private Sub pnl_signup_Paint(sender As Object, e As PaintEventArgs) Handles pnl_signup.Paint
+
+    End Sub
 End Class

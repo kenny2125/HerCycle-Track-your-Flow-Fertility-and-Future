@@ -143,7 +143,7 @@ Partial Class MyProfile
         '
         Me.lbl_ageval.BackColor = System.Drawing.Color.Transparent
         Me.lbl_ageval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_ageval.Location = New System.Drawing.Point(195, 233)
+        Me.lbl_ageval.Location = New System.Drawing.Point(152, 221)
         Me.lbl_ageval.Name = "lbl_ageval"
         Me.lbl_ageval.Size = New System.Drawing.Size(31, 31)
         Me.lbl_ageval.TabIndex = 82
@@ -153,7 +153,7 @@ Partial Class MyProfile
         '
         Me.lbl_bdayval.BackColor = System.Drawing.Color.Transparent
         Me.lbl_bdayval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_bdayval.Location = New System.Drawing.Point(195, 198)
+        Me.lbl_bdayval.Location = New System.Drawing.Point(153, 181)
         Me.lbl_bdayval.Name = "lbl_bdayval"
         Me.lbl_bdayval.Size = New System.Drawing.Size(75, 31)
         Me.lbl_bdayval.TabIndex = 81
@@ -163,7 +163,7 @@ Partial Class MyProfile
         '
         Me.lbl_passwordval.BackColor = System.Drawing.Color.Transparent
         Me.lbl_passwordval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_passwordval.Location = New System.Drawing.Point(195, 303)
+        Me.lbl_passwordval.Location = New System.Drawing.Point(152, 301)
         Me.lbl_passwordval.Name = "lbl_passwordval"
         Me.lbl_passwordval.Size = New System.Drawing.Size(76, 31)
         Me.lbl_passwordval.TabIndex = 80
@@ -173,7 +173,7 @@ Partial Class MyProfile
         '
         Me.lbl_usernameval.BackColor = System.Drawing.Color.Transparent
         Me.lbl_usernameval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_usernameval.Location = New System.Drawing.Point(195, 268)
+        Me.lbl_usernameval.Location = New System.Drawing.Point(152, 261)
         Me.lbl_usernameval.Name = "lbl_usernameval"
         Me.lbl_usernameval.Size = New System.Drawing.Size(79, 31)
         Me.lbl_usernameval.TabIndex = 79
@@ -184,9 +184,9 @@ Partial Class MyProfile
         Me.lbl_emailval.AutoSize = False
         Me.lbl_emailval.BackColor = System.Drawing.Color.Transparent
         Me.lbl_emailval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_emailval.Location = New System.Drawing.Point(195, 136)
+        Me.lbl_emailval.Location = New System.Drawing.Point(152, 141)
         Me.lbl_emailval.Name = "lbl_emailval"
-        Me.lbl_emailval.Size = New System.Drawing.Size(113, 66)
+        Me.lbl_emailval.Size = New System.Drawing.Size(227, 31)
         Me.lbl_emailval.TabIndex = 78
         Me.lbl_emailval.Text = "Email" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Address"
         '
@@ -194,7 +194,7 @@ Partial Class MyProfile
         '
         Me.lbl_nameval.BackColor = System.Drawing.Color.Transparent
         Me.lbl_nameval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_nameval.Location = New System.Drawing.Point(195, 101)
+        Me.lbl_nameval.Location = New System.Drawing.Point(152, 101)
         Me.lbl_nameval.Name = "lbl_nameval"
         Me.lbl_nameval.Size = New System.Drawing.Size(48, 31)
         Me.lbl_nameval.TabIndex = 77
@@ -245,9 +245,9 @@ Partial Class MyProfile
         Me.lbl_ques4.AutoSize = False
         Me.lbl_ques4.BackColor = System.Drawing.Color.Transparent
         Me.lbl_ques4.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_ques4.Location = New System.Drawing.Point(385, 247)
+        Me.lbl_ques4.Location = New System.Drawing.Point(414, 247)
         Me.lbl_ques4.Name = "lbl_ques4"
-        Me.lbl_ques4.Size = New System.Drawing.Size(366, 60)
+        Me.lbl_ques4.Size = New System.Drawing.Size(337, 60)
         Me.lbl_ques4.TabIndex = 72
         Me.lbl_ques4.Text = "What is the average length of your menstrual cycle (in days)?"
         '
@@ -255,7 +255,7 @@ Partial Class MyProfile
         '
         Me.lbl_ques3.BackColor = System.Drawing.Color.Transparent
         Me.lbl_ques3.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_ques3.Location = New System.Drawing.Point(385, 210)
+        Me.lbl_ques3.Location = New System.Drawing.Point(414, 210)
         Me.lbl_ques3.Name = "lbl_ques3"
         Me.lbl_ques3.Size = New System.Drawing.Size(199, 31)
         Me.lbl_ques3.TabIndex = 71
@@ -265,7 +265,7 @@ Partial Class MyProfile
         '
         Me.lbl_ques2.BackColor = System.Drawing.Color.Transparent
         Me.lbl_ques2.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_ques2.Location = New System.Drawing.Point(385, 173)
+        Me.lbl_ques2.Location = New System.Drawing.Point(414, 173)
         Me.lbl_ques2.Name = "lbl_ques2"
         Me.lbl_ques2.Size = New System.Drawing.Size(220, 31)
         Me.lbl_ques2.TabIndex = 70
@@ -275,7 +275,7 @@ Partial Class MyProfile
         '
         Me.lbl_ques1.BackColor = System.Drawing.Color.Transparent
         Me.lbl_ques1.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_ques1.Location = New System.Drawing.Point(385, 136)
+        Me.lbl_ques1.Location = New System.Drawing.Point(414, 136)
         Me.lbl_ques1.Name = "lbl_ques1"
         Me.lbl_ques1.Size = New System.Drawing.Size(337, 31)
         Me.lbl_ques1.TabIndex = 69
@@ -285,7 +285,7 @@ Partial Class MyProfile
         '
         Me.lbl_subheader.BackColor = System.Drawing.Color.Transparent
         Me.lbl_subheader.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_subheader.Location = New System.Drawing.Point(385, 99)
+        Me.lbl_subheader.Location = New System.Drawing.Point(414, 99)
         Me.lbl_subheader.Name = "lbl_subheader"
         Me.lbl_subheader.Size = New System.Drawing.Size(191, 31)
         Me.lbl_subheader.TabIndex = 67
@@ -295,7 +295,7 @@ Partial Class MyProfile
         '
         Me.lbl_age.BackColor = System.Drawing.Color.Transparent
         Me.lbl_age.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_age.Location = New System.Drawing.Point(27, 233)
+        Me.lbl_age.Location = New System.Drawing.Point(27, 221)
         Me.lbl_age.Name = "lbl_age"
         Me.lbl_age.Size = New System.Drawing.Size(33, 31)
         Me.lbl_age.TabIndex = 64
@@ -305,7 +305,7 @@ Partial Class MyProfile
         '
         Me.lbl_birthdate.BackColor = System.Drawing.Color.Transparent
         Me.lbl_birthdate.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_birthdate.Location = New System.Drawing.Point(26, 198)
+        Me.lbl_birthdate.Location = New System.Drawing.Point(26, 181)
         Me.lbl_birthdate.Name = "lbl_birthdate"
         Me.lbl_birthdate.Size = New System.Drawing.Size(80, 31)
         Me.lbl_birthdate.TabIndex = 63
@@ -315,7 +315,7 @@ Partial Class MyProfile
         '
         Me.lbl_password.BackColor = System.Drawing.Color.Transparent
         Me.lbl_password.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_password.Location = New System.Drawing.Point(26, 303)
+        Me.lbl_password.Location = New System.Drawing.Point(26, 301)
         Me.lbl_password.Name = "lbl_password"
         Me.lbl_password.Size = New System.Drawing.Size(81, 31)
         Me.lbl_password.TabIndex = 60
@@ -325,7 +325,7 @@ Partial Class MyProfile
         '
         Me.lbl_username.BackColor = System.Drawing.Color.Transparent
         Me.lbl_username.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_username.Location = New System.Drawing.Point(26, 268)
+        Me.lbl_username.Location = New System.Drawing.Point(26, 261)
         Me.lbl_username.Name = "lbl_username"
         Me.lbl_username.Size = New System.Drawing.Size(86, 31)
         Me.lbl_username.TabIndex = 59
@@ -335,7 +335,7 @@ Partial Class MyProfile
         '
         Me.lbl_email.BackColor = System.Drawing.Color.Transparent
         Me.lbl_email.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_email.Location = New System.Drawing.Point(27, 136)
+        Me.lbl_email.Location = New System.Drawing.Point(27, 141)
         Me.lbl_email.Name = "lbl_email"
         Me.lbl_email.Size = New System.Drawing.Size(118, 31)
         Me.lbl_email.TabIndex = 57

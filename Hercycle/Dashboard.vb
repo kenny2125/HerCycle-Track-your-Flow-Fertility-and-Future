@@ -17,7 +17,6 @@ Public Class Dashboard
 
 
     End Sub
-
     Private Sub RefreshDashboard()
 
         LoadName()
@@ -52,35 +51,39 @@ Public Class Dashboard
             Dim menstruationStart As DateTime = reader.GetDateTime("datestart")
             Dim menstruationEnd As DateTime = reader.GetDateTime("dateend")
 
-            ' Calculate the next menstruation start date (add average cycle length)
-            Dim cycleAverage As Integer
-            If Integer.TryParse(lbl_phasedayno.Text, cycleAverage) AndAlso cycleAverage > 0 Then
-                Dim nextMenstruationStart As DateTime = menstruationEnd.AddDays(cycleAverage)
+            ' Get the cycle length from lbl_phasedayno
+            Dim cycleLength As Integer
+            If Integer.TryParse(lbl_phasedayno.Text, cycleLength) AndAlso cycleLength > 0 Then
 
-                ' Calculate the next follicular phase (first 14 days of cycle)
-                Dim follicularPhaseEnd As DateTime = nextMenstruationStart.AddDays(13) ' 14-day follicular phase
+                ' Calculate the next menstruation start date (start of the next cycle)
+                Dim nextMenstruationStart As DateTime = menstruationEnd.AddDays(1) ' Start of follicular phase
+
+                ' Calculate the follicular phase (12 days from menstruation start)
+                Dim follicularPhaseEnd As DateTime = nextMenstruationStart.AddDays(cycleLength * 0.5 - 1) ' Half of cycle length
                 lbl_follicularval.Text = nextMenstruationStart.ToString("MM/dd/yyyy") & " - " & follicularPhaseEnd.ToString("MM/dd/yyyy")
 
-                ' Calculate the ovulation phase (around 14-16 days before the next menstruation start)
-                Dim ovulationStart As DateTime = nextMenstruationStart.AddDays(-14)
-                Dim ovulationEnd As DateTime = nextMenstruationStart.AddDays(-10)
+                ' Calculate the ovulation phase (typically around 1/3 of the cycle)
+                Dim ovulationStart As DateTime = follicularPhaseEnd.AddDays(1) ' Ovulation starts right after follicular phase
+                Dim ovulationEnd As DateTime = ovulationStart.AddDays(cycleLength * 0.17 - 1) ' Approx 1/3 of the cycle
                 lbl_ovulationval.Text = ovulationStart.ToString("MM/dd/yyyy") & " - " & ovulationEnd.ToString("MM/dd/yyyy")
 
-                ' Calculate the luteal phase (typically 14 days after ovulation)
-                Dim lutealStart As DateTime = ovulationEnd.AddDays(1)
-                Dim lutealEnd As DateTime = lutealStart.AddDays(13)
+                ' Calculate the luteal phase (remaining days after ovulation)
+                Dim lutealStart As DateTime = ovulationEnd.AddDays(1) ' Luteal phase starts right after ovulation
+                Dim lutealEnd As DateTime = lutealStart.AddDays(cycleLength * 0.33 - 1) ' Remaining time in luteal phase
                 lbl_lutealval.Text = lutealStart.ToString("MM/dd/yyyy") & " - " & lutealEnd.ToString("MM/dd/yyyy")
 
-                ' Calculate the next menstruation phase (28 days from menstruation start)
-                Dim nextMenstruationEnd As DateTime = nextMenstruationStart.AddDays(cycleAverage - 1) ' Next menstruation will last cycle length days
+                ' Calculate the next menstruation phase (cycle length days from menstruation start)
+                Dim nextMenstruationEnd As DateTime = lutealEnd.AddDays(1) ' Next menstruation starts right after luteal phase ends
                 lbl_menstruationval.Text = nextMenstruationStart.ToString("MM/dd/yyyy") & " - " & nextMenstruationEnd.ToString("MM/dd/yyyy")
+
             Else
-                ' Handle invalid or missing cycle average
+                ' Handle invalid or missing cycle length
                 lbl_follicularval.Text = ""
                 lbl_ovulationval.Text = ""
                 lbl_lutealval.Text = ""
                 lbl_menstruationval.Text = ""
             End If
+
         Else
             ' Handle case where there is no data for menstruation
             lbl_follicularval.Text = ""
@@ -92,6 +95,7 @@ Public Class Dashboard
         reader.Close()
         dbconnect.conn.Close()
     End Sub
+
 
     Private Sub CalculateAverageDuration()
         ' Connect to the database

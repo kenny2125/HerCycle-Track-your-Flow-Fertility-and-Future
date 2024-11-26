@@ -642,7 +642,6 @@ Partial Class Dashboard
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Dashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.pnl_dashboard.ResumeLayout(False)
         Me.pnl_dashboard.PerformLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

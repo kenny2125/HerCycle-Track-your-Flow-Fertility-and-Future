@@ -55,7 +55,7 @@ Partial Class MyProfile
         '
         'btn_logout
         '
-        Me.btn_logout.BorderRadius = 6
+        Me.btn_logout.BorderRadius = 10
         Me.btn_logout.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_logout.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_logout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -64,15 +64,15 @@ Partial Class MyProfile
         Me.btn_logout.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
         Me.btn_logout.Font = New System.Drawing.Font("Sylfaen", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_logout.ForeColor = System.Drawing.Color.White
-        Me.btn_logout.Location = New System.Drawing.Point(230, 354)
+        Me.btn_logout.Location = New System.Drawing.Point(595, 313)
         Me.btn_logout.Name = "btn_logout"
-        Me.btn_logout.Size = New System.Drawing.Size(171, 32)
+        Me.btn_logout.Size = New System.Drawing.Size(197, 32)
         Me.btn_logout.TabIndex = 21
         Me.btn_logout.Text = "Log Out"
         '
         'btn_close
         '
-        Me.btn_close.BorderRadius = 6
+        Me.btn_close.BorderRadius = 10
         Me.btn_close.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_close.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_close.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -81,7 +81,7 @@ Partial Class MyProfile
         Me.btn_close.FillColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
         Me.btn_close.Font = New System.Drawing.Font("Sylfaen", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_close.ForeColor = System.Drawing.Color.White
-        Me.btn_close.Location = New System.Drawing.Point(417, 354)
+        Me.btn_close.Location = New System.Drawing.Point(595, 354)
         Me.btn_close.Name = "btn_close"
         Me.btn_close.Size = New System.Drawing.Size(197, 32)
         Me.btn_close.TabIndex = 22

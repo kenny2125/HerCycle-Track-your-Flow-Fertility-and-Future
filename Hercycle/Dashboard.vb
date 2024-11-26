@@ -4,50 +4,201 @@ Public Class Dashboard
 
     Private currentUserId As Integer = CurrentUser.UserId
     Public Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadUserRecords()
-        LoadName()
-        'MessageBox.Show("Current User ID: " & currentUserId.ToString())
+        RefreshDashboard()
+
+        ' Handle PreScreening visibility
         If Not IsAnswered() Then
             PreScreening.Show()
+        Else
+            PreScreening.Close()
         End If
 
-        CalculateAverageDuration() ' Call the function to calculate average duration
+        ' Check if the user has any records
+
+
+    End Sub
+
+    Private Sub RefreshDashboard()
+
+        LoadName()
+        LoadUserRecords()
+
+        IdentifyCurrentCycleDay()
+        CalculateAverageDuration()
+        UpdateFertilityWatcher()
+
+
 
         DisplayCurrentPeriod()
-        CalculateNextMonthFollicular()
-        CalculateNextMonthOvulation()
-        CalculateNextMonthLuteal()
-        CalculateNextMonthMenstruation()
-        IdentifyCurrentCycleDay()
-        UpdateFertilityWatcher()
-        CheckRecords()
+        CalculateNextPhases()
+
 
     End Sub
+    Private Sub CalculateNextPhases()
+        ' Connect to the database
+        Dim dbconnect As New dbconnect
+        dbconnect.connect()
 
-    Private Sub CheckRecords()
-        Try
-            ' Connect to the database
-            Dim dbconnect As New dbconnect
-            dbconnect.connect()
+        ' Query to get the most recent menstruation data, sorted by date started
+        Dim query As String = "SELECT datestart, dateend FROM tbl_records WHERE user_id = @userId ORDER BY datestart DESC LIMIT 1"
+        Dim cmd As New MySqlCommand(query, dbconnect.conn)
+        cmd.Parameters.AddWithValue("@userId", currentUserId)
 
-            ' Query to check if the current user has any records
-            Dim query As String = "SELECT COUNT(*) FROM tbl_records WHERE user_id = @userId"
-            Dim cmd As New MySqlCommand(query, dbconnect.conn)
-            cmd.Parameters.AddWithValue("@userId", currentUserId)
+        ' Execute the query and get the result
+        Dim reader As MySqlDataReader = cmd.ExecuteReader()
 
-            ' Execute the query and retrieve the count
-            Dim recordCount As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+        If reader.HasRows Then
+            reader.Read()
+            Dim menstruationStart As DateTime = reader.GetDateTime("datestart")
+            Dim menstruationEnd As DateTime = reader.GetDateTime("dateend")
 
-            ' Check if there are no records
-            If recordCount = 0 Then
+            ' Calculate the next menstruation start date (add average cycle length)
+            Dim cycleAverage As Integer
+            If Integer.TryParse(lbl_phasedayno.Text, cycleAverage) AndAlso cycleAverage > 0 Then
+                Dim nextMenstruationStart As DateTime = menstruationEnd.AddDays(cycleAverage)
 
-                Period_Records.Show()
+                ' Calculate the next follicular phase (first 14 days of cycle)
+                Dim follicularPhaseEnd As DateTime = nextMenstruationStart.AddDays(13) ' 14-day follicular phase
+                lbl_follicularval.Text = nextMenstruationStart.ToString("MM/dd/yyyy") & " - " & follicularPhaseEnd.ToString("MM/dd/yyyy")
 
+                ' Calculate the ovulation phase (around 14-16 days before the next menstruation start)
+                Dim ovulationStart As DateTime = nextMenstruationStart.AddDays(-14)
+                Dim ovulationEnd As DateTime = nextMenstruationStart.AddDays(-10)
+                lbl_ovulationval.Text = ovulationStart.ToString("MM/dd/yyyy") & " - " & ovulationEnd.ToString("MM/dd/yyyy")
+
+                ' Calculate the luteal phase (typically 14 days after ovulation)
+                Dim lutealStart As DateTime = ovulationEnd.AddDays(1)
+                Dim lutealEnd As DateTime = lutealStart.AddDays(13)
+                lbl_lutealval.Text = lutealStart.ToString("MM/dd/yyyy") & " - " & lutealEnd.ToString("MM/dd/yyyy")
+
+                ' Calculate the next menstruation phase (28 days from menstruation start)
+                Dim nextMenstruationEnd As DateTime = nextMenstruationStart.AddDays(cycleAverage - 1) ' Next menstruation will last cycle length days
+                lbl_menstruationval.Text = nextMenstruationStart.ToString("MM/dd/yyyy") & " - " & nextMenstruationEnd.ToString("MM/dd/yyyy")
+            Else
+                ' Handle invalid or missing cycle average
+                lbl_follicularval.Text = ""
+                lbl_ovulationval.Text = ""
+                lbl_lutealval.Text = ""
+                lbl_menstruationval.Text = ""
             End If
-        Catch ex As Exception
-            MessageBox.Show("An error occurred while checking records: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        Else
+            ' Handle case where there is no data for menstruation
+            lbl_follicularval.Text = ""
+            lbl_ovulationval.Text = ""
+            lbl_lutealval.Text = ""
+            lbl_menstruationval.Text = ""
+        End If
+
+        reader.Close()
+        dbconnect.conn.Close()
     End Sub
+
+    Private Sub CalculateAverageDuration()
+        ' Connect to the database
+        Dim dbconnect As New dbconnect
+        dbconnect.connect()
+
+        ' Query to get the relevant records for the current user, ordered by start date
+        Dim query As String = "SELECT datestart, dateend FROM tbl_records WHERE user_id = @userId ORDER BY YEAR(datestart), MONTH(datestart)"
+        Dim cmd As New MySqlCommand(query, dbconnect.conn)
+        cmd.Parameters.AddWithValue("@userId", currentUserId)
+
+        ' Execute the query and get the result
+        Dim reader As MySqlDataReader = cmd.ExecuteReader()
+
+        ' List to store intervals between periods
+        Dim cycleIntervals As New List(Of Integer)()
+
+        ' Track the last period's end date
+        Dim lastEndDate As DateTime? = Nothing
+
+        ' Process each record
+        While reader.Read()
+            Dim startDate As DateTime = Convert.ToDateTime(reader("datestart"))
+            Dim endDate As DateTime = Convert.ToDateTime(reader("dateend"))
+
+            ' Calculate the interval between the end of the previous period and the start of the current period
+            If lastEndDate.HasValue Then
+                Dim interval As Integer = (startDate - lastEndDate.Value).Days
+                cycleIntervals.Add(interval)
+            End If
+
+            ' Update the last end date
+            lastEndDate = endDate
+        End While
+
+        ' Check if there are intervals to evaluate
+        If cycleIntervals.Count > 0 Then
+            ' Calculate the average interval across all records
+            Dim averageInterval As Integer = CInt(cycleIntervals.Average())
+
+            ' Output the average interval
+            lbl_phasedayno.Text = averageInterval.ToString()
+
+            ' Determine if the cycle is regular based on intervals
+            If cycleIntervals.All(Function(i) i >= 24 And i <= 38) Then
+                lbl_phasesub.Text = "Regular"
+            Else
+                lbl_phasesub.Text = "Irregular"
+            End If
+        Else
+            ' Handle the case with no records
+            lbl_phasesub.Text = "No Data"
+            lbl_phasedayno.Text = ""
+        End If
+
+        ' Clean up
+        reader.Close()
+        dbconnect.conn.Close() ' Ensure the connection is closed after use
+    End Sub
+
+    Private Sub LoadUserRecords()
+        ' Load the data from tbl_records for the current user
+        Dim dbconnect As New dbconnect
+        dbconnect.connect()
+
+        ' Explicitly select columns to ensure records_id is included
+        Dim query As String = "SELECT records_id, date_added, datestart, dateend, duration, notes FROM tbl_records WHERE user_id = @userId ORDER BY datestart"
+        Dim cmd As New MySqlCommand(query, dbconnect.conn)
+        cmd.Parameters.AddWithValue("@userId", currentUserId) ' Use the current user's ID
+
+        Dim reader As MySqlDataReader = cmd.ExecuteReader()
+
+        ' Show on the DataGridView
+        If reader.HasRows Then
+            Dim dt As New DataTable
+            dt.Load(reader)
+
+            ' Sort the data table based on the calculated intervals (by `datestart`)
+            ' Assume that `cycleIntervals` is a sorted list from the previous average calculation
+            ' Applying the sort
+            dt.DefaultView.Sort = "datestart ASC"
+
+            gridview_tracker.DataSource = dt
+
+            ' Set column headers
+            gridview_tracker.Columns("records_id").HeaderText = "Record ID"
+            gridview_tracker.Columns("date_added").HeaderText = "Date Added"
+            gridview_tracker.Columns("datestart").HeaderText = "Date Started"
+            gridview_tracker.Columns("dateend").HeaderText = "Date Ended"
+            gridview_tracker.Columns("duration").HeaderText = "Period Duration"
+            gridview_tracker.Columns("notes").HeaderText = "Notes"
+
+            ' Set visibility of columns if necessary
+            gridview_tracker.Columns("records_id").Visible = True
+            gridview_tracker.Columns("date_added").Visible = True
+        Else
+            'MessageBox.Show("No records found for the current user.")
+        End If
+
+        ' Clean up
+        reader.Close()
+        dbconnect.conn.Close() ' Ensure the connection is closed after use
+    End Sub
+
+
+
+
 
 
     Public Sub UpdateCycleDayInfo(cycleDay As String)
@@ -159,20 +310,17 @@ Public Class Dashboard
         End Select
     End Sub
 
-
-
-
     Private Sub IdentifyCurrentCycleDay()
         ' Get today's date
-        Dim today As DateTime = New DateTime(2024, 11, 27) ' Hardcoded for testing, replace with DateTime.Today in production
-        'Dim today As DateTime = DateTime.Today
+        'Dim today As DateTime = New DateTime(2024, 12, 30)
+        Dim today As DateTime = DateTime.Today
 
         ' Connect to the database
         Dim dbconnect As New dbconnect
         dbconnect.connect()
 
-        ' Query to get the most recent period data for the current user
-        Dim query As String = "SELECT datestart, dateend FROM tbl_records WHERE user_id = @userId ORDER BY records_id DESC LIMIT 1"
+        ' Query to get the most recent period data for the current user, sorted by datestart
+        Dim query As String = "SELECT datestart, dateend FROM tbl_records WHERE user_id = @userId ORDER BY datestart DESC LIMIT 1"
         Dim cmd As New MySqlCommand(query, dbconnect.conn)
         cmd.Parameters.AddWithValue("@userId", currentUserId)
 
@@ -192,9 +340,9 @@ Public Class Dashboard
         ' Close the reader
         reader.Close()
 
-        ' Calculate the current cycle day
+        ' Calculate the current cycle day based on the most recent period
         If lastPeriodStart <> DateTime.MinValue AndAlso lastPeriodEnd <> DateTime.MinValue Then
-            ' Calculate total cycle length from database if needed (e.g., for future use)
+            ' Calculate total cycle length from the database if needed (e.g., for future use)
             Dim totalCycleLength As Integer = (lastPeriodEnd - lastPeriodStart).Days + 1
 
             ' Calculate the cycle day based on today's date
@@ -249,48 +397,6 @@ Public Class Dashboard
         dbconnect.conn.Close()
     End Sub
 
-    Private Sub LoadUserRecords()
-        ' Load the data from tbl_records for the current user
-        Dim dbconnect As New dbconnect
-        dbconnect.connect()
-
-        ' Explicitly select columns to ensure records_id is included
-        Dim query As String = "SELECT records_id, date_added, datestart, dateend, duration, notes FROM tbl_records WHERE user_id = @userId"
-        Dim cmd As New MySqlCommand(query, dbconnect.conn)
-        cmd.Parameters.AddWithValue("@userId", currentUserId) ' Use the current user's ID
-
-        Dim reader As MySqlDataReader = cmd.ExecuteReader()
-
-        ' Show on the DataGridView
-        If reader.HasRows Then
-            Dim dt As New DataTable
-            dt.Load(reader)
-
-
-            gridview_tracker.DataSource = dt
-
-            ' Set column headers
-            gridview_tracker.Columns("records_id").HeaderText = "Record ID"
-            gridview_tracker.Columns("date_added").HeaderText = "Date Added"
-            gridview_tracker.Columns("datestart").HeaderText = "Date Started"
-            gridview_tracker.Columns("dateend").HeaderText = "Date Ended"
-            gridview_tracker.Columns("duration").HeaderText = "Period Duration"
-            gridview_tracker.Columns("notes").HeaderText = "Notes"
-
-            ' Set visibility of columns if necessary
-            gridview_tracker.Columns("records_id").Visible = True
-            gridview_tracker.Columns("date_added").Visible = True
-        Else
-            'MessageBox.Show("No records found for the current user.")
-        End If
-
-        ' Clean up
-        reader.Close()
-        dbconnect.conn.Close() ' Ensure the connection is closed after use
-    End Sub
-
-
-
     Private Sub ChangeGridViewFont()
         ' Change the font of the DataGridView
         Dim newFont As New Font("Sitka Banner", 12, FontStyle.Bold)
@@ -304,22 +410,6 @@ Public Class Dashboard
         periodRecordsForm.Show()
 
     End Sub
-
-
-    Private Sub RefreshDashboard()
-        LoadUserRecords() ' Refresh the DataGridView
-        CalculateAverageDuration() ' Call the function to calculate average duration
-
-        DisplayCurrentPeriod()
-        CalculateNextMonthFollicular()
-        CalculateNextMonthOvulation()
-        CalculateNextMonthLuteal()
-        CalculateNextMonthMenstruation()
-        IdentifyCurrentCycleDay()
-        UpdateFertilityWatcher()
-    End Sub
-
-
 
     Private Sub LoadName()
         Dim dbconnect As New dbconnect
@@ -349,7 +439,6 @@ Public Class Dashboard
         End Try
     End Sub
 
-
     Private Function IsAnswered() As Boolean
         Dim dbconnect As New dbconnect
         dbconnect.connect()
@@ -373,255 +462,8 @@ Public Class Dashboard
         Return False ' Default to false if no result or an error occurs
     End Function
 
-
     Private Sub picb_profile_Click(sender As Object, e As EventArgs) Handles picb_profile.Click
         MyProfile.Show()
-    End Sub
-
-
-    Private Sub CalculateAverageDuration()
-        ' Connect to the database
-        Dim dbconnect As New dbconnect
-        dbconnect.connect()
-
-        ' Query to get the relevant records for the current user, ordered by start date
-        Dim query As String = "SELECT datestart, dateend FROM tbl_records WHERE user_id = @userId ORDER BY datestart"
-        Dim cmd As New MySqlCommand(query, dbconnect.conn)
-        cmd.Parameters.AddWithValue("@userId", currentUserId)
-
-        ' Execute the query and get the result
-        Dim reader As MySqlDataReader = cmd.ExecuteReader()
-
-        ' List to store intervals between periods
-        Dim cycleIntervals As New List(Of Integer)()
-
-        ' Track the last period's end date
-        Dim lastEndDate As DateTime? = Nothing
-
-        ' Process each record
-        While reader.Read()
-            Dim startDate As DateTime = Convert.ToDateTime(reader("datestart"))
-            Dim endDate As DateTime = Convert.ToDateTime(reader("dateend"))
-
-            ' Calculate the interval between the end of the previous period and the start of the current period
-            If lastEndDate.HasValue Then
-                Dim interval As Integer = (startDate - lastEndDate.Value).Days
-                cycleIntervals.Add(interval)
-            End If
-
-            ' Update the last end date
-            lastEndDate = endDate
-        End While
-
-        ' Check if there are intervals to evaluate
-        If cycleIntervals.Count > 0 Then
-            ' Calculate the average interval
-            Dim averageInterval As Integer = CInt(cycleIntervals.Average())
-
-            ' Determine if the cycle is regular based on intervals
-            If cycleIntervals.All(Function(i) i >= 24 And i <= 38) Then
-                lbl_phasesub.Text = "Regular"
-            Else
-                lbl_phasesub.Text = "Irregular"
-            End If
-
-            ' Display the average interval
-            lbl_phasedayno.Text = averageInterval.ToString()
-        ElseIf lastEndDate.HasValue Then
-            ' If only one record is available, display a default message
-            lbl_phasesub.Text = ""
-            lbl_phasedayno.Text = ""
-        Else
-            ' Handle the case with no records
-            lbl_phasesub.Text = "No Data"
-            lbl_phasedayno.Text = ""
-        End If
-
-        ' Clean up
-        reader.Close()
-        dbconnect.conn.Close() ' Ensure the connection is closed after use
-    End Sub
-
-    Private Sub CalculateNextMonthMenstruation()
-        ' Connect to the database
-        Dim dbconnect As New dbconnect
-        dbconnect.connect()
-
-        ' Query to get the most recent period data for the current user
-        Dim query As String = "SELECT datestart, dateend FROM tbl_records WHERE user_id = @userId ORDER BY records_id DESC LIMIT 1"
-        Dim cmd As New MySqlCommand(query, dbconnect.conn)
-        cmd.Parameters.AddWithValue("@userId", currentUserId)
-
-        ' Execute the query and load the result into a reader
-        Dim reader As MySqlDataReader = cmd.ExecuteReader()
-
-        ' Declare variables to hold the start and end date of the most recent period
-        Dim lastPeriodEnd As DateTime = DateTime.MinValue
-
-        ' Fetch the most recent period's end date
-        If reader.Read() Then
-            lastPeriodEnd = Convert.ToDateTime(reader("dateend"))
-        End If
-
-        ' Close the reader
-        reader.Close()
-
-        ' Get the cycle length from lbl_phasedayno (assuming it contains the average cycle length in days)
-        Dim cycleLength As Integer
-        If Integer.TryParse(lbl_phasedayno.Text, cycleLength) Then
-            ' If the cycle length is valid, proceed with the calculation
-            If lastPeriodEnd <> DateTime.MinValue Then
-                ' Calculate the next menstruation start date using the cycle length
-                Dim nextMenstruationStart As DateTime = lastPeriodEnd.AddDays(cycleLength) ' Add cycle length days for the next cycle
-
-                ' Calculate the end date for the next menstruation phase (Assume 5-day period length)
-                Dim nextMenstruationEnd As DateTime = nextMenstruationStart.AddDays(4) ' Assuming 5 days menstruation duration
-
-                ' Check if the projected menstruation period is within the next month (December)
-                If nextMenstruationStart.Month = 12 Then
-                    lbl_menstruationval.Text = nextMenstruationStart.ToString("MM/dd/yyyy") & " - " & nextMenstruationEnd.ToString("MM/dd/yyyy")
-                Else
-                    lbl_menstruationval.Text = "is not in December."
-                End If
-            Else
-                lbl_menstruationval.Text = ""
-            End If
-        Else
-            lbl_menstruationval.Text = ""
-        End If
-
-        ' Clean up
-        dbconnect.conn.Close()
-    End Sub
-
-
-    Private Sub CalculateNextMonthFollicular()
-        ' Connect to the database
-        Dim dbconnect As New dbconnect
-        dbconnect.connect()
-
-        ' Query to get the most recent menstruation data (based on records_id)
-        Dim query As String = "SELECT datestart, dateend FROM tbl_records WHERE user_id = @userId ORDER BY records_id DESC LIMIT 1"
-        Dim cmd As New MySqlCommand(query, dbconnect.conn)
-        cmd.Parameters.AddWithValue("@userId", currentUserId)
-
-        ' Execute the query and get the result
-        Dim reader As MySqlDataReader = cmd.ExecuteReader()
-
-        If reader.HasRows Then
-            reader.Read()
-            Dim menstruationStart As DateTime = reader.GetDateTime("datestart")
-            Dim menstruationEnd As DateTime = reader.GetDateTime("dateend")
-
-            ' Validate and parse the cycle average from lbl_phasedayno
-            Dim cycleAverage As Integer
-            If Integer.TryParse(lbl_phasedayno.Text, cycleAverage) AndAlso cycleAverage > 0 Then
-                ' Calculate the projected next menstruation start date
-                Dim nextMenstruationStart As DateTime = menstruationEnd.AddDays(cycleAverage)
-
-                ' Calculate the Follicular Phase: Starts from the next menstruation day
-                ' and lasts until ovulation (approximately the first 14 days of the cycle)
-                Dim follicularPhaseEnd As DateTime = nextMenstruationStart.AddDays(-14 + 13) ' Align with ovulation start
-
-                ' Display the projected Follicular Phase in the label
-                lbl_follicularval.Text = nextMenstruationStart.ToString("MM/dd/yyyy") & " - " & follicularPhaseEnd.ToString("MM/dd/yyyy")
-            Else
-                ' Handle invalid or missing cycle average
-                lbl_follicularval.Text = ""
-            End If
-        Else
-            ' Handle case where there is no data for menstruation
-            lbl_follicularval.Text = ""
-        End If
-
-        reader.Close()
-        dbconnect.conn.Close()
-    End Sub
-
-
-
-    Private Sub CalculateNextMonthOvulation()
-        ' Connect to the database
-        Dim dbconnect As New dbconnect
-        dbconnect.connect()
-
-        ' Query to get the most recent menstruation data (based on records_id)
-        Dim query As String = "SELECT datestart, dateend FROM tbl_records WHERE user_id = @userId ORDER BY records_id DESC LIMIT 1"
-        Dim cmd As New MySqlCommand(query, dbconnect.conn)
-        cmd.Parameters.AddWithValue("@userId", currentUserId)
-
-        ' Execute the query and get the result
-        Dim reader As MySqlDataReader = cmd.ExecuteReader()
-
-        If reader.HasRows Then
-            reader.Read()
-            Dim menstruationEnd As DateTime = reader.GetDateTime("dateend")
-
-            ' Validate and parse the cycle average from lbl_phasedayno
-            Dim cycleAverage As Integer
-            If Integer.TryParse(lbl_phasedayno.Text, cycleAverage) AndAlso cycleAverage > 0 Then
-                ' Calculate the projected next menstruation start date
-                Dim nextMenstruationStart As DateTime = menstruationEnd.AddDays(cycleAverage)
-
-                ' Calculate ovulation range (10–14 days before next menstruation start)
-                Dim ovulationStart As DateTime = nextMenstruationStart.AddDays(-14)
-                Dim ovulationEnd As DateTime = nextMenstruationStart.AddDays(-10)
-
-                ' Display the ovulation range
-                lbl_ovulationval.Text = ovulationStart.ToString("MM/dd/yyyy") & " - " & ovulationEnd.ToString("MM/dd/yyyy")
-            Else
-                ' Handle invalid or missing cycle average
-                lbl_ovulationval.Text = ""
-            End If
-        Else
-            ' Handle case where there is no data for menstruation
-            lbl_ovulationval.Text = ""
-        End If
-
-        reader.Close()
-        dbconnect.conn.Close()
-    End Sub
-
-    Private Sub CalculateNextMonthLuteal()
-        ' Connect to the database
-        Dim dbconnect As New dbconnect
-        dbconnect.connect()
-
-        ' Query to get the most recent menstruation data (based on records_id)
-        Dim query As String = "SELECT datestart, dateend FROM tbl_records WHERE user_id = @userId ORDER BY records_id DESC LIMIT 1"
-        Dim cmd As New MySqlCommand(query, dbconnect.conn)
-        cmd.Parameters.AddWithValue("@userId", currentUserId)
-
-        ' Execute the query and get the result
-        Dim reader As MySqlDataReader = cmd.ExecuteReader()
-
-        If reader.HasRows Then
-            reader.Read()
-            Dim menstruationEnd As DateTime = reader.GetDateTime("dateend")
-
-            ' Validate and parse the cycle average from lbl_phasedayno
-            Dim cycleAverage As Integer
-            If Integer.TryParse(lbl_phasedayno.Text, cycleAverage) AndAlso cycleAverage > 0 Then
-                ' Calculate the projected next menstruation start date
-                Dim nextMenstruationStart As DateTime = menstruationEnd.AddDays(cycleAverage)
-
-                ' Calculate luteal phase range
-                Dim lutealPhaseStart As DateTime = nextMenstruationStart.AddDays(-9) ' Luteal phase starts 9 days before menstruation
-                Dim lutealPhaseEnd As DateTime = nextMenstruationStart.AddDays(-1)  ' Ends the day before menstruation
-
-                ' Display the luteal phase range
-                lbl_lutealval.Text = lutealPhaseStart.ToString("MM/dd/yyyy") & " - " & lutealPhaseEnd.ToString("MM/dd/yyyy")
-            Else
-                ' Handle invalid or missing cycle average
-                lbl_lutealval.Text = ""
-            End If
-        Else
-            ' Handle case where there is no data for menstruation
-            lbl_lutealval.Text = ""
-        End If
-
-        reader.Close()
-        dbconnect.conn.Close()
     End Sub
 
 
@@ -631,8 +473,8 @@ Public Class Dashboard
         dbconnect.connect()
 
         Try
-            ' Query to get the most recent period data for the current user
-            Dim query As String = "SELECT datestart, dateend FROM tbl_records WHERE user_id = @userId ORDER BY records_id DESC LIMIT 1"
+            ' Query to get the most recent period data for the current user based on datestart
+            Dim query As String = "SELECT datestart, dateend FROM tbl_records WHERE user_id = @userId ORDER BY datestart DESC LIMIT 1"
             Dim cmd As New MySqlCommand(query, dbconnect.conn)
             cmd.Parameters.AddWithValue("@userId", currentUserId)
 
@@ -654,8 +496,15 @@ Public Class Dashboard
         End Try
     End Sub
 
+
+
+    'For debugging purposes
     Private Sub lbl_period_Click(sender As Object, e As EventArgs) Handles lbl_period.Click
+
         IdentifyCurrentCycleDay()
         UpdateFertilityWatcher()
+
     End Sub
+
+
 End Class

@@ -84,10 +84,12 @@ Public Class MyProfile
 
         ' Raise the UserLoggedOut event
         Me.Close()
+        Period_Records.Close()
         Dashboard.Close()
-        ' Optionally, show splash or login screen
-        Splashscreen.Show()
+
         Me.Hide()  ' Hide the dashboard or current form
+        Splashscreen.Show()
+
 
         MsgBox("Logged out successfully.")
     End Sub

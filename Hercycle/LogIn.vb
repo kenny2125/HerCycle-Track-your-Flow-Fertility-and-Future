@@ -15,40 +15,46 @@ Public Class LogIn
 
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         ' Get the username and password
-        Dim username As String = txt_password.Text
-        Dim password As String = txt_username.Text
+        Dim username As String = txt_username.Text ' Fixed order
+        Dim password As String = txt_password.Text
 
-        RaiseEvent RecordAdded()
+        Try
+            ' Ensure the database connection is open
+            Dim dbconnect As New dbconnect
+            dbconnect.connect()
 
-        ' SQL query to check if the username and password matched from the database
-        Dim query As String = "SELECT user_id FROM tbl_user WHERE username = @username AND password = @password"
+            ' SQL query to check if the username and password match in the database
+            Dim query As String = "SELECT user_id FROM tbl_user WHERE username = @username AND password = @password"
+            Using cmd As New MySqlCommand(query, dbconnect.conn)
+                ' Parameterized query to prevent SQL injection
+                cmd.Parameters.AddWithValue("@username", username)
+                cmd.Parameters.AddWithValue("@password", password)
 
-        Using cmd As New MySqlCommand(query, dbconnect.conn)
-            cmd.Parameters.AddWithValue("@username", username) ' Parameterized query to prevent SQL injection
-            cmd.Parameters.AddWithValue("@password", password)
+                ' Execute query and check for matches
+                Using reader As MySqlDataReader = cmd.ExecuteReader()
+                    If reader.HasRows Then
+                        reader.Read() ' Read the first row
+                        Dim userId As Integer = reader.GetInt32("user_id") ' Get the user_id from the result
 
-            Dim reader As MySqlDataReader = cmd.ExecuteReader()
-            If reader.HasRows Then
-                reader.Read() ' Read the first row
-                Dim userId As Integer = reader.GetInt32("user_id") ' Get the user_id from the result
+                        MsgBox("Login Successful", MsgBoxStyle.Information)
 
-                MsgBox("Login Success")
+                        ' Store user ID in a static class or variable for global access
+                        CurrentUser.UserId = userId ' Set the current user ID
 
-                ' Store user ID in a static class or variable for global access
-                CurrentUser.UserId = userId ' Set the current user ID
-
-                ' Raise the UserLoggedIn event
-
-
-                Dashboard.Show()
-                Splashscreen.Hide()
-                Me.Hide()
-            Else
-                MsgBox("Login Failed. Please try again.")
-            End If
-            reader.Close()
-        End Using
+                        ' Show the dashboard and close splashscreen
+                        Dashboard.Show()
+                        Splashscreen.Close()
+                        Me.Hide()
+                    Else
+                        MsgBox("Login Failed. Invalid username or password.", MsgBoxStyle.Critical)
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox("An error occurred during login: " & ex.Message, MsgBoxStyle.Critical)
+        End Try
     End Sub
+
 
 
 

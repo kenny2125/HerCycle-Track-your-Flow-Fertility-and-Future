@@ -17,14 +17,36 @@ Public Class Period_Records
 
         ' Bring the form to the front
 
-        Me.BringToFront()
-        Me.Activate()
-        Me.BringToFront()
-        Me.Activate()
-        Me.BringToFront()
-        Me.Activate()
+
+
 
     End Sub
+
+
+    Private Sub Period_Records_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.TopMost = False
+    End Sub
+
+    Private Sub datetmpick_start_Enter(sender As Object, e As EventArgs) Handles datetmpick_start.Enter
+        ' Temporarily disable TopMost to allow the calendar to appear on top
+        Me.TopMost = False
+    End Sub
+
+    Private Sub datetmpick_start_Leave(sender As Object, e As EventArgs) Handles datetmpick_start.Leave
+        ' Re-enable TopMost after the calendar loses focus
+        Me.TopMost = True
+    End Sub
+
+    Private Sub datetmpick_end_Enter(sender As Object, e As EventArgs) Handles datetmpick_end.Enter
+        ' Temporarily disable TopMost to allow the calendar to appear on top
+        Me.TopMost = False
+    End Sub
+
+    Private Sub datetmpick_end_Leave(sender As Object, e As EventArgs) Handles datetmpick_end.Leave
+        ' Re-enable TopMost after the calendar loses focus
+        Me.TopMost = True
+    End Sub
+
     Private Sub CalculateDuration()
         ' Check if both date pickers have valid dates
         If datetmpick_start.Value <= datetmpick_end.Value Then
@@ -69,13 +91,18 @@ Public Class Period_Records
             ' Call the appropriate method based on the button text
             If btn_add.Text = "Save Record" Then
                 SaveRecord()
+
+                RaiseEvent RecordAdded() ' Raise the event to notify the parent form
             ElseIf btn_add.Text = "Update Record" Then
                 UpdateRecord()
+
+                RaiseEvent RecordAdded() ' Raise the event to notify the parent form
             End If
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
     End Sub
+
 
     Private Sub SaveRecord()
         Try
@@ -188,10 +215,12 @@ Public Class Period_Records
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
         Prev_LoadUserRecords()
+        RaiseEvent RecordAdded() ' Raise the event to notify the parent form
     End Sub
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
         Next_LoadUserRecords()
+        RaiseEvent RecordAdded() ' Raise the event to notify the parent form
     End Sub
 
     Private Sub Prev_LoadUserRecords()

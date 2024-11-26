@@ -1,33 +1,68 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class SignUp
+    Private Function ValidateInputsAndUniqueness() As Boolean
+        ' Check if all fields are filled
+        If String.IsNullOrWhiteSpace(txt_givenname.Text) OrElse
+       String.IsNullOrWhiteSpace(txt_surname.Text) OrElse
+       String.IsNullOrWhiteSpace(txt_middleint.Text) OrElse
+       String.IsNullOrWhiteSpace(txt_email.Text) OrElse
+       String.IsNullOrWhiteSpace(txt_username.Text) OrElse
+       String.IsNullOrWhiteSpace(txt_password.Text) OrElse
+       String.IsNullOrWhiteSpace(txt_cnfirmpassword.Text) Then
+            MessageBox.Show("Please fill in all fields.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        ' Check if lbl_agevalue is visible (filled)
+        If Not lbl_agevalue.Visible Then
+            MessageBox.Show("Please select a valid birthdate to calculate your age.", "Missing Age", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        ' Validate if passwords match
+        If txt_password.Text <> txt_cnfirmpassword.Text Then
+            MessageBox.Show("Passwords do not match. Please try again.", "Password Mismatch", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        End If
+
+        ' Validate password strength
+        If txt_password.Text.Length < 8 Then
+            MessageBox.Show("Password must be at least 8 characters long.", "Weak Password", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
+        ' Check if username or password already exists in the database
+        Dim dbconnect As New dbconnect
+        dbconnect.connect()
+
+        Try
+            Dim query As String = "SELECT COUNT(*) FROM tbl_user WHERE username = @username OR password = @password"
+            Dim cmd As New MySqlCommand(query, dbconnect.conn)
+            cmd.Parameters.AddWithValue("@username", txt_username.Text)
+            cmd.Parameters.AddWithValue("@password", txt_password.Text)
+
+            Dim result As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+            If result > 0 Then
+                MessageBox.Show("Username or password already exists. Please choose a different one.", "Duplicate Entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return False
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred while checking uniqueness: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        Finally
+            dbconnect.conn.Close()
+        End Try
+
+        ' All validations passed
+        Return True
+    End Function
+
 
 
     Private Sub btn_signup_Click_1(sender As Object, e As EventArgs) Handles btn_signup.Click
-        Dim validInput As Boolean = False
-
-        Do While Not validInput
-            ' Check if the passwords match
-            If txt_password.Text <> txt_cnfirmpassword.Text Then
-                MessageBox.Show("Passwords do not match. Please try again.", "Password Mismatch", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Exit Sub ' Exit if the user cancels or needs to fix the input
-            End If
-
-            ' Check if the password is strong enough
-            If txt_password.Text.Length < 8 Then
-                MessageBox.Show("Password must be at least 8 characters long.", "Weak Password", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Exit Sub
-            End If
-
-            ' Validate other inputs (e.g., empty fields)
-            If String.IsNullOrWhiteSpace(txt_givenname.Text) OrElse
-           String.IsNullOrWhiteSpace(txt_surname.Text) OrElse
-           String.IsNullOrWhiteSpace(txt_email.Text) Then
-                MessageBox.Show("Please fill in all required fields.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Exit Sub
-            End If
-
-            ' If all inputs are valid, proceed with database insertion
+        If ValidateInputsAndUniqueness() Then
             Try
+                ' Proceed with database insertion
                 Dim dbconnect As New dbconnect
                 dbconnect.connect()
 
@@ -38,22 +73,21 @@ Public Class SignUp
                 cmd.Parameters.AddWithValue("@lastname", txt_surname.Text)
                 cmd.Parameters.AddWithValue("@email", txt_email.Text)
                 cmd.Parameters.AddWithValue("@age", lbl_agevalue.Text)
-                cmd.Parameters.AddWithValue("@birthdate", datetmpick_birthdate.Text)
-
+                cmd.Parameters.AddWithValue("@birthdate", datetmpick_birthdate.Value.Date)
                 cmd.Parameters.AddWithValue("@username", txt_username.Text)
                 cmd.Parameters.AddWithValue("@password", txt_password.Text)
+
                 cmd.ExecuteNonQuery()
 
                 MessageBox.Show("User successfully registered.", "Registration Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                validInput = True ' Exit the loop
                 LogIn.Show()
                 Me.Close()
-
             Catch ex As Exception
                 MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
-        Loop
+        End If
     End Sub
+
 
 
     Private Sub linklbl_login_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklbl_login.LinkClicked

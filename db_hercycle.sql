@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2024 at 04:28 PM
+-- Generation Time: Nov 26, 2024 at 05:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,32 +24,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_answers`
+--
+
+CREATE TABLE `tbl_answers` (
+  `answers_id` int(11) NOT NULL,
+  `user_ID` int(11) NOT NULL,
+  `answered` tinyint(1) NOT NULL DEFAULT 0,
+  `Q1` varchar(11) NOT NULL,
+  `Q2` varchar(11) NOT NULL,
+  `Q3` varchar(11) NOT NULL,
+  `Q4` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_records`
 --
 
 CREATE TABLE `tbl_records` (
   `records_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `date` date DEFAULT NULL,
+  `date_added` date DEFAULT current_timestamp(),
   `datestart` date DEFAULT NULL,
   `dateend` date DEFAULT NULL,
   `duration` int(11) DEFAULT NULL,
   `notes` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_records`
---
-
-INSERT INTO `tbl_records` (`records_id`, `user_id`, `date`, `datestart`, `dateend`, `duration`, `notes`) VALUES
-(5, 2, '2024-11-06', '2024-11-06', '2024-11-06', 1, 'dsg'),
-(6, 1, '2024-11-06', '2024-11-06', '2024-11-06', 2, 'test'),
-(7, 2, '2024-11-06', '2024-11-06', '2024-11-06', 2, 'test'),
-(8, 1, '2024-11-06', '2024-11-06', '2024-11-06', 2, 'testing'),
-(9, 2, '2024-11-06', '2024-10-31', '2024-11-22', 2323, 'testttt'),
-(10, 2, '2024-11-06', '2024-10-31', '2024-11-22', 2323, 'testttt'),
-(11, 1, '2024-11-06', '2024-11-06', '2024-11-06', 2, 'testngiba'),
-(12, 2, '2024-11-06', '2024-11-06', '2024-11-06', 2, 'nanana');
 
 -- --------------------------------------------------------
 
@@ -64,22 +66,21 @@ CREATE TABLE `tbl_user` (
   `lastname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `age` int(255) NOT NULL,
-  `gender` text NOT NULL,
+  `birthdate` varchar(50) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tbl_user`
---
-
-INSERT INTO `tbl_user` (`user_ID`, `firstname`, `middleinitial`, `lastname`, `email`, `age`, `gender`, `username`, `password`) VALUES
-(1, 'John Kenny', 'Q', 'Reyes', 'reyes.johnkenny.quiachon@gmail.com', 19, 'Male', 'batdimoiprint', 'admin'),
-(2, 'test', 'test', 'test', 'test', 19, 'System.Windows.Forms.TextBox, Text: test', 'admin', 'admin');
-
---
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tbl_answers`
+--
+ALTER TABLE `tbl_answers`
+  ADD PRIMARY KEY (`answers_id`),
+  ADD KEY `FK_tbl_user` (`user_ID`);
 
 --
 -- Indexes for table `tbl_records`
@@ -99,20 +100,32 @@ ALTER TABLE `tbl_user`
 --
 
 --
+-- AUTO_INCREMENT for table `tbl_answers`
+--
+ALTER TABLE `tbl_answers`
+  MODIFY `answers_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tbl_records`
 --
 ALTER TABLE `tbl_records`
-  MODIFY `records_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `records_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `tbl_answers`
+--
+ALTER TABLE `tbl_answers`
+  ADD CONSTRAINT `FK_tbl_user` FOREIGN KEY (`user_ID`) REFERENCES `tbl_user` (`user_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `tbl_records`

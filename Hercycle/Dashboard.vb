@@ -412,7 +412,6 @@ Public Class Dashboard
         Dim periodRecordsForm As New Period_Records()
         AddHandler periodRecordsForm.RecordAdded, AddressOf RefreshDashboard
         periodRecordsForm.Show()
-
     End Sub
 
     Private Sub LoadName()
@@ -510,5 +509,7 @@ Public Class Dashboard
 
     End Sub
 
-
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        RefreshDashboard()
+    End Sub
 End Class

@@ -6,7 +6,9 @@ Public Class dbconnect
     Public Sub connect()
         ' Set the connection string only once before attempting to open the connection
         If conn.State = ConnectionState.Closed Then
-            conn.ConnectionString = "server=127.0.0.1;uid=root;pwd=;database=db_hercycle;"
+            'conn.ConnectionString = "server=127.0.0.1;uid=root;pwd=;database=db_hercycle;"
+            conn.ConnectionString = "server=xq7t6tasopo9xxbs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;uid=x18e41hgvr1saedn;pwd=k8pt9jxwfoysxhvp;database=szc29aptqpk1igin;port=3306;"
+
         End If
 
         ' Check if the connection is already open

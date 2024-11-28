@@ -38,10 +38,7 @@ Public Class MyProfile
                         lbl_ageval.Text = reader("age").ToString()
                         lbl_bdayval.Text = reader("birthdate").ToString()
                         lbl_usernameval.Text = reader("username").ToString()
-                        lbl_bdayval.Text = reader("password").ToString()
-
-
-
+                        lbl_passwordval.Text = New String("*"c, reader("password").ToString().Length) ' Mask password by default
                     End If
                 End Using
             Catch ex As Exception
@@ -90,12 +87,48 @@ Public Class MyProfile
         Me.Hide()  ' Hide the dashboard or current form
         Splashscreen.Show()
 
-
         MsgBox("Logged out successfully.")
     End Sub
-
 
     Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         Me.Hide()
     End Sub
+
+    Private Sub Guna2ToggleSwitch1_CheckedChanged(sender As Object, e As EventArgs) Handles Guna2ToggleSwitch1.CheckedChanged
+        If Guna2ToggleSwitch1.Checked Then
+            ' Reveal the password
+            lbl_passwordval.Text = GetPassword()
+        Else
+            ' Mask the password
+            lbl_passwordval.Text = New String("*"c, GetPassword().Length)
+        End If
+    End Sub
+
+    Private Function GetPassword() As String
+        ' Ensure connection is open
+        db.connect()
+
+        ' SQL query to get the password based on user ID
+        Dim query As String = "SELECT password FROM tbl_user WHERE user_ID = @user_ID"
+
+        ' Use the connection object from DbConnect class
+        Using cmd As New MySqlCommand(query, db.conn)
+            cmd.Parameters.AddWithValue("@user_ID", currentUserId)
+
+            Try
+                ' Execute the query and read data
+                Using reader As MySqlDataReader = cmd.ExecuteReader()
+                    If reader.Read() Then
+                        Return reader("password").ToString()
+                    End If
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            End Try
+        End Using
+
+        Return String.Empty
+    End Function
+
+
 End Class

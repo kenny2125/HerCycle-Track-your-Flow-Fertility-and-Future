@@ -43,7 +43,7 @@ Public Class LogIn
 
                         ' Show the dashboard and close splashscreen
                         Dashboard.Show()
-                        Splashscreen.Close()
+                        Splashscreen.Hide()
                         Me.Hide()
                     Else
                         MsgBox("Login Failed. Invalid username or password.", MsgBoxStyle.Critical)

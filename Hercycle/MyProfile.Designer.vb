@@ -50,6 +50,7 @@ Partial Class MyProfile
         Me.lbl_name = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_header = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
+        Me.Guna2ToggleSwitch1 = New Guna.UI2.WinForms.Guna2ToggleSwitch()
         Me.pnl_tracking.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -90,6 +91,7 @@ Partial Class MyProfile
         'pnl_tracking
         '
         Me.pnl_tracking.BackColor = System.Drawing.Color.Transparent
+        Me.pnl_tracking.Controls.Add(Me.Guna2ToggleSwitch1)
         Me.pnl_tracking.Controls.Add(Me.Guna2Button1)
         Me.pnl_tracking.Controls.Add(Me.lbl_ageval)
         Me.pnl_tracking.Controls.Add(Me.lbl_bdayval)
@@ -173,7 +175,7 @@ Partial Class MyProfile
         '
         Me.lbl_usernameval.BackColor = System.Drawing.Color.Transparent
         Me.lbl_usernameval.Font = New System.Drawing.Font("Sitka Banner", 15.0!)
-        Me.lbl_usernameval.Location = New System.Drawing.Point(152, 261)
+        Me.lbl_usernameval.Location = New System.Drawing.Point(152, 276)
         Me.lbl_usernameval.Name = "lbl_usernameval"
         Me.lbl_usernameval.Size = New System.Drawing.Size(79, 31)
         Me.lbl_usernameval.TabIndex = 79
@@ -325,7 +327,7 @@ Partial Class MyProfile
         '
         Me.lbl_username.BackColor = System.Drawing.Color.Transparent
         Me.lbl_username.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_username.Location = New System.Drawing.Point(26, 261)
+        Me.lbl_username.Location = New System.Drawing.Point(26, 276)
         Me.lbl_username.Name = "lbl_username"
         Me.lbl_username.Size = New System.Drawing.Size(86, 31)
         Me.lbl_username.TabIndex = 59
@@ -368,6 +370,21 @@ Partial Class MyProfile
         Me.Guna2BorderlessForm1.ContainerControl = Me
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2BorderlessForm1.TransparentWhileDrag = True
+        '
+        'Guna2ToggleSwitch1
+        '
+        Me.Guna2ToggleSwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch1.Location = New System.Drawing.Point(267, 312)
+        Me.Guna2ToggleSwitch1.Name = "Guna2ToggleSwitch1"
+        Me.Guna2ToggleSwitch1.Size = New System.Drawing.Size(35, 20)
+        Me.Guna2ToggleSwitch1.TabIndex = 84
+        Me.Guna2ToggleSwitch1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2ToggleSwitch1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2ToggleSwitch1.UncheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.Guna2ToggleSwitch1.UncheckedState.InnerColor = System.Drawing.Color.White
         '
         'MyProfile
         '
@@ -412,4 +429,5 @@ Partial Class MyProfile
     Friend WithEvents lbl_nameval As Guna.UI2.WinForms.Guna2HtmlLabel
 
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2ToggleSwitch1 As Guna.UI2.WinForms.Guna2ToggleSwitch
 End Class

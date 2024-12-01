@@ -29,7 +29,6 @@ Partial Class Dashboard
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2ShapesTool1 = New Guna.UI2.WinForms.Guna2ShapesTool(Me.components)
         Me.pnl_dashboard = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnl_profile = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -98,7 +97,6 @@ Partial Class Dashboard
         'pnl_dashboard
         '
         Me.pnl_dashboard.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(121, Byte), Integer))
-        Me.pnl_dashboard.Controls.Add(Me.Guna2HtmlLabel1)
         Me.pnl_dashboard.Controls.Add(Me.Guna2PictureBox1)
         Me.pnl_dashboard.Controls.Add(Me.pnl_profile)
         Me.pnl_dashboard.Dock = System.Windows.Forms.DockStyle.Top
@@ -106,17 +104,6 @@ Partial Class Dashboard
         Me.pnl_dashboard.Name = "pnl_dashboard"
         Me.pnl_dashboard.Size = New System.Drawing.Size(1904, 170)
         Me.pnl_dashboard.TabIndex = 0
-        '
-        'Guna2HtmlLabel1
-        '
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Lucida Fax", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(494, 59)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(321, 45)
-        Me.Guna2HtmlLabel1.TabIndex = 3
-        Me.Guna2HtmlLabel1.Text = "Main Dashboard"
         '
         'Guna2PictureBox1
         '
@@ -672,7 +659,6 @@ Partial Class Dashboard
         Me.Name = "Dashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.pnl_dashboard.ResumeLayout(False)
-        Me.pnl_dashboard.PerformLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_profile.ResumeLayout(False)
         Me.pnl_profile.PerformLayout()
@@ -723,7 +709,6 @@ Partial Class Dashboard
     Friend WithEvents pnl_dailydigest As Guna.UI2.WinForms.Guna2GradientPanel
     Friend WithEvents pnl_periodtracker As Guna.UI2.WinForms.Guna2GradientPanel
     Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
-    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents gridview_tracker As Guna.UI2.WinForms.Guna2DataGridView

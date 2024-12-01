@@ -74,7 +74,7 @@ Public Class Dashboard
 
                 ' Calculate the next menstruation phase (cycle length days from menstruation start)
                 Dim nextMenstruationEnd As DateTime = lutealEnd.AddDays(1) ' Next menstruation starts right after luteal phase ends
-                lbl_menstruationval.Text = nextMenstruationStart.ToString("MM/dd/yyyy") & " - " & nextMenstruationEnd.ToString("MM/dd/yyyy")
+                lbl_menstruationval.Text = nextMenstruationEnd.ToString("MM/dd/yyyy")
 
             Else
                 ' Handle invalid or missing cycle length

@@ -156,7 +156,7 @@ Partial Class Period_Records
         Me.lbl_recordID.AutoSize = False
         Me.lbl_recordID.BackColor = System.Drawing.Color.Transparent
         Me.lbl_recordID.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_recordID.Location = New System.Drawing.Point(14, 49)
+        Me.lbl_recordID.Location = New System.Drawing.Point(50, 335)
         Me.lbl_recordID.Name = "lbl_recordID"
         Me.lbl_recordID.Size = New System.Drawing.Size(87, 31)
         Me.lbl_recordID.TabIndex = 84
@@ -169,13 +169,12 @@ Partial Class Period_Records
         Me.Guna2HtmlLabel1.AutoSize = False
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Sitka Banner", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(14, 12)
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(50, 298)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
         Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(87, 31)
         Me.Guna2HtmlLabel1.TabIndex = 83
         Me.Guna2HtmlLabel1.Text = "Record_ID"
         Me.Guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.TopCenter
-        Me.Guna2HtmlLabel1.Visible = False
         '
         'Guna2Button4
         '

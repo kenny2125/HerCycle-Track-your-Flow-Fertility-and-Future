@@ -31,3 +31,6 @@ Hercycle is a comprehensive menstrual cycle tracking application designed to hel
 
 ## Design Prototype
 - View the prototype in [Figma](https://www.figma.com/design/yD59ogcuWaVFaD1jKpTYUB/HerCycle-UI%2FUX?node-id=0-1&t=2Di5GvDJQR6tM7ah-1)
+
+## License
+- Copyright (c) 2024 John Kenny Reyes, Danel Tungpalan, Joshua Miguel Timado

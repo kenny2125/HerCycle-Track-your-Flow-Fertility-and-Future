@@ -2,7 +2,7 @@
 A Project Presented to the Faculty of College of Computer Studies
 In Partial Fulfillment of the Requirements for the Subject PF101 Object-Oriented Programming
 
-![Screenshot of the dashboard](Dashboard.png)
+![Screenshot of the dashboard](MainDashboard.png)
 Hercycle is a comprehensive menstrual cycle tracking application designed to help users monitor their periods, ovulation, and fertility. By logging daily biomarkers and symptoms, users can gain insights into their reproductive health, predict future cycles, and make informed decisions about their well-being. 
 
 ## Features
